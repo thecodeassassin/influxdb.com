@@ -1,0 +1,409 @@
+<!doctype html>
+
+<!--
+	HTML5 Reset: https://github.com/murtaugh/HTML5-Reset
+	Free to use
+-->
+
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. --> 
+
+<head id="www-sitename-com">
+
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>InfluxDB · Documents · Overview</title>
+	
+	<meta name="title" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="" />
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+
+	<meta name="Copyright" content="" />
+	
+	<!--  Mobile Viewport Fix
+	http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use; use thoughtfully! -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+
+	<!-- Iconifier might be helpful for generating favicons and touch icons: http://iconifier.net -->
+	<link rel="shortcut icon" href="_/img/favicon.ico" />
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+		 
+	<link rel="apple-touch-icon" href="_/img/apple-touch-icon.png" />
+	<!-- The is the icon for iOS's Web Clip and other things.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- concatenate and minify for production -->
+	<link rel="stylesheet" href="_/css/reset.css" />
+	<link rel="stylesheet" href="_/css/adobe-blank.css" />
+	
+	<!-- link to google fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	
+	<!-- css for prism syntax highlighting -->
+	<link rel="stylesheet" href="_/css/prism.css" />
+	
+	<link rel="stylesheet" href="_/css/style.css" />
+	
+	<!-- Lea Verou's Prefix Free, lets you use only un-prefixed properties in yuor CSS files -->
+	<script src="_/js/prefixfree.min.js"></script>
+	
+	<!-- This is an un-minified, complete version of Modernizr. 
+		 Before you move to production, you should generate a custom build that only has the detects you need. -->
+	<script src="_/js/modernizr-2.7.0.dev.js"></script>
+	
+	<!-- Application-specific meta tags -->
+	<!-- Windows 8 -->
+	<meta name="application-name" content="" /> 
+	<meta name="msapplication-TileColor" content="" /> 
+	<meta name="msapplication-TileImage" content="" />
+	<!-- Twitter -->
+	<meta name="twitter:card" content="">
+	<meta name="twitter:site" content="">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:url" content="">
+	<!-- Facebook -->
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+
+</head>
+
+<body>
+
+
+<header>
+	
+	<h1><a href="index.html">InfluxDB</a></h1>
+	
+	<a href="#main-nav" class="skip-to-nav">Menu</a>
+
+</header>
+
+<div class="page-content">
+	
+	<article class="article-docs article-main-column">
+		
+		<h1><span class="heading-group">Introduction &middot; <a href="#" id="showDocNav" class="show-all-docs">All Docs</a> </span>Overview</h1>
+		
+		<p>InfluxDB is a time series, metrics, and analytics database. It’s written in Go and has no external dependencies. That means once you install it there’s nothing else to manage (like Redis, ZooKeeper, HBase, or whatever).</p>
+
+		<p>InfluxDB is targeted at use cases for DevOps, metrics, sensor data, and real-time analytics. It arose from our need for a database like this on more than a few previous products we&rsquo;ve built. You can <a href="/blog/2014/09/26/one-year-of-influxdb-and-the-road-to-1_0.html">read more about our journey from SaaS application to open source time series database</a>.</p>
+		
+		<h2>Project Status</h2>
+		
+		<p>The current version of InfluxDB is 0.8.8. This version is an alpha of the software, but is currently being run by hundreds of organizations around the world. It is recommended that you run in single server mode.</p>
+		
+		<p>For clustering, high availability, and a more stable production ready release it is recommended that you wait for the next version, 0.9.0. Read the <a href="/blog/2014/12/08/clustering_tags_and_enhancements_in_0_9_0.html">details on InfluxDB 0.9.0</a>.</p>
+
+		<h2 id="key-features">Key Features</h2>
+
+		<p>Here are some of the features that InfluxDB currently supports that make it a great choice for working with time series data.</p>
+		
+		<ul>
+			<li>SQL like query language</li>
+			<li>HTTP(S) API</li>
+			<li>Store billions of data points</li>
+			<li>Database managed retention policies for data</li>
+			<li>Built in management interface</li>
+			<li>Aggregate on the fly:
+				<pre><code class="language-sql">select mean(value) from cpu group by time(5m)</code></pre></li>
+
+			<li>Pre-aggregate in the database:
+				<pre><code class="language-sql">select mean(value) from cpu group by time(5m) into 5m.cpu.mean
+-- after that you can select from the composed series
+select * from "5m.cpu.mean" where time > now() - 4h</code></pre></li>
+		
+			<li>Store hundreds of thousands of series:
+				<pre><code class="language-sql">select mean(value) from "region.uswest.az.1.serverA.cpu"
+group by time(30s)</code></pre></li>
+			
+			<li>Merge multiple series together:
+				<pre><code class="language-sql">select mean(value) from merge(/.*az\.1.*\.cpu/) group by time(1h)</code></pre></li>
+		</ul>
+		
+		
+		<p>There&rsquo;s much more, have a look at the <a href="/docs/v0.8/introduction/getting_started.html">getting started guide</a> to see some examples.</p>
+		
+		<h2 id="design-goals">Design Goals</h2>
+		
+		<p>Here are some goals we have as we&rsquo;re building InfluxDB:</p>
+		
+		<ul>
+			<li>Stores metrics data (like response times and cpu load. i.e. what you&rsquo;d put into Graphite).</li>
+			<li>Stores events data (like exceptions, user analytics, or business analytics).</li>
+			<li>HTTP(S) interface for reading and writing data. Shouldn&rsquo;t require additional server code to be useful directly from the browser.</li>
+			<li>Security model that will enable user facing analytics dashboards connecting directly to the HTTP API.</li>
+			<li>Horizontally scalable.</li>
+			<li>On disk and in memory. It shouldn&rsquo;t require a cluster of machines keeping everything in memory since most analytics data is cold most of the time.</li>
+			<li>Simple to install and manage. Shouldn&rsquo;t require setting up external dependencies like Zookeeper and Hadoop.</li>
+			<li>Compute percentiles and other functions on the fly.</li>
+			<li>Downsample data on different windows of time.</li>
+			<li>Can efficiently and automatically clear out raw data daily to free up space. Database managed retention policies.</li>
+			<li>Should be able to add on custom real-time and batch analytics processing.</li>
+			<li>Expand storage by adding servers to a cluster. Should make node replacement quick and easy.</li>
+			<li>Automatically compute common queries continuously in the background.</li>
+		</ul>
+		
+		<h2 id="logging-in-and-creating-your-first-database">Logging in and creating your first database</h2>
+
+		<p>If you’ve installed locally, point your browser to <a href="http://localhost:8083/">localhost:8083</a>. The built in user interface runs on port <code>8083</code> by default. You should see a screen like this:</p>
+
+		<figure>
+			<img src="_/img/admin_login.jpg" alt="Admin login" />
+			<figcaption>Optional Caption for the images.</figcaption>
+		</figure>
+
+		<p>The default options for hostname of <code>localhost</code> and port of <code>8086</code> should work. The InfluxDB HTTP API runs on port 8086 by default.</p>
+		
+		<h3 id="specifying-time-and-sequence-number-on-writes">Specifying Time and Sequence Number on writes</h3>
+
+		<p>InfluxDB will assign a time and sequence number for every point written. If your data collection lags behind or you&rsquo;re writing in historical data, you&rsquo;ll want to specify the time. Simply include the time column in the body of the post with an epoch as the value. For example:</p>
+		
+		<pre><code class="language-javascript">[
+  {
+    "name" : "hd_used",
+    "columns" : ["value", "host", "mount"],
+    "points" : [
+      [23.2, "serverA", "/mnt"]
+    ]
+  }
+]</code></pre>
+
+		
+		
+		
+		<!-- next / previous document navigation -->
+		
+		<p class="docs-traverse">
+			<b>Next:</b> <a href="#">Installation</a><br>
+			<b>Previous:</b> <a href="#">Getting Started</a>
+			
+		</p>
+	
+	</article>
+	
+	<aside class="nav-docs">
+	
+		<a href="#" id="hideDocNav" class="hide-all-docs">Hide All Docs</a>
+	
+		<h2>InfluxDB Docs v0.9</h2>
+		
+		<h3>Introduction</h3>
+		<ul>
+			<li class="nav-active-item"><a href="/docs/v0.8/introduction/overview.html">Overview</a></li>
+			<li><a href="/docs/v0.8/introduction/installation.html">Installation</a></li>
+			<li><a href="/docs/v0.8/introduction/getting_started.html">Getting Started</a></li>
+		</ul>
+		
+		<h3>API</h3>
+		<ul>
+			<li><a href="/docs/v0.8/api/reading_and_writing_data.html">Reading &amp; Writing Data</a></li>
+			<li><a href="/docs/v0.8/api/query_language.html">Query Language</a></li>
+			<li><a href="/docs/v0.8/api/aggregate_functions.html">Aggregate Functions</a></li>
+			<li><a href="/docs/v0.8/api/continuous_queries.html">Continuous Queries</a></li>
+			<li><a href="/docs/v0.8/api/chunked_responses.html">Chunked HTTP Responses</a></li>
+			<li><a href="/docs/v0.8/api/administration.html">Administration</a></li>
+		</ul>
+		
+		<h3>UI</h3>
+		<ul>
+			<li><a href="/docs/v0.8/ui/built_in_admin_and_explorer.html">Built-in Admin and Explorer Interface</a></li>
+			<li><a href="http://grafana.org/">Grafana Dashboards</a></li>
+			<li><a href="https://github.com/hakobera/influga">Influga Dashboards</a></li>
+		</ul>
+		
+		<h3>Advanced Topics</h3>
+		<ul>
+			<li><a href="/docs/v0.8/advanced_topics/sharding_and_storage.html">Underlying Storage and Shards</a></li>
+			<li><a href="/docs/v0.8/advanced_topics/configuration_options.html">Configuration Options</a></li>
+			<li><a href="/docs/v0.8/advanced_topics/schema_design.html">Schema Design</a></li>
+			<li><a href="/docs/v0.8/advanced_topics/upgrading.html">Upgrading from Previous Versions</a></li>
+		</ul>
+		
+		<h3>Clustering</h3>
+		<ul>
+			<li><a href="/docs/v0.8/clustering/design.html">Design</a></li>
+			<li><a href="/docs/v0.8/clustering/setup.html">Setup</a></li>
+		</ul>
+		
+		<h3>Guides</h3>
+		<ul>
+			<li><a href="/docs/v0.8/guides/intro.html">Introduction</a></li>
+			<li><a href="/docs/v0.8/guides/replacing_graphite.html">Replacing Graphite</a></li>
+			<li><a href="http://www.fluentd.org/guides/recipes/syslog-influxdb">Syslog Analytics with FluentD</a></li>
+		</ul>
+		
+		<h3>Future Features</h3>
+		<ul>
+			<li><a href="/docs/v0.8/future/binary_protocol.html">Binary Protocol</a></li>
+			<li><a href="/docs/v0.8/future/pubsub.html">Pubsub</a></li>
+			<li><a href="/docs/v0.8/future/column_indexes.html">Column Indexes and Tags</a></li>
+			<li><a href="/docs/v0.8/future/custom_functions.html">Custom Functions</a></li>
+			<li><a href="/docs/v0.8/future/security.html">Security Enhancements</a></li>
+			<li><a href="/docs/v0.8/future/merge.html">Merging Many Series</a></li>
+		</ul>
+		
+		<h3>Client Libraries</h3>
+		<ul>
+			<li><a href="/docs/v0.8/client_libraries/javascript.html">JavaScript</a></li>
+			<li><a href="https://github.com/influxdb/influxdb-ruby">Ruby</a></li>
+			<li><a href="https://github.com/influxdb/influxdb-rails">Rails</a></li>
+			<li><a href="/docs/v0.8/client_libraries/python.html">Python</a></li>
+			<li><a href="https://github.com/puentesarrin/asyncflux">Python (async Tornado)</a></li>
+			<li><a href="/docs/v0.8/client_libraries/node.html">Node.js</a></li>
+			<li><a href="/docs/v0.8/client_libraries/php.html">PHP</a></li>
+			<li><a href="https://github.com/influxdb/influxdb-java">Java</a></li>
+			<li><a href="https://github.com/olauzon/capacitor">Clojure</a></li>
+			<li><a href="https://github.com/mmaul/cl-influxdb">Common Lisp</a></li>
+			<li><a href="https://github.com/davidB/metrics-influxdb">Java Metrics</a></li>
+			<li><a href="https://github.com/influxdb/influxdb-go">Go</a></li>
+			<li><a href="https://github.com/rcrowley/go-metrics">Go Metrics</a></li>
+			<li><a href="https://github.com/influxdb/influxdb-scala">Scala</a></li>
+			<li><a href="https://github.com/influxdb/influxdb-r">R</a></li>
+			<li><a href="https://github.com/radekg/erflux">Erlang</a></li>
+			<li><a href="https://github.com/saa/fluxer">Erlang (fluxer)</a></li>
+			<li><a href="%20https://github.com/palkan/influx_udp">Erlang (UDP)</a></li>
+			<li><a href="https://metacpan.org/pod/InfluxDB">Perl</a></li>
+			<li><a href="https://github.com/maoe/influxdb-haskell">Haskell</a></li>
+			<li><a href="https://github.com/ziyasal/InfluxDB.Net">.NET (C#)</a></li>
+		</ul>
+		
+		<h3>Contributing</h3>
+		<ul>
+			<li><a href="https://github.com/influxdb/influxdb/blob/master/docs/contributing.md">Building and Contributing</a></li>
+			<li><a href="/community/cla.html">CLA</a></li>
+			<li><a href="https://github.com/influxdb/influxdb.org">To this Documentation</a></li>
+			<li><a href="https://github.com/influxdb/influxdb/blob/master/LICENSE">License (MIT)</a></li>
+		</ul>
+		
+		<h3>Other Libraries and Tools</h3>
+		<ul>
+			<li><a href="https://github.com/Dieterbe/influx-cli">CLI (Go)</a></li>
+			<li><a href="https://github.com/FGRibreau/influxdb-cli">CLI (Node)</a></li>
+			<li><a href="https://github.com/phstc/influxdb-cli">CLI (Ruby)</a></li>
+			<li><a href="http://grafana.org/">Grafana (dashboards)</a></li>
+			<li><a href="https://github.com/vimeo/graphite-influxdb">Graphite-Influxdb bridge</a></li>
+			<li><a href="https://github.com/obfuscurity/tasseo">Tasseo (realtime dashboard)</a></li>
+			<li><a href="https://github.com/bernd/statsd-influxdb-backend">StatsD Backend</a></li>
+			<li><a href="https://github.com/bpaquet/collectd-influxdb-proxy">CollectD Proxy</a></li>
+			<li><a href="https://github.com/fangli/fluent-plugin-influxdb">FluentD Plugin</a></li>
+			<li><a href="https://github.com/lusis/sensu_influxdb_handler">Sensu Handler</a></li>
+			<li><a href="https://github.com/SimpleFinance/chef-handler-influxdb">Chef Handler/Reporter</a></li>
+			<li><a href="https://github.com/CargoSense/puppet-influxdb">Config Management via Boxen</a></li>
+			<li><a href="https://github.com/savoirfairelinux/mod-influxdb">Shinken module</a></li>
+			<li><a href="https://github.com/ezotrank/logsend">LogSend</a></li>
+		</ul>
+		
+		<h3>Docs Versions</h3>
+		<ul>
+			<li><a href="/docs/v0.8/introduction/overview.html">v0.8</a></li></ul>
+		</ul>
+	
+	</aside>
+	
+</div>
+
+<nav id="main-nav" class="nav-main">
+	<ol>
+		<li><a href="support.html">Support</a></li>
+		<li><a href="http://customers.influxdb.com">Hosting</a></li>
+		<li class="nav-active-item"><a href="docs.html">Docs</a></li>
+		<li><a href="blog.html">Blog</a></li>
+		<li><a href="community.html">Community</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li class="download"><a href="download.html">Download</a></li>
+	</ol>
+	
+	<!--
+<form class="search-site">
+		<a href="#" class="search-toggle">Show Search</a>
+		<input type="text" class="search-entry" placeholder="Search">
+		<input type="submit">
+	</form>
+-->
+</nav>
+
+<footer>
+	
+	<nav class="nav-footer">
+		<ol>
+			<li><a href="">Support</a></li>
+			<li><a href="http://customers.influxdb.com">Hosting</a></li>
+			<li><a href="download.html">Download</a></li>
+			<li><a href="">Docs</a></li>
+			<li><a href="">Blog</a></li>
+			<li><a href="">Community</a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Contact</a></li>
+		</ol>
+	</nav>
+	
+	<ul class="footer-social">
+		<li><a href="#" class="link-twitter">Follow @influxdb on Twitter</a></li>
+		<li><a href="#" class="link-github">Fork influxDB at Github</a></p></li>
+	</ul>
+	
+	<p>Copyright 2015 InfluxDB. All Rights Reserved.</p>
+	
+</footer>
+
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+		 http://chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src='_/js/jquery-1.10.2.min.js'></script>
+
+<!-- this is where we put our custom functions -->
+<!-- don't forget to concatenate and minify if needed -->
+<script src="_/js/functions.js"></script>
+
+<!-- syntax highlighting script -->
+<script src="_/js/prism.min.js"></script>
+
+<!-- Asynchronous google analytics; this is the official snippet.
+	 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
+	 
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+-->
+  
+</body>
+</html>
