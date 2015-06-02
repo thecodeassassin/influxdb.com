@@ -1,0 +1,12 @@
+title = "InfluxDB"
+baseurl = "http://influxdb.com/"
+
+config = "config.toml"
+
+languageCode = "en-us"
+
+
+
+publishdir = "public"
+contentdir = "content"
+layoutdir = "layouts"
