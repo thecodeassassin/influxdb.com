@@ -1,12 +1,16 @@
+# Site info
 title = "InfluxDB"
 baseurl = "http://influxdb.com/"
 
+# Site configuration
+languageCode = "en-US"
 config = "config.toml"
-
-languageCode = "en-us"
-
-
-
 publishdir = "public"
 contentdir = "content"
 layoutdir = "layouts"
+
+# Site links
+[permalinks]
+  post = "/:year/:month/:title/"
+  site = "/:filename/"
+#  docs = "/:section/"
