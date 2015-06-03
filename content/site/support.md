@@ -1,5 +1,6 @@
-{{ partial "header.html" . }}
-{{ partial "logo.html" . }}
++++
+title = "support"
++++
 <article class="article-support">
 	
 	<section class="support-subscriptions">
@@ -136,5 +137,3 @@
 	</section>
 
 </article>
-{{ partial "nav.html" . }}
-{{ partial "footer.html" . }}

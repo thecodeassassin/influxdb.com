@@ -1,7 +1,8 @@
 ---
 title: InfluxDB v0.5.0-rc1 released with all new clustering and features.
 author: Paul Dix
-published_on: February 25, 2014
+date: 2014-02-25
+publishdate: 2014-02-25
 ---
 
 InfluxDB version 0.5.0-rc1 is out! This release adds significant improvements to clustering, eviction of old data, and 99.99th percentile write performance. We've also added a cool new feature to continuous queries and given the admin interface some love. The goal of this RC is to put it through serious testing with different loads and failure scenarios. We'd like the 0.5.0 line to be ready for production use with a few caveats. Read on for all the details on this big new release.

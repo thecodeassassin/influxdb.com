@@ -1,7 +1,8 @@
 ---
 title: InfluxDB v0.9.0 release update 2
 author: Paul Dix
-published_on: May 19, 2015
+date: 2015-05-19
+publishdate: 2015-05-19
 ---
 
 Here's the latest update on our path to InfluxDB 0.9.0. Since the last [release update 18 days ago](/blog/2015/04/01/InfluxDB-v0_9_0-release-update.html), we've merged 44 PRs to add features or close out bugs. Most notable on the feature side of things are `non_negative_derivative`, `derivative`. and `distinct`, with `count(distinct)` coming in the next few days.

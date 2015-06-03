@@ -1,7 +1,8 @@
 ---
 title: Free trial for InfluxDB hosting and updated documentation
 author: Paul Dix
-published_on: May 21, 2014
+date: 2014-05-21
+publishdate: 2014-05-21
 ---
 
 Today we're announcing managed hosting of InfluxDB and [Grafana](http://grafana.org/) (the excellent open source dashboarding solution)! Plans start at just $39 per month for a single node and an extra $49 per month for each additional node. Each InfluxDB node has 10GB of storage and you can expand the cluster at any time as your needs grow. Get up and running in under a minute by signing up for a [30 day free trial of hosted InfluxDB here](https://customers.influxdb.com/).

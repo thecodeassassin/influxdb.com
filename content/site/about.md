@@ -1,5 +1,6 @@
-{{ partial "header.html" . }}
-{{ partial "logo.html" . }}
++++
+title = "about"
++++
 <div class="page-content">
 	
 	<article class="article-docs">
@@ -117,5 +118,3 @@
 	</article>
 	
 </div>
-{{ partial "nav.html" . }}
-{{ partial "footer.html" . }}

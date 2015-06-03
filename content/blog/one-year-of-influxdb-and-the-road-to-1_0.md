@@ -1,7 +1,8 @@
 ---
 title: One year of InfluxDB and the road to 1.0
 author: Paul Dix
-published_on: September 26, 2014
+date: 2014-09-26
+publishdate: 2014-09-26
 ---
 
 I'm sitting in a Starbucks in Tokyo as I write this. I'm here because [Shuhei Tanuma](https://github.com/chobie), a developer at GREE, has invited me to give a talk about our experiences developing InfluxDB in Golang at a [GREE tech event](https://atnd.org/events/55464). Shuhei is also one of the 47 contributors we've had issue pull requests to the core of InfluxDB in the last year. He's using InfluxDB to store server and application performance data at GREE, a mobile social gaming company that's publicly traded on the Tokyo stock exchange.

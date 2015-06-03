@@ -1,7 +1,8 @@
 ---
 title: Clustering, tags, and enhancements to come in 0.9.0
 author: Paul Dix
-published_on: December 8, 2014
+date: 2014-12-08
+publishdate: 2014-12-08
 ---
 
 We've been heads down working on InfluxDB v0.9.0 for a while and I'd like to update the community on what we're working on and what the goals are for the upcoming release. It started out as a release to completely rewrite the clustering implementation, but it has turned into something much bigger. Not only are we significantly improving the clustering capabilities of Influx, we're adding support for tags, cleaning up the API, rewriting a bunch of underlying implementation, changing storage engines, and moving to a pure Go codebase.
