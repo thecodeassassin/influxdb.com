@@ -1,5 +1,6 @@
 +++
 title = "contact"
+layout = "sidebar"
 +++
 <h1 class="docs header">Contact Us</h1>
 

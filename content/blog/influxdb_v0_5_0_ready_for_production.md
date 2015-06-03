@@ -1,7 +1,8 @@
 ---
 title: InfluxDB v0.5.0 ready for production
 author: Paul Dix
-published_on: March 24, 2014
+date: 2014-03-24
+publishdate: 2014-03-24
 ---
 
 InfluxDB version 0.5.0 has been released and is ready for production! Well, ready for production depending on your comfort level. There are [still issues and features we want to address](https://github.com/influxdb/influxdb/issues?state=open). However, there are no known bugs that cause a crash or a memory leak. This is the first release that we're deeming production worthy. Here's the lowdown on what we've added, what's coming, and what promises we're making for releases going forward.

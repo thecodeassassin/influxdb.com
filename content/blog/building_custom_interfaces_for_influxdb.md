@@ -1,7 +1,8 @@
 ---
 title: Building Custom Interfaces For InfluxDB
 author: Todd Persen
-published_on: December 2, 2013
+date: 2013-12-02
+publishdate: 2013-12-02
 ---
 
 In addition to shipping with a basic admin interface, InfluxDB also allows you to create [custom interfaces](/docs/interfaces/custom.html) with a little bit of HTML and JavaScript and drop them into the admin interface as plugins. This makes it easy to build custom dashboards or reporting interfaces that you can share with others. In this post, we'll walk through the basic concepts of building a plugin and put together a quick visualization example.

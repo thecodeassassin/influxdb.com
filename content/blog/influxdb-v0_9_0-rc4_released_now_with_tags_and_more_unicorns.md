@@ -1,7 +1,8 @@
 ---
 title: InfluxDB v0.9.0-rc4 released, now with tags and more unicorns
 author: Paul Dix
-published_on: February 24, 2015
+date: 2015-02-24
+publishdate: 2015-02-24
 ---
 
 After months of hard work we're very excited to announce the first early testing build of InfluxDB v0.9.0, 0.9.0-rc4([latest here](/download#latest)). There are some details on the 0.9.0 release in the [changelog](https://github.com/influxdb/influxdb/blob/master/CHANGELOG.md), but this deserves a much larger post. We've added some major new features, like support for tags, and made breaking API changes. The new API should reflect what the 1.0 release of InfluxDB later this year will look like. There may be additions, but we are unlikely to make any breaking API changes after 0.9.0 is released. Read on to get a quick preview of some of the new functionality and for more details on what's still on the TODO list before we do the full 0.9.0 release.

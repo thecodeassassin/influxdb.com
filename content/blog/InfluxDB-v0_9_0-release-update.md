@@ -1,7 +1,8 @@
 ---
 title: InfluxDB v0.9.0 release update
 author: Paul Dix
-published_on: May 1, 2015
+date: 2015-05-01
+publishdate: 2015-05-01
 ---
 
 This is an update to [the v0.9.0 release plan](/blog/2015/04/01/InfluxDB-v0_9_0-release-plan.html) I posted a month ago. The short answer is: it's not released or ready yet, but we're making great progress. We would rather disappoint you on a release date than disappoint you with sub-par software.

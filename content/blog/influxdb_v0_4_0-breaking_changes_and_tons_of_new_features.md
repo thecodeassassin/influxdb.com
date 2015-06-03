@@ -1,7 +1,8 @@
 ---
-title: InfluxDB v0.4.0 &ndash; Breaking changes and tons of new features
+title: InfluxDB v0.4.0 - Breaking changes and tons of new features
 author: Paul Dix
-published_on: November 27, 2013
+date: 2013-11-27
+publishdate: 2013-11-27
 ---
 
 InfluxDB has some new features, support for custom dashboards, and there are a bunch of new client libraries that have come out since we announced the project. Most importantly, we're planning a release next week that changes something on the underlying data storage. That means that without a migration, all your data will go away. Read on for more details and how to potentially avoid this fate.

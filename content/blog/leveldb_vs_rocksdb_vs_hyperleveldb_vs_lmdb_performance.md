@@ -1,7 +1,8 @@
 ---
 title: Benchmarking LevelDB vs. RocksDB vs. HyperLevelDB vs. LMDB Performance for InfluxDB
 author: Paul Dix
-published_on: June 20, 2014
+date: 2014-06-20
+publishdate: 2014-06-20
 ---
 
 For quite some time we've wanted to test the performance of different storage engines for our use case with InfluxDB. We started off using LevelDB because it's what we had used on earlier projects and RocksDB wasn't around yet. We've finally gotten around to running some basic tests against a few different engines. Going forward it looks like RocksDB might be the best choice for us.

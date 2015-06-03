@@ -1,7 +1,13 @@
 ---
-title: Visualizing Bitcoin post frequency on HN with InfluxDB and Rickshaw
-author: Todd Persen
-published_on: November 19, 2013
+title: "Visualizing Bitcoin post frequency on HN with InfluxDB and Rickshaw"
+description: "Visualizing Bitcoin post frequency on HN with InfluxDB and Rickshaw"
+author: "Todd Persen"
+date: "2013-11-19"
+publishdate: "2013-11-19"
+categories:
+  - "Visualization"
+  - "InfluxDB"
+tags: [ "rickshaw", "bitcoin", "hacker news", "ruby" ]
 ---
 
 Based on casual observation, the crowd at HackerNews seems to be totally obsessed 

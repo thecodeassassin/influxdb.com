@@ -1,9 +1,9 @@
 +++
 title = "community"
+layout = "sidebar"
 +++
-
 # Community
-		
+
 InfluxDB is an open-source company, so we rely on a strong community for feedback and adoption. We try to stay connected in as many ways as possible:
 
 <icon class="fa fa-envelope fa-border fa-2x fa-lg pull-right fa-align-center"></icon>

@@ -1,22 +1,12 @@
 {{ partial "header.html" . }}
 {{ partial "logo.html" . }}
 <div class="page-content">
-	
 	<article class="article-docs article-main-column">
-		
 		<h1 class="docs header">InfluxDB Blog</h1>
-				
-		<h5 class="blog-post-metadata"><b>{{ .Author }}</b> &middot; {{ .Date.Format "January 2, 2006" }}</h5>
+		<h5 class="blog-post-metadata"><b>Author</b> &middot; {{ .Date.Format "January 2, 2006" }}</h5>
 		<h2 class="blog-heading">{{ .Title }}</h2>
-		
 		{{ .Content }}
-
-		<!-- -------------------- DISQUS GOES HERE -------------------- -->
-
-		<div id="disqus_thread"></div>
-		
-		<!-- -------------------- /DISQUS GOES HERE -------------------- -->
-
+		{{ partial "disqus.html" . }}
 	</article>
 	{{ partial "sidebar.html" . }}	
 </div>

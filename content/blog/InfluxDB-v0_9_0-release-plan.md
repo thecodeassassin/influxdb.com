@@ -1,7 +1,8 @@
 ---
 title: InfluxDB v0.9.0 release plan
 author: Paul Dix
-published_on: April 1, 2015
+date: 2015-04-01
+publishdate: 2015-04-01
 ---
 
 Happy April 1st everyone! As you can see, March has come and gone and we haven't yet released the official version of 0.9.0 of InfluxDB. Let's call this our elaborate April fool's joke. Seriously though, we're very hard at work on 0.9.0 and we want to have it released as soon as possible. However, there are some key things we need to get done and I wanted to share what that road map looks like publicly so people can have a better feel for how things are developing on the 0.9.0 release front.
