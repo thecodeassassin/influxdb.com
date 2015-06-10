@@ -17,7 +17,7 @@ title = "about"
 		
 		<ul class="team-listing">
 			<li>
-				<img src="_/img/headshots/FPO_headshot_1.jpg" alt="Name" />		
+				<img src="/img/headshots/FPO_headshot_1.jpg" alt="Name" />
 				<h3>Joe Teamplayer</h3>
 				<h4>Title</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -27,7 +27,7 @@ title = "about"
 				</ul>		
 			</li>
 			<li>
-				<img src="_/img/headshots/FPO_headshot_2.jpg" alt="Name" />
+				<img src="/img/headshots/FPO_headshot_2.jpg" alt="Name" />
 				<h3>Frank Teamplayer</h3>
 				<h4>Title</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -37,7 +37,7 @@ title = "about"
 				</ul>		
 			</li>
 			<li>
-				<img src="_/img/headshots/FPO_headshot_3.jpg" alt="Name" />		
+				<img src="/img/headshots/FPO_headshot_3.jpg" alt="Name" />
 				<h3>Henry Teamplayer</h3>
 				<h4>Title</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -47,7 +47,7 @@ title = "about"
 				</ul>		
 			</li>
 			<li>
-				<img src="_/img/headshots/FPO_headshot_4.jpg" alt="Name" />		
+				<img src="/img/headshots/FPO_headshot_4.jpg" alt="Name" />
 				<h3>Jane Teamplayer</h3>
 				<h4>Title</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -66,7 +66,7 @@ title = "about"
 		
 		<ul class="team-listing">
 			<li>
-				<img src="_/img/headshots/FPO_headshot_1.jpg" />		
+				<img src="/img/headshots/FPO_headshot_1.jpg" />
 				<h3>Robin Vasan</h3>
 				<h4>Title, Mayfield Fund</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -75,7 +75,7 @@ title = "about"
 				</ul>		
 			</li>
 			<li>
-				<img src="_/img/headshots/FPO_headshot_2.jpg" />
+				<img src="/img/headshots/FPO_headshot_2.jpg" />
 				<h3>Dan Scholnick</h3>
 				<h4>Title, Trinity Ventures</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -84,7 +84,7 @@ title = "about"
 				</ul>		
 			</li>
 			<li>
-				<img src="_/img/headshots/FPO_headshot_3.jpg" />		
+				<img src="/img/headshots/FPO_headshot_3.jpg" />
 				<h3>Henry Director</h3>
 				<h4>Title</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -102,16 +102,16 @@ title = "about"
 		
 		<ul class="team-listing investor-listing">
 			<li>
-				<img src="_/img/logo_mayfield.svg" alt="Mayfield Fund" />
+				<img src="/img/logo_mayfield.svg" alt="Mayfield Fund" />
 			</li>
 			<li>
-				<img src="_/img/logo_trinity-ventures.png" alt="Trinity Ventures" />	
+				<img src="/img/logo_trinity-ventures.png" alt="Trinity Ventures" />
 			</li>
 			<li>
-				<img src="_/img/logo_bloomberg-beta.png" alt="Bloomberg Beta" />
+				<img src="/img/logo_bloomberg-beta.png" alt="Bloomberg Beta" />
 			</li>
 			<li>
-				<img src="_/img/logo_y-combinator.gif" alt="Y-Combinator" />
+				<img src="/img/logo_y-combinator.gif" alt="Y-Combinator" />
 			</li>
 		</ul>
 
