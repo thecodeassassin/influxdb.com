@@ -7,7 +7,7 @@
 		{{ range .Data.Pages.ByPublishDate.Reverse }}
 			<li>
 				<h5 class="blog-post-metadata"><b>Author</b> &middot; {{ .Date.Format "January 2, 2006" }}</h5>
-				<h2 class="blog-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				<h2 class="blog-heading"><a href="{{ .url }}">{{ .Title }}</a></h2>
 				<p>{{ .Summary }}</p>
 				{{ if .Truncated }}
 				<p><a href="{{ .Permalink }}">Read More &raquo;</a></p>

@@ -1,6 +1,6 @@
 # Site info
 title = "InfluxDB"
-baseurl = "http://influxdb.com/"
+baseurl = "http://new.influxdb.com/"
 
 # Site configuration
 languageCode = "en-US"
@@ -14,7 +14,7 @@ uglyurls = true
 
 # Site links
 [permalinks]
-  blog = "/:section/:year/:month/:day/:title.html"
+  # blog = "/:section/:year/:month/:day/:slug.html"
   site = "/:filename/index.html"
 
 #[taxonomies]
