@@ -9,11 +9,13 @@ publishdir = "public"
 contentdir = "content"
 layoutdir = "layouts"
 
+# Use urls that end in .html
+uglyurls = true
+
 # Site links
 [permalinks]
-  post = "/:year/:month/:title/"
-  site = "/:filename/"
-#  docs = "/:section/"
+  blog = "/:section/:year/:month/:day/:title.html"
+  site = "/:filename/index.html"
 
 #[taxonomies]
 #  version = "versions"
