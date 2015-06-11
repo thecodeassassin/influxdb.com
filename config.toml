@@ -1,6 +1,6 @@
 # Site info
 title = "InfluxDB"
-baseurl = "http://new.influxdb.com/"
+baseurl = "http://influxdb.com/"
 
 # Site configuration
 languageCode = "en-US"
