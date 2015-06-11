@@ -62,7 +62,7 @@ One caveat is that shard groups and shards are created in the CP system. During 
 
 For example, let’s take a look at what happens when a write comes in. Say we have a cluster of 4 servers:
 
-![Cluster Write](/blog/images/write_4_servers.png)
+![Cluster Write](/img/blog/write_4_servers.png)
 
 And the data is owned by servers 2-3.
 
@@ -74,7 +74,7 @@ Once we have the shard group we hash the measurement name and tagset and mod tha
 
 The key for the data is the measurement name, tagset, and nanosecond timestamp. An an example, let’s say that the shard exists on servers 2, 3, and 4:
 
-![Cluster Write](/blog/images/write_3_owners.png)
+![Cluster Write](/img/blog/write_3_owners.png)
 
 What happens next depends on the requested consistency level of the write operation. The different levels are:
 
