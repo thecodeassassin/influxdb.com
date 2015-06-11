@@ -4,8 +4,8 @@ Welcome to the InfluxDB documentation. Pick a version of the docs to get started
 
 ## Current Version
 
-- [v0.9](v0.9/introduction/getting_started/)
+- [v0.9](v0.9/introduction/getting_started.html)
 
 ## Deprecated Versions
 
-- [v0.8](v0.8/introduction/getting_started/)
+- [v0.8](v0.8/introduction/getting_started.html)

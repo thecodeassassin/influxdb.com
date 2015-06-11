@@ -19,10 +19,6 @@ layout = "sidebar"
 		
 		wget https://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb
 		sudo dpkg -i influxdb_latest_amd64.deb
-- 32-bit system install instructions
-		
-		wget https://s3.amazonaws.com/influxdb/influxdb_latest_i686.deb
-		sudo dpkg -i influxdb_latest_i686.deb
 
 ### RedHat & CentOS
 
@@ -30,11 +26,6 @@ layout = "sidebar"
 
 		wget https://s3.amazonaws.com/influxdb/influxdb-latest-1.x86_64.rpm
 		sudo rpm -ivh influxdb-latest-1.x86_64.rpm
-
-- 32-bit system install instructions
-
-		wget https://s3.amazonaws.com/influxdb/influxdb-latest-1.i686.rpm
-		sudo rpm -ivh influxdb-latest-1.i686.rpm
 
 ## Deprecated Releases
 
