@@ -47,6 +47,10 @@ Our goal moving from 0.9 to 1.0 will be primarily filling in any missing feature
 
 Currently, we only have the client library for Go updated. In the coming weeks we're hoping that library authors will update to work with the new line protocol and query language for creating databases, retention policies, and users. If you update or implement a client library, let us know and we'll link to it in the docs.
 
+### Managed Hosting
+
+Our managed hosting platform hasn't been updated yet to spin up 0.9.0 servers. In the coming weeks we'll update it to deploy 0.9.0 InfluxDB servers along with Grafana 2.0 servers to visualize the data. When 0.9.1 is released we'll begin work to migrate existing customers from 0.8 to 0.9.1. In the meantime, feel free to [sign up for managed InfluxDB hosting](https://customers.influxdb.com/) and we'll let you know when 0.9.0 is ready for use there.
+
 ### Conclusion
 
 We're very excited about the foundational work we've laid out in InfluxDB 0.9.0. The API is a significant overhaul from what was previously available. There are great [new features that enable all sorts of interesting queries to do discovery and exploration](/blog/2014/12/08/clustering-tags-and-enhancements-to-come-in-0.9.0.html) of the data in InfluxDB in addition to the basic time series queries.
