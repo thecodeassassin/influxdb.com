@@ -40,7 +40,7 @@ title = "support"
 						<script
 							src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 							data-key="pk_live_YqkcDTFvohavPUkSV9ZtI7oO"
-							data-image="/img/documentation/checkout/marketplace.png"
+							data-image="/img/influx-128.png"
 							data-name="InfluxDB"
 							data-description="Developer Support Plan"
 							data-label="Buy Support"
