@@ -12,7 +12,7 @@ Sign up for updates [on the InfluxDB newsletter](#newsletter).
 
 <icon class="fa fa-comments fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
-Join the  [mailing list for users and developers](https://groups.google.com/forum/#!forum/influxdb).
+Join the [mailing list for users and developers](https://groups.google.com/forum/#!forum/influxdb).
 
 <icon class="fa fa-twitter fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
@@ -24,7 +24,7 @@ The [InfluxDB Community](https://plus.google.com/communities/1145075110020426543
 
 <icon class="fa fa-facebook-square fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
-Like the  [InfluxDB Facebook Group](https://www.facebook.com/influxdb).
+Like the [InfluxDB Facebook Group](https://www.facebook.com/influxdb).
 
 <icon class="fa fa-comment fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
@@ -42,7 +42,8 @@ Check out the [source code](https://github.com/influxdb).
 
 Here's a list of local groups we know about:
 
-- [NYC InfluxDB User Group](href="http://www.meetup.com/NYC-InfluxDB-User-Group/)
+- [SF InfluxDB User Group](http://www.meetup.com/San-Francisco-InfluxDB-Meetup/)
+- [NYC InfluxDB User Group](http://www.meetup.com/NYC-InfluxDB-User-Group/)
 - [Berlin InfluxDB Users](http://www.meetup.com/Berlin-InfluxDB-Users/)
 
 If you're interested in starting your own meetup, email us at [support@influxdb.com](mailto:support@influxdb.com) and we'll cover the Meetup dues for you!
