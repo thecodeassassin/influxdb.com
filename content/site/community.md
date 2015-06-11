@@ -58,4 +58,4 @@ We're available for consulting and professional support. We can help you build o
 
 ## Presenting
 
-We're up for giving talks at local user groups, meetups, and conferences any time. We can talk about InfluxDB, distributed computing, our experience building in Go, or scaling real-time analytics. If it's within train distance from NYC, we'd be happy to come to you almost any time. Otherwise, get in touch at [support@influxdb.com](mailto:support@influxdb.com) and tell us about your group and when you'd like us to drop by. If it requires a flight we'd like to make sure we can line up some other groups nearby around the same time.
+We're up for giving talks at local user groups, meetups, and conferences any time. We can talk about InfluxDB, distributed computing, our experience building in Go, or scaling real-time analytics. If it's within train distance from NYC, we'd be happy to come to you almost any time. Otherwise, get in touch at [contact@influxdb.com](mailto:contact@influxdb.com) and tell us about your group and when you'd like us to drop by. If it requires a flight we'd like to make sure we can line up some other groups nearby around the same time.
