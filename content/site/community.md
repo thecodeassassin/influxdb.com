@@ -54,7 +54,7 @@ If you're in New York City or San Francisco we're up for meeting up and hacking 
 
 ## Support
 
-We're available for consulting and professional support. We can help you build out a custom solution on top of InfluxDB or help you get set up and making the most of InfluxDB. Drop us a line at [support@influxdb.com](mailto:support@influxdb.com).
+We're available for professional services and support. We can help you build out a custom solution on top of InfluxDB or help you get set up to make the most of InfluxDB. Drop us a line at [support@influxdb.com](mailto:support@influxdb.com).
 
 ## Presenting
 
