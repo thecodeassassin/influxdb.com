@@ -1,35 +1,25 @@
 <!doctype html>
-
-<!--
-	HTML5 Reset: https://github.com/murtaugh/HTML5-Reset
-	Free to use
--->
-
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en-US"><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. --> 
-
 <head id="www-sitename-com">
 
 	<meta charset="utf-8">
-	
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>InfluxDB</title>
+	<title>{{ if .Title }}{{ title .Title }} | InfluxDB{{ else }}InfluxDB - Open Source Time Series, Metrics, and Analytics Database{{ end }}</title>
 	
-	<meta name="title" content="" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
+	<meta name="title" content="{{ if .Title }}{{ title .Title }}{{ else }}InfluxDB - Open Source Time Series, Metrics, and Analytics Database{{ end }}" />
+	<meta name="description" content="{{ if .Description }}{{ .Description }}{{ end }}" />
+	<!-- <meta name="author" content="" /> -->
 	<!-- Google will often use this as its description of your page/site. Make it good. -->
 	
 	<meta name="google-site-verification" content="" />
 	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
 
-	<meta name="Copyright" content="" />
+	<meta name="Copyright" content="InfluxDB" />
 	
 	<!--  Mobile Viewport Fix
 	http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
@@ -37,16 +27,11 @@
 	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
 	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
 	-->
-	<!-- Uncomment to use; use thoughtfully! -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 
 	<!-- Iconifier might be helpful for generating favicons and touch icons: http://iconifier.net -->
 	<link rel="shortcut icon" href="/img/favicon.ico" />
-	<!-- This is the traditional favicon.
-		 - size: 16x16 or 32x32
-		 - transparency is OK -->
-		 
 	<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
 	<!-- The is the icon for iOS's Web Clip and other things.
 		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for retina display (IMHO, just go ahead and use the biggest one)
@@ -56,8 +41,7 @@
 	<!-- concatenate and minify for production -->
 	<link rel="stylesheet" href="/css/reset.css" />
 	<link rel="stylesheet" href="/css/adobe-blank.css" />
-	
-	<!-- link to google fonts -->
+
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 	
 	<!-- css for prism syntax highlighting -->
@@ -74,19 +58,19 @@
 	
 	<!-- Application-specific meta tags -->
 	<!-- Windows 8 -->
-	<meta name="application-name" content="" /> 
+	<meta name="application-name" content="InfluxDB" /> 
 	<meta name="msapplication-TileColor" content="" /> 
-	<meta name="msapplication-TileImage" content="" />
+	<meta name="msapplication-TileImage" content="http://influxdb.com/img/logo_influxdb.png" />
 	<!-- Twitter -->
-	<meta name="twitter:card" content="">
-	<meta name="twitter:site" content="">
-	<meta name="twitter:title" content="">
-	<meta name="twitter:description" content="">
-	<meta name="twitter:url" content="">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@influxdb">
+	<meta name="twitter:title" content="InfluxDB">
+	<meta name="twitter:description" content="Open Source Time Series, Metrics, and Analytics Database">
+	<meta name="twitter:image" content="http://influxdb.com/img/logo_influxdb.png" />
 	<!-- Facebook -->
-	<meta property="og:title" content="" />
-	<meta property="og:description" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:image" content="" />
+	<meta property="og:title" content="InfluxDB" />
+	<meta property="og:description" content="Open Source Time Series, Metrics, and Analytics Database" />
+	<meta property="og:url" content="http://influxdb.com/" />
+	<meta property="og:image" content="http://influxdb.com/img/logo_influxdb.png" />
 
 </head>
