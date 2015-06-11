@@ -4,7 +4,15 @@
 	<article class="article-docs article-main-column">
 		<h1 class="docs header">InfluxDB Blog</h1>
 		<h5 class="blog-post-metadata"><b>Paul Dix</b> &middot; {{ .Date.Format "January 2, 2006" }}</h5>
-		<h2 class="blog-heading">{{ .Title }}</h2>
+		<h2 class="blog-heading">
+            {{ .Title }}
+            <p id="twitter" style="float:right;">
+                <a class="twitter-share-button" data-via="influxdb" href="https://twitter.com/share"></a>
+            </p>
+            <script type="text/javascript">
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            </script>
+        </h2>
 		{{ .Content }}
 		{{ partial "disqus.html" . }}
 	</article>
