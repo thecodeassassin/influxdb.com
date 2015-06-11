@@ -2,6 +2,8 @@
 title: Upgrading from previous versions
 ---
 
-# Upgrading from 0.8 to 0.9
+# Upgrading from 0.8.8 to 0.9
 
-This is a work in progress.
+Work is currently in progress on an upgrade path to 0.9 from 0.8.8.
+
+This page will be updated in the coming weeks with more information.

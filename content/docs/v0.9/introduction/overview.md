@@ -10,7 +10,7 @@ InfluxDB is targeted at use cases for DevOps, metrics, sensor data, and real-tim
 
 ## Project Status
 
-The current version of InfluxDB is 0.9.0 and is alpha-level software. Clustering, replication and high-availability are supported.
+The current version of InfluxDB is 0.9.0. Clustering, replication and high-availability should be considered in an alpha state.
 
 ## Key Features
 
