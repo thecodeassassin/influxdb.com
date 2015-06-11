@@ -21,35 +21,20 @@ Replace the `riak` user with `influxdb` and you should be good to go.
 
 ## OS X
 
-Installation on OS X 10.6 and higher is supported through [Homebrew](http://brew.sh/).
+Installation of version 0.8.x on OS X is no longer supported through [Homebrew](http://brew.sh/). You will need to build from source. If that's unclear please contact us at [support@influxdb.com](mailto:support@influxdb.com).
 
-```
-brew update
-brew install influxdb
-```
-
-After you run the install you'll need to start up InfluxDB. The message gives you details on how to do this:
-
-```
-To have launchd start influxdb at login:
-    ln -sfv /usr/local/opt/influxdb/*.plist ~/Library/LaunchAgents
-Then to load influxdb now:
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.influxdb.plist
-Or, if you don't want/need launchctl, you can just run:
-    influxdb -config=/usr/local/etc/influxdb.conf
-```
 
 ## Ubuntu & Debian
 Debian users can install by downloading the package and installing it like this:
 
 ```bash
 # for 64-bit systems
-wget https://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb
-sudo dpkg -i influxdb_latest_amd64.deb
+wget https://s3.amazonaws.com/influxdb/influxdb_0.8.8_amd64.deb
+sudo dpkg -i influxdb_0.8.8_amd64.deb
 
 # for 32-bit systems
-wget https://s3.amazonaws.com/influxdb/influxdb_latest_i386.deb
-sudo dpkg -i influxdb_latest_i386.deb
+wget https://s3.amazonaws.com/influxdb/influxdb_0.8.8_i686.deb
+sudo dpkg -i influxdb_0.8.8_i686.deb
 ```
 
 Then start the daemon by running:
@@ -63,12 +48,12 @@ RedHat and CentOS users can install by downloading and installing the rpm like t
 
 ```bash
 # for 64-bit systems
-wget https://s3.amazonaws.com/influxdb/influxdb-latest-1.x86_64.rpm
-sudo rpm -ivh influxdb-latest-1.x86_64.rpm
+wget https://s3.amazonaws.com/influxdb/influxdb-0.8.8-1.x86_64.rpm
+sudo rpm -ivh influxdb-0.8.8-1.x86_64.rpm
 
 # for 32-bit systems
-wget https://s3.amazonaws.com/influxdb/influxdb-latest-1.i686.rpm
-sudo rpm -ivh influxdb-latest-1.i686.rpm
+wget https://s3.amazonaws.com/influxdb/influxdb-0.8.8-1.i686.rpm
+sudo rpm -ivh influxdb-0.8.8-1.i686.rpm
 ```
 
 Then start the daemon by running:
