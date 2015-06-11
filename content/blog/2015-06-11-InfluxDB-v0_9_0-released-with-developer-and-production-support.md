@@ -57,4 +57,4 @@ We're very excited about the foundational work we've laid out in InfluxDB 0.9.0.
 
 There's still a massive amount of work to do, but we're on a good path. And we're back to regular improvements along with a stable code base that members in the community should be able to contribute to. We've already had fantastic contributions during the last 4 weeks and we're looking forward to many more. In the coming months we'll document some key areas of the code base that will help bring contributions in areas like new query functions and input plugins.
 
-We're looking forward to improving things quickly over the next 6 months and laying the groundwork for 1.0.
+We're looking forward to improving things quickly over the next 4 months and laying the groundwork for 1.0.
