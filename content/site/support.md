@@ -39,7 +39,7 @@ title = "support"
 					<td data-label="support align-center"><form action="/charge" method="POST">
 						<script
 							src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-							data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+							data-key="pk_live_YqkcDTFvohavPUkSV9ZtI7oO"
 							data-image="/img/documentation/checkout/marketplace.png"
 							data-name="InfluxDB"
 							data-description="Developer Support Plan"
