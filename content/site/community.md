@@ -46,7 +46,7 @@ Here's a list of local groups we know about:
 - [NYC InfluxDB User Group](http://www.meetup.com/NYC-InfluxDB-User-Group/)
 - [Berlin InfluxDB Users](http://www.meetup.com/Berlin-InfluxDB-Users/)
 
-If you're interested in starting your own meetup, email us at [support@influxdb.com](mailto:support@influxdb.com) and we'll cover the Meetup dues for you!
+If you're interested in starting your own meetup, email us at [contact@influxdb.com](mailto:contact@influxdb.com) and we'll cover the Meetup dues for you!
 
 ## In Person
 
