@@ -9,105 +9,42 @@ The HTTP API is the primary means of getting data into InfluxDB. To write data s
 curl -G http://localhost:8086/query --data-urlencode "q=CREATE DATABASE mydb"
 
 # Write your data to your new database.
-curl -XPOST 'http://localhost:8086/write' -d '
-{
-    "database": "mydb",
-    "retentionPolicy": "default",
-    "points": [
-        {
-            "name": "cpu_load_short",
-            "tags": {
-                "host": "server01",
-                "region": "us-west"
-            },
-            "time": "2009-11-10T23:00:00Z",
-            "fields": {
-                "value": 0.64
-            }
-        }
-    ]
-}
-'
+curl -i -XPOST 'http://localhost:8086/write?db=mydb&rp=mypolicy' -d 'cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000'
 ```
 
-In the example above the destination database is `mydb`, and the data will be stored in the retention policy named `mypolicy`, which are assumed to exist. The actual data represents the short-term CPU-load on a server server01 in region _us-west_. `database` must be specified in the request body and must already exist. `retentionPolicy` is optional, but if specified the retention policy must already exist. If `retentionPolicy` is not specified the default retention policy for the given database is used. Strictly speaking `tags` are optional but most series include tags to differentiate data sources. The `timestamp` is also optional. If you do not specify a timestamp the server's local timestamp will be used.
+In the example above the destination database is `mydb`, and the data will be stored in the retention policy named `mypolicy`, which are assumed to exist. The actual data represents the short-term CPU-load on a server server01 in region _us-west_. `database` must be specified in the request body and must already exist. `rp` is optional, but if specified the retention policy must already exist. If `rp` is not specified the default retention policy for the given database is used. Strictly speaking `tags` are optional but most series include tags to differentiate data sources. The `timestamp` is also optional. If you do not specify a timestamp the server's local timestamp will be used.
 
 ### Schemaless Design
 InfluxDB is schemaless so the series and columns (fields and tags) get created on the fly. You can add columns to existing series without penalty, and integers, floats, strings, booleans, and raw bytes are all supported as types. If you attempt to write data with a different type than previously used (for example writing a string to a tag that previously accepted integers), InfluxDB will reject the data.
 
 ### Writing multiple points
-As you can see in the example below, you can post multiple points to multiple series at the same time. Batching points in this manner will result in much higher performance. 
+As you can see in the example below, you can post multiple points to multiple series at the same time by separating each point with a new line. Batching points in this manner will result in much higher performance.
 
-#### Shared values in batches
-If some of your points in a batch have identical `tags` or `timestamp` values, you may set the shared default value for those keys by declaring them at the same level as `database` and `retentionPolicy` in the JSON schema. Any points in the batch lacking explicit values for those keys will inherit the shared values. Shared tags will be merged with explicitly declared tags for each point. For example, the JSON data shown below is a valid write request.
-
-```json
-{
-    "database": "mydb",
-    "retentionPolicy": "default",
-    "tags": {
-        "host": "server01",
-        "region": "us-west"
-    },
-    "time": "2009-11-10T23:00:00Z",
-    "points": [
-        {
-            "name": "cpu_load_short",
-            "fields": {
-                "value": 0.64
-            }
-        },
-        {
-            "name": "cpu_load_short",
-            "fields": {
-                "value": 0.55
-            },
-            "time": 1422568543702900257,
-            "precision": "n"
-        },
-        {
-            "name": "network",
-            "tags": {
-                "direction": "in"
-            },
-            "fields": {
-                "value": 23422
-            }
-        }
-    ]
-}
+```
+curl -i -XPOST 'http://localhost:8086/write?db=mydb' -d '
+cpu_load_short,host=server01,region=us-west value=0.64
+cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
+cpu_load_short,direction=in,host=server01,region=us-west value=23422.0 1422568543702900257'
 ```
 
 ### Tags
 Each point can have a set of key-value pairs associated with it. Both keys and values must be strings. Tags allow data to be easily and efficient queried, including or excluding data that matches a set of keys with particular values.
 
 ### Time format
-The following time formats are accepted:
-
-_RFC3339_
-
-Both UTC and formats with timezone information are supported. Nanosecond precision is also supported. Examples of each are shown below.
-
-```
-"time": "2015-01-29T21:50:44Z"
-"time": "2015-01-29T14:49:23-07:00"
-"time": "2015-01-29T21:51:28.968422294Z"
-"time": "2015-01-29T14:48:36.127798015-07:00"
-```
+The following time format is accepted:
 
 _Epoch and Precision_
 
-Timestamps can also be supplied as an integer value, with the precision specified separately. For example to set the time in nanoseconds, use the following two keys in the JSON request.
+Timestamps can be supplied as an integer value at the end of the line. The precision is configurable per-request by including a `precision` url parameter. If no precision is specified, the line protocol will default to nanosecond precision. For example to set the time in seconds, use the following request.
 
 ```
-"time": 1422568543702900257,
-"precision": "n"
+curl -i -XPOST 'http://localhost:8086/write?db=mydb&precision=s' -d 'cpu_load_short,host=server01,region=us-west value=0.64 1434059627'
 ```
 
-`n`, `u`, `ms`, `s`, `m`, and `h` are all supported and represent nanoseconds, microseconds, milliseconds, seconds, minutes, and hours, respectively. If no precision is specified, seconds is assumed.
+`n`, `u`, `ms`, `s`, `m`, and `h` are all supported and represent nanoseconds, microseconds, milliseconds, seconds, minutes, and hours, respectively.
 
 ### Response
-Once a quorum of Brokers has acknowledged the write, the Data node that initially received the write responds with `HTTP 200 OK`.
+Once a configurable number of servers have acknowledged the write, the node that initially received the write responds with `HTTP 200 OK`.
 
 #### Errors
 If an error was encountered while processing the data, InfluxDB will respond with either a `HTTP 400 Bad Request` or, in certain cases, with `HTTP 200 OK`. The former is returned if the request could not be understood. In the latter, InfluxDB could understand the request, but processing cannot be completed. In this case a JSON response is included in the body of the response with additional error information.
