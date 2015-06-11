@@ -112,7 +112,7 @@ title = "support"
 		<p class="call-to-action"><a href="mailto:contact@influxdb.com">Contact us for details!</a> </p>
 		<h3>Development Plans</h3>
 
-		<p>Purcahses for InfluxDB development support provide unlimited web and email support for 30 days. These plans are ideal for developers in the initial development phase to have questions promply answered to help get them up to speed quickly.</p>
+		<p>Purchases for InfluxDB development support provide unlimited web and email support for 30 days. These plans are ideal for developers in the initial development phase to have questions promptly answered to help get them up to speed quickly.</p>
 
 		<h3>Production Plans</h3>
 
