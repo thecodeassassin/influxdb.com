@@ -1,5 +1,5 @@
 ---
-title: InfluxDB v0.9.0 released with commercial support
+title: InfluxDB v0.9.0 released with developer and production support
 author: Paul Dix
 date: 2015-06-11
 publishdate: 2015-06-11
