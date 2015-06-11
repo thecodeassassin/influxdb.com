@@ -53,7 +53,7 @@ Our managed hosting platform hasn't been updated yet to spin up 0.9.0 servers. I
 
 ### Conclusion
 
-We're very excited about the foundational work we've laid out in InfluxDB 0.9.0. The API is a significant overhaul from what was previously available. There are great [new features that enable all sorts of interesting queries to do discovery and exploration](/blog/2014/12/08/clustering-tags-and-enhancements-to-come-in-0.9.0.html) of the data in InfluxDB in addition to the basic time series queries.
+We're very excited about the foundational work we've laid out in InfluxDB 0.9.0. The API is a significant overhaul from what was previously available. There are great [new features that enable all sorts of interesting queries to do discovery and exploration](/blog/2014/12/08/clustering_tags_and_enhancements_in_0_9_0.html) of the data in InfluxDB in addition to the basic time series queries.
 
 There's still a massive amount of work to do, but we're on a good path. And we're back to regular improvements along with a stable code base that members in the community should be able to contribute to. We've already had fantastic contributions during the last 4 weeks and we're looking forward to many more. In the coming months we'll document some key areas of the code base that will help bring contributions in areas like new query functions and input plugins.
 
