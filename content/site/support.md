@@ -36,7 +36,19 @@ title = "support"
 					<td data-label="contacts"><b>1</b> contact</td>
 					<td data-label="email support"><b>&#10003;</b></td>
 					<td data-label="emergency support"><b>30 Days</b></td>
-					<td data-label="support" id="buynow"><b><a href="mailto:contact%40influxdb.com?subject=InfluxDB%20Developer%20Support%20Plan%20Request&body=Hello%2C%0A%0AI%20am%20interested%20in%20purchasing%20an%20InfluxDB%2030-day%20developer%20support%20plan%20for%20%24350.">Buy<br />Support<br />Now</a></b></td>
+					<td data-label="support" id="buynow"><form action="http://localhost:5000/api/support_charges" method="POST">
+						<script
+							src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+							data-key="pk_test_raFtCBUQIROL9yvZdgFy532f" 
+							data-image="/img/influx-128.png"
+							data-name="InfluxDB"
+							data-description="Developer Support Plan"
+							data-label="Buy Support Now"
+							data-amount="35000"
+							data-currency="USD"
+							data-allow-remember-me=false>
+					 	</script>
+					</form></td>
 				</tr>
 			</tbody>
 
