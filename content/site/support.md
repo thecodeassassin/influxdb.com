@@ -36,19 +36,7 @@ title = "support"
 					<td data-label="contacts"><b>1</b> contact</td>
 					<td data-label="email support"><b>&#10003;</b></td>
 					<td data-label="emergency support"><b>30 Days</b></td>
-					<td data-label="support align-center"><form action="/charge" method="POST">
-						<script
-							src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-							data-key="pk_live_YqkcDTFvohavPUkSV9ZtI7oO"
-							data-image="/img/influx-128.png"
-							data-name="InfluxDB"
-							data-description="Developer Support Plan"
-							data-label="Buy Support"
-							data-amount="35000"
-							data-currency="USD"
-							data-allow-remember-me=false>
-					 	</script>
-					</form></td>
+					<td data-label="support" id="buynow"><b><a href="mailto:contact%40influxdb.com?subject=InfluxDB%20Developer%20Support%20Plan%20Request&body=Hello%2C%0A%0AI%20am%20interested%20in%20purchasing%20an%20InfluxDB%2030-day%20developer%20support%20plan%20for%20%24350.">Buy<br />Support<br />Now</a></b></td>
 				</tr>
 			</tbody>
 					
@@ -109,7 +97,7 @@ title = "support"
 					
 		</table>
 
-		<p class="call-to-action"><a href="mailto:contact@influxdb.com">Contact us for details!</a> </p>
+		<p class="call-to-action"><a href="mailto:contact%40influxdb.com?subject=InfluxDB%20Production%20Support%20Inquiry&body=Hello%2C%0A%0AI%20would%20like%20to%20know%20more%20about%20the%20production%20support%20plans%20available%20for%20InfluxDB.">Contact us for details!</a> </p>
 		<h3>Development Plans</h3>
 
 		<p>Purchases for InfluxDB development support provide unlimited web and email support for 30 days. These plans are ideal for developers in the initial development phase to have questions promptly answered to help get them up to speed quickly.</p>

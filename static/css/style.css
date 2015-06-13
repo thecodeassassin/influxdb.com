@@ -724,9 +724,23 @@ aside {
 	color: #fff;
 	font-size: 1em;
 	font-weight: normal;
-	padding: 1.5em;
+	padding: 1.5em 0;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.support-plans #buynow {
+	background-color: #008fb8;
+	transition: background-color 0.25s;
+}
+
+.support-plans #buynow:hover {
+	background-color: #51c231;
+}
+
+.support-plans #buynow a {
+	color: #fff;
+	text-decoration: none;
 }
 
 .article-docs h1, .article-basic h1 {
@@ -1460,9 +1474,9 @@ aside {
 	.support-plans td {
 		border: none;
 		line-height: 1.5em;
-		padding: 1.5em 0 1.5em 1.5em;
+		padding: 1.5em 0;
 		position: relative;
-		text-align: left;
+		text-align: center;
 		vertical-align: middle;
 	}
 	
