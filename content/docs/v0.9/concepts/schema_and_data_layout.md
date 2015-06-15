@@ -4,7 +4,7 @@ In the 0.9.x version of InfluxDB, it is recommended that you encode most metadat
 
 It’s also a good idea to start the tag names and measurement names with a character in [a-z] or [A-Z], but not a requirement. It will just make writing queries easier later since you won’t have to wrap the names in double quotes.
 
-Take a common example from the world of computer infrastructure monitoring. Imagine you need to record CPU load across you entire deployment. Furthermore, each CPU is actually composed of two cores, numbered 0 and 1. In this case you could send a datapoint like the following into InfluxDB:
+Take a common example from the world of computer infrastructure monitoring. Imagine you need to record CPU load across your entire deployment. Furthermore, each CPU is actually composed of two cores, numbered 0 and 1. In this case you could log 4 datapoints into InfluxDB as follows:
 
 ```json
 {
