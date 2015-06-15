@@ -31,4 +31,4 @@ layout = "sidebar"
 
 Deprecated versions are no longer actively developed.
 
-- [version 0.8](/docs/v0.8/introduction/installation)
+- [version 0.8](/docs/v0.8/introduction/installation.html)
