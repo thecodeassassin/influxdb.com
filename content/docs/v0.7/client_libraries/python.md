@@ -1,4 +1,6 @@
-# Python
+---
+title: Python
+---
 
 The [InfluxDB Python library lives on GitHub](https://github.com/influxdb/influxdb-python) thanks to [smly](https://github.com/smly).
 

@@ -1,4 +1,6 @@
-# Security Enhancements
+---
+title: Security Enhancements
+---
 
 Should it be possible to limit a user's permissions for reads and writes
 so they can only write specific values for a given column or request a
