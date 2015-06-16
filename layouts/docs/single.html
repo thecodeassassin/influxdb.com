@@ -2,9 +2,17 @@
 {{ partial "logo.html" . }}
 <div class="page-content">
 	<article class="article-docs article-main-column">
+		<h1>{{ .Title }}</h1>
+		{{ if not (in .RelPermalink "v0.9") }}
+		<div class="flash">
+			<p><b>Warning! This version of InfluxDB is no longer in active development.</b></p>
+			<b><a href="/docs/v0.9/introduction/overview.html">Version 0.9</a> is the most recent version of InfluxDB.</b>
+		</div>
+		<br />
+		{{ end }}
 		{{ .Content }}
 	</article>
-	{{ partial "docsbar.html" . }}
+	{{ partial "docs/sidebar.html" . }}
 </div>
 {{ partial "nav.html" . }}
 {{ partial "footer.html" . }}
