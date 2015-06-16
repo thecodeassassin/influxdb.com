@@ -1,12 +1,12 @@
 ---
-title: InfluxDB Underlying Storage and Sharding
+title: Underlying Storage and Sharding
 ---
 
-# Storage Engines
+## Storage Engines
 
 InfluxDB can use different storage engines for the underlying storage of data. The current options are LevelDB, RocksDB, HyperLevelDB, and LMDB. The first three are Log Structured Merge Trees with Rocks and Hyper being forks of LevelDB. LMDB is a memory-mapped Copy on Write B+Tree. We've performed some [initial testing on the different storage engines](http://influxdb.com/blog/2014/06/20/leveldb_vs_rocksdb_vs_hyperleveldb_vs_lmdb_performance.html). RocksDB seems to come out on top so we've made it the default. See the configuration file for more information about [configuring the different storage engines](https://github.com/influxdb/influxdb/blob/master/config.sample.toml#L83).
 
-# Databases and Shard Spaces
+## Databases and Shard Spaces
 
 Data in InfluxDB is organized into **databases** which have many **shard spaces** which have many **shards**. A shard maps to an underlying storage engine database. That is, each shard will be a separate LevelDB or LMDB. The implications of this are that if you want to keep your underlying storage engine databases small, configure things so your data will be split across many shards.
 
@@ -56,7 +56,7 @@ Note that a duration of `inf` or an empty string will cause the shards in that s
 }
 ```
 
-# Configuration
+## Configuration
 
 You must set up shard spaces when you create your database. You can also set up any continuous queries you want running at the same time. It's easy to do through the API. Take a file like this:
 
@@ -109,7 +109,7 @@ There you're creating a database called `mydb` and loading it with the shard spa
 
 You can only run this command once when initially creating the database. It will error out if the database already exists. Later on we'll have tools for working with existing databases.
 
-# Updating Shard Spaces
+## Updating Shard Spaces
 
 As of version 0.8.2 you can update shard space definitions. However, it's important to note that updates do not move things around. The updates to replication factor and split will only cause future shards to have those changes. If you update the regex, you could end up hiding a bunch of data that was previously accessible.
 

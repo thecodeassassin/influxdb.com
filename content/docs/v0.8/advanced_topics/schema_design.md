@@ -1,8 +1,8 @@
 ---
-title: InfluxDB Schema Design Guidelines
+title: Schema Design Guidelines
 ---
 
-# Schema Design
+## Schema Design
 
 In the 0.8.x versions of InfluxDB, it is recommended that you encode most metadata into the series names. This is similar to what you'd do in Graphite. A good way to do it is:
 
@@ -18,7 +18,7 @@ You can still use the columns, but if you do queries with a `where someColumn = 
 
 The way to index data is by creating many series. InfluxDB can handle tens of thousands or even hundreds of thousands of different series names.
 
-# Migration to 0.9.0
+## Migration to 0.9.0
 
 In the 0.9.0 release there will be support for tags. There will be a migration tool to move from the above schema type, to a tagged representation. Read more about the [InfluxDB 0.9.0 release here](/blog/2014/12/08/clustering_tags_and_enhancements_in_0_9_0.html).
 

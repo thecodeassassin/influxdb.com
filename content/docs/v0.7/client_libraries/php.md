@@ -1,4 +1,6 @@
-# PHP
+---
+title: PHP
+---
 
 There's a [PHP InfluxDB library on GitHub](https://github.com/crodas/InfluxPHP) thanks to [César D. Rodas](http://cesarodas.com/).
 

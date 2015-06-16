@@ -1,1 +1,3 @@
-# Admin and Explorer Interface
+---
+title: Admin and Explorer Interface
+---

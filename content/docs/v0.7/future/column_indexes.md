@@ -1,4 +1,6 @@
-# Column Indexes
+---
+title: Column Indexes
+---
 
 To enable things like tags and quick lookups on specific column values, we're going to be adding support for column indexes. Here's the [issue to track column indexes](https://github.com/influxdb/influxdb/issues/582).
 

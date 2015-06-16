@@ -1,4 +1,6 @@
-# Merging many series into one
+---
+title: Merging many series into one
+---
 
 ```sql
 select * from merge (/stats.*/)

@@ -1,8 +1,6 @@
 ---
-title: InfluxDB Cluster Setup
+title: Cluster Setup
 ---
-
-# Cluster Setup
 
 The current clustering implementation is experimental. We suggest using Influx in single server mode for the time being. However, if you're feeling adventurous, here's how you set up a cluster.
 

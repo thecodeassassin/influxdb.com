@@ -1,4 +1,6 @@
-# .NET (C#)
+---
+title: .NET (C#)
+---
 
 The [InfluxDB .NET library lives on GitHub](https://github.com/ziyasal/InfluxDB.Net).
 
