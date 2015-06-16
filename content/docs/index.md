@@ -1,4 +1,7 @@
-# InfluxDB Documentation
+---
+title: InfluxDB Documentation
+layout: index
+---
 
 Welcome to the InfluxDB documentation. Pick a version of the docs to get started, or navigate using the menu on the left for the documentation on the most recent version.
 
@@ -9,3 +12,5 @@ Welcome to the InfluxDB documentation. Pick a version of the docs to get started
 ## Deprecated Versions
 
 - [v0.8](v0.8/introduction/getting_started.html)
+- [v0.7](v0.7/introduction/getting_started.html)
+- [v0.6](v0.6/introduction/getting_started.html)
