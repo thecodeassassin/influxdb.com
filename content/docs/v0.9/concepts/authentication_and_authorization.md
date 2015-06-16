@@ -1,4 +1,6 @@
-# Authentication and Authorization
+---
+title: Authentication and Authorization
+---
 
 InfluxDB provides simple, built-in authentication and authorization capabilities.
 

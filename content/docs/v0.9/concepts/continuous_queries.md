@@ -1,4 +1,6 @@
-# Continuous Queries
+---
+title: Continuous Queries
+---
 
 When writing in large amounts of raw data, you will often want to query a downsampled variant of the data for viewing or analysis. In some cases, this downsampled data may be needed many times in the future, and repeatedly computing the same rollups is wasteful. Continuous queries let you precompute these expensive queries into another time series in real-time.
 

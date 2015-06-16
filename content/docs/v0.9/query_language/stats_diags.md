@@ -1,4 +1,6 @@
-# Server Monitoring
+---
+title: Server Monitoring
+---
 
 InfluxDB can display statistical and diagnostic information about each node. This information can be very useful for troubleshooting and performance monitoring.
 

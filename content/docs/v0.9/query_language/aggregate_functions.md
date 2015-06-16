@@ -1,9 +1,6 @@
 ---
-title: InfluxDB Aggregate Functions
-alias: docs/query_language/functions.html
+title: Aggregate Functions
 ---
-
-# Aggregate Functions
 
 InfluxDB contains a number of functions that you can use for computing aggregates, rollups, or doing downsampling on the fly. These are usually used in conjunction with a `GROUP BY time(...)` clause. Note that the use of a `GROUP BY` clause necessitates a `WHERE time` clause. 
 

@@ -1,4 +1,6 @@
-# Key Concepts
+---
+title: Key Concepts
+---
 
 To understand InfluxDB, it is necessary to understand some key concepts. These concepts are outlined below.
 

@@ -1,4 +1,7 @@
-# Clustering
+---
+title: Clustering
+---
+
 InfluxDB is designed to scale horizontally. This means that you can easily add more machines to your cluster. This will increase data ingestion performance and reduce query response time.
 
 There are two ways you can scale your cluster.  Increasing hardware, such as memory and CPU (commonly referred to as scaling vertically), or by adding more machines or data centers (commonly referred to as scaling horizontally).  A benefit to scaling horizontally is that it adds additional replication.  Replicating your data provides high-availability, allowing your cluster to remain fully functional, even if some nodes fail.

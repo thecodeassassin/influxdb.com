@@ -1,4 +1,6 @@
-# Schema Design
+---
+title: Schema Design
+---
 
 In the 0.9.x version of InfluxDB, it is recommended that you encode most metadata into the series `Tags`. Tags are indexed within the InfluxDB system allowing fast querying by 1 or more tag values. Note that tag values are always interpreted as strings. And the optimal way to structure things is to have many series and a single column named "value" (or some other key of your choice) used consistently across all series.
 

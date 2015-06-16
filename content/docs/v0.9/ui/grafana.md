@@ -1,7 +1,7 @@
 ---
-title: Building Dashboards for InfluxDB with Grafana
+title: Building Dashboards with Grafana
 ---
 
-# Building Dashboards with Grafana
+Grafana is a convenient dashboard tool for visuallizing time series data. It was originally built for Graphite, modeled after Kibana, and since been updated to support InfluxDB.
 
-Grafana is a dashboarding tool modeled after Kibana. It was originally built for Graphite, but has since been updated to support InfluxDB. We need a detailed guide here ([which you can write and submit a PR for](https://github.com/influxdb/influxdb.org)), but in the meantime you can head over to the [Grafana site](http://grafana.org).
+The [Grafana's InfluxDB data source documentation](http://docs.grafana.org/datasources/influxdb/) has more information on how to set up Grafana with InfluxDB v0.9.

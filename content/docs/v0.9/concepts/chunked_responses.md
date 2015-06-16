@@ -1,4 +1,6 @@
-# Chunked HTTP Responses
+---
+title: Chunked HTTP Responses
+---
 
 If the request asks for a chunked response, JSON objects will get written to the HTTP response as they are ready. They will come in batches in the requested time order. That might look like this:
 

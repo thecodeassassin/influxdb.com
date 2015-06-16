@@ -1,4 +1,7 @@
-# Cluster Administration
+---
+title: Administration
+---
+
 Full configuration and management of an InfluxDB cluster is provided through the query language. This section describes how to manage databases, retention policies, users, and user privileges using the query language.
 
 _Note: Only cluster administrators can create and drop databases, and manage users. See the documentation on [Authorization](../authentication_and_authorization.html#cluster-administration-privileges) for more information._

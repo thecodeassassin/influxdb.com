@@ -1,4 +1,6 @@
-# Installation
+---
+title: Installation
+---
 
 This page provides directions on downloading and starting InfluxDB Version 0.9.0.
 

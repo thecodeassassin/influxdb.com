@@ -1,4 +1,6 @@
-# InfluxDB Logs
+---
+title: Logs
+---
 
 InfluxDB writes log output, by default, to `stderr`. Depending on your use case, this log information can be written to another location.
 

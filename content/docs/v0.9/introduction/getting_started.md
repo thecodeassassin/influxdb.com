@@ -2,8 +2,6 @@
 title: Getting Started with InfluxDB
 ---
 
-# Getting Started
-
 With [InfluxDB installed](installation.html), you're ready to start doing awesome things. In this section we'll use the `influx` command line interface (CLI). The CLI is included in all InfluxDB packages and is a lightweight and simple way to interact with the database. The CLI communicates with InfluxDB by making requests to the InfluxDB API. 
 
 _Note: The database can also be used by making direct requests to the API. See [Reading and Writing Data](../concepts/reading_and_writing_data.html) for examples._

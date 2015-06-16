@@ -1,8 +1,6 @@
-+++
-title = "v0.9.0 Documentation"
-+++
-
-# InfluxDB Version 0.9 Documentation
+---
+title: InfluxDB Version 0.9 Documentation
+---
 
 Welcome to the v0.9 documentation for InfluxDB.
 

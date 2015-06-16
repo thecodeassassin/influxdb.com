@@ -1,4 +1,7 @@
-# Reading and Writing Data
+---
+title: Reading and Writing Data
+---
+
 There are many ways to write data into InfluxDB including the built-in HTTP API, client libraries, and integrations with external data sources such as Collectd.
 
 ## Writing data using the HTTP API

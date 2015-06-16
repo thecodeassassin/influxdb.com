@@ -1,4 +1,6 @@
-# Discovering the Data within InfluxDB
+---
+title: Data Exploration
+---
 
 There are various ways to learn about the data contained within an InfluxDB system.
 
