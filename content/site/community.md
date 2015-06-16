@@ -8,7 +8,7 @@ InfluxDB is an open-source company, so we rely on a strong community for feedbac
 
 <icon class="fa fa-envelope fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
-Sign up for updates <a href="http://errplane.us5.list-manage.com/subscribe/?u=4d17b6adac2728b1ea6e4926b&id=08af34971b" target="_blank">on the InfluxDB newsletter</a>.
+Sign up for updates <a href="https://errplane.us5.list-manage.com/subscribe/?u=4d17b6adac2728b1ea6e4926b&id=08af34971b" target="_blank">on the InfluxDB newsletter</a>.
 
 <icon class="fa fa-comments fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
