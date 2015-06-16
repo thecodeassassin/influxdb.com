@@ -1,4 +1,6 @@
-# Installation
+---
+title: Installation
+---
 
 The easiest way to get started using InfluxDB is to head over to [play.influxdb.org](http://play.influxdb.org) where you can create a database and start writing data and exploring it through the administrative interface in seconds. There's no signup required. It's an open sandbox for you to play in.
 

@@ -1,4 +1,6 @@
-# Configuration
+---
+title: Configuration
+---
 
 Here's a sample configuration file. Comments in the file explain the options.
 

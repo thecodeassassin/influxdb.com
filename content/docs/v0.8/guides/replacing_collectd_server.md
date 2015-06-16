@@ -1,4 +1,3 @@
-
 ---
 title: Replacing Collectd network server with InfluxDB
 ---

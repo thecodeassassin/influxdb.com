@@ -1,4 +1,6 @@
-# Ruby
+---
+title: Ruby
+---
 
 The [InfluxDB Ruby library lives on GitHub](https://github.com/influxdb/influxdb-ruby).
 

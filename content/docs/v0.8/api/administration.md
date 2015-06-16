@@ -1,4 +1,6 @@
-# Administration & Security
+---
+title: Administration & Security
+---
 
 The following section details the endpoints in the HTTP API for administering the cluster and managing database security.
 

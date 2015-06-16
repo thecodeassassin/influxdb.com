@@ -1,8 +1,6 @@
 ---
-title: InfluxDB Clustering Design
+title: Clustering Design
 ---
-
-# Clustering Design
 
 The current clustering implementation is experimental and we're completely reworking it for the next major release (either 0.9 or 0.10). However, there are a few things that will remain the same in the new implementation.
 
