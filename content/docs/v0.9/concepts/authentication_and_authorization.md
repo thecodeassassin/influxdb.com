@@ -14,11 +14,13 @@ When authentication is enabled, every request must be accompanied by a valid use
 
 _Note: Authentication occurs at the cluster scope.  See the [Authorization](authentication_and_authorization.html#authorization) section for more information on how to grant a user access to a particular database._
 
-To enable authentication, set the `[authentication]` section in the configuration file (shown below) to `true` and restart `influxd`.  
+To enable authentication, set the `auth-enabled` value to `true` in the `[http]` section of the configuration file (shown below) and restart `influxd`.  
 
 ```
-[authentication]
-enabled = false  # set as 'true' to enable authentication
+[http]
+  ...
+  auth-enabled = true
+  ...
 ```
 
 ### Bootstrapping a new secure cluster
