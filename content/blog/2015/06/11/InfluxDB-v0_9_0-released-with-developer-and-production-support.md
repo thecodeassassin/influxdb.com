@@ -5,7 +5,7 @@ date: 2015-06-11
 publishdate: 2015-06-11
 ---
 
-Today we're very excited to announce the release of InfluxDB version 0.9.0 and the immediate availability of [developer and production support plans](/support). This release is the culmination of over 7 months of effort from our development team with feedback from hundreds in the community. This is a limited release with some caveats, but the most important part is what it signifies in the development of InfluxDB: a promise that going forward in the 0.9.x series of releases we will not make breaking API changes or breaking changes to the underlying data storage. It's also a return to a faster cycle of continuous incremental improvement.
+Today we're very excited to announce the release of InfluxDB version 0.9.0 and the immediate availability of [developer and production support plans](/support/). This release is the culmination of over 7 months of effort from our development team with feedback from hundreds in the community. This is a limited release with some caveats, but the most important part is what it signifies in the development of InfluxDB: a promise that going forward in the 0.9.x series of releases we will not make breaking API changes or breaking changes to the underlying data storage. It's also a return to a faster cycle of continuous incremental improvement.
 
 ### Stability
 
@@ -27,7 +27,7 @@ What's in place in 0.9.0 should give InfluxDB users the option of running an HA 
 
 ### Developer and Production Support
 
-Starting today we're officially supporting InfluxDB. Developer support plans are a one time purchase for $350 for 30 days of support. This will ensure you get quick answers to any questions you have while in the development phase of a project. Production support comes in three different tiers offering different SLAs. You can [purchase developer support directly from the site or read about the support tiers](/support).
+Starting today we're officially supporting InfluxDB. Developer support plans are a one time purchase for $350 for 30 days of support. This will ensure you get quick answers to any questions you have while in the development phase of a project. Production support comes in three different tiers offering different SLAs. You can [purchase developer support directly from the site or read about the support tiers](/support/).
 
 ### Upgrading from 0.8.8
 
