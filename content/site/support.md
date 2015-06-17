@@ -16,8 +16,8 @@ title = "support"
 				<tr class="support-plans-class">
 					<td colspan="9">Development Support Plans</td>
 				</tr>
-				
-				<tr>
+
+				<tr class="support-plans-headers">
 					<th>Tier</th>
 					<th>Coverage</th>
 					<th>Response time</th>
@@ -39,7 +39,7 @@ title = "support"
 					<td data-label="support" id="buynow"><b><a href="mailto:contact%40influxdb.com?subject=InfluxDB%20Developer%20Support%20Plan%20Request&body=Hello%2C%0A%0AI%20am%20interested%20in%20purchasing%20an%20InfluxDB%2030-day%20developer%20support%20plan%20for%20%24350.">Buy<br />Support<br />Now</a></b></td>
 				</tr>
 			</tbody>
-					
+
 		</table>
 
 		<table cellspacing="0" cellpadding="0" class="support-plans">
@@ -54,7 +54,7 @@ title = "support"
 					<td colspan="9">Production Support Plans</td>
 				</tr>
 				
-				<tr>
+				<tr class="support-plans-headers">
 					<th>Tier</th>
 					<th>Coverage</th>
 					<th>Response time</th>

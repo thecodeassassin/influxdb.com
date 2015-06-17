@@ -729,6 +729,10 @@ aside {
 	text-transform: uppercase;
 }
 
+.support-plans .support-plans-headers {
+	display: none;
+}
+
 .support-plans #buynow {
 	background-color: #008fb8;
 	transition: background-color 0.25s;
@@ -1506,6 +1510,10 @@ aside {
 		padding: 1.5em;
 		text-align: center;
 		text-transform: uppercase;
+	}
+
+	.support-plans .support-plans-headers {
+		display: table-row;
 	}
 
 }
