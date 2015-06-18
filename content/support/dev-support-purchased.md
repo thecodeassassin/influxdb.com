@@ -6,15 +6,15 @@ title = "Developer Support Purchased"
 
 You have successfully signed up for the Developer Support Plan.
 
-Emails sent to [support@influxdb.com](mailto:support@influxdb.com) originating from your email will be addressed within six business hours. Business hours are 8am to 8pm PST.
+Emails sent to [support@influxdb.com](mailto:support@influxdb.com) originating from your email will be addressed within six business hours. Business hours are 8am to 8pm Eastern Time.
 
-Receipts will automatically be emailed every time you are charged.
+Your subscription will renew monthly until canceled. Receipts will automatically be emailed every time you are charged.
 
 Please [email support](mailto:support@influxdb.com) for all account administration requests, such as,
 
 - requesting receipts be sent to a different email
 - changing the email address that will receive support
-- changing your subscription
+- changing or cancelling your subscription
 
 ## Resources
 
