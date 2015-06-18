@@ -17,5 +17,5 @@ uglyurls = true
   site = "/:filename/index.html"
 
 [params]
-  CustomersUrl = "http://localhost:5000"
-  StripeApiToken = "pk_test_raFtCBUQIROL9yvZdgFy532f"
+  CustomersUrl = "http://customers.influxdb.com"
+  StripeApiToken = "pk_live_YqkcDTFvohavPUkSV9ZtI7oO"
