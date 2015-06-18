@@ -22,7 +22,7 @@ While we'll be available to answer any questions, there are a number of other wa
 
 - Sign up for updates <a href="https://errplane.us5.list-manage.com/subscribe/?u=4d17b6adac2728b1ea6e4926b&id=08af34971b" target="_blank">on the InfluxDB newsletter</a>.
 - Join the [mailing list for users and developers](https://groups.google.com/forum/#!forum/influxdb).
-- Read the [documentation](http://localhost:1313/docs/v0.9/introduction/overview.html).
+- Read the [documentation](/docs/v0.9/introduction/overview.html).
 - Find answers to specific questions on the [help desk](http://support.influxdb.com/hc/en-us).
 - Follow [@influxdb](https://twitter.com/influxdb) on twitter.
 - Find us on freenode in #influxdb.
