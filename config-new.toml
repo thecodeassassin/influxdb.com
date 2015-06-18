@@ -1,6 +1,6 @@
 # Site info
 title = "InfluxDB"
-baseurl = "https://influxdb.com/"
+baseurl = "http://new.influxdb.com/"
 
 # Site configuration
 languageCode = "en-US"
@@ -17,5 +17,5 @@ uglyurls = true
   site = "/:filename/index.html"
 
 [params]
-  CustomersUrl = "http://localhost:5000"
+  CustomersUrl = "https://acceptance.influxdb.com"
   StripeApiToken = "pk_test_raFtCBUQIROL9yvZdgFy532f"

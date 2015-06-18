@@ -732,16 +732,16 @@ aside {
 .support-plans .support-plans-headers {
 	display: none;
 }
-
+/*
 .support-plans #buynow {
-	background-color: #008fb8;
-	transition: background-color 0.25s;
-}
-
-.support-plans #buynow:hover {
 	background-color: #51c231;
+	transition: background-color 0.25s;
+}*/
+/*
+.support-plans #buynow:hover {
+	background-color: #008fb8;
 }
-
+*/
 .support-plans #buynow a {
 	color: #fff;
 	text-decoration: none;
