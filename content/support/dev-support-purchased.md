@@ -6,9 +6,9 @@ title = "Developer Support Purchased"
 
 You have successfully signed up for the Developer Support Plan.
 
-Emails sent to [support@influxdb.com](mailto:support@influxdb.com) originating from <b><span id="dev-support-email"></span></b> will be addressed within six business hours. Business hours are 8am to 8pm PST.
+Emails sent to [support@influxdb.com](mailto:support@influxdb.com) originating from your email will be addressed within six business hours. Business hours are 8am to 8pm PST.
 
-Receipts will automatically be emailed every month to <b><span id="dev-support-email-receipt"></span></b>.
+Receipts will automatically be emailed every time you are charged.
 
 Please [email support](mailto:support@influxdb.com) for all account administration requests, such as,
 
@@ -28,16 +28,3 @@ While we'll be available to answer any questions, there are a number of other wa
 - Find us on freenode in #influxdb.
 - Log issues on [GitHub](https://github.com/influxdb/influxdb/issues).
 - Check out the [source code](https://github.com/influxdb).
-
-<script type="text/javascript">
-email_div = document.getElementById("dev-support-email");
-email_div_receipt = document.getElementById("dev-support-email-receipt");
-if(window.location.hash) {
-	var hash = window.location.hash.substring(1);
-	email_div.innerHTML = hash
-	email_div_receipt.innerHTML = hash
-} else {
-	email_div.innerHTML = "your email"
-	email_div_receipt.innerHTML = "the address on file"
-}
-</script>
