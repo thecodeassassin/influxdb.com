@@ -24,31 +24,33 @@ title = "support"
 					<th>Incidents</th>
 					<th>Contacts</th>
 					<th>Email</th>
-					<th>Length</th>
+					<th>Price</th>
 					<th>Purchase</th>
 				</tr>
 
 				<tr class="support-tier-development">
 					<td data-label="tier">Developer</td>
 					<td data-label="coverage"><b>Business Hours</b></td>
-					<td data-label="response time"><b>2 business days</b> response time</td>
+					<td data-label="response time"><b>6 business hour</b> response time</td>
 					<td data-label="incidents"><b>Unlimited</b> incidents</td>
 					<td data-label="contacts"><b>1</b> contact</td>
 					<td data-label="email support"><b>&#10003;</b></td>
-					<td data-label="emergency support"><b>30 Days</b></td>
-					<td data-label="support" id="buynow"><form action="http://localhost:5000/api/support_charges" method="POST">
-						<script
-							src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-							data-key="pk_test_raFtCBUQIROL9yvZdgFy532f" 
-							data-image="/img/influx-128.png"
-							data-name="InfluxDB"
-							data-description="Developer Support Plan"
-							data-label="Buy Support Now"
-							data-amount="35000"
-							data-currency="USD"
-							data-allow-remember-me=false>
-					 	</script>
-					</form></td>
+					<td data-label="price support"><b>$350</b>per month</td>
+					<td data-label="support" id="buynow">
+						<form action="https://customers.influxdb.com/api/support_charges" method="POST">
+							<script
+								src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+								data-key="pk_test_raFtCBUQIROL9yvZdgFy532f" 
+								data-image="/img/influx-128.png"
+								data-name="InfluxDB"
+								data-description="Developer Support Plan"
+								data-label="Buy Now"
+								data-amount="35000"
+								data-currency="USD"
+								data-allow-remember-me=false>
+						 	</script>
+						</form>
+					</td>
 				</tr>
 			</tbody>
 
