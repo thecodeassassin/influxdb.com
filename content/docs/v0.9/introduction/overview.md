@@ -37,7 +37,7 @@ SELECT mean(value) FROM cpu
 * Merge multiple series together:
 
 ```sql
-SELECT mean(value) FROM /cpu*/ GROUP BY time(1h)
+SELECT mean(value) FROM /cpu.*/ GROUP BY time(1h)
 ```
 
 There's much more, have a look at the [getting started guide](getting_started.html) to see some examples.
