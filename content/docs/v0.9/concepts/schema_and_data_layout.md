@@ -13,7 +13,7 @@ Take a common example from the world of computer infrastructure monitoring. Imag
     "database": "mydb",
     "points": [
          {
-            "name": "cpu_load",
+            "measurement": "cpu_load",
             "tags": {
                 "host": "server01",
                 "core": "0"
@@ -24,7 +24,7 @@ Take a common example from the world of computer infrastructure monitoring. Imag
             }
         },
         {
-            "name": "cpu_load",
+            "measurement": "cpu_load",
             "tags": {
                 "host": "server01",
                 "core": "1"
@@ -35,7 +35,7 @@ Take a common example from the world of computer infrastructure monitoring. Imag
             }
         },
          {
-            "name": "cpu_load",
+            "measurement": "cpu_load",
             "tags": {
                 "host": "server02",
                 "core": "0"
@@ -46,7 +46,7 @@ Take a common example from the world of computer infrastructure monitoring. Imag
             }
         },
         {
-            "name": "cpu_load",
+            "measurement": "cpu_load",
             "tags": {
                 "host": "server02",
                 "core": "1"
