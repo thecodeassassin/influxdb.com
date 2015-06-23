@@ -82,7 +82,7 @@ To insert a single time-series datapoint into InfluxDB using the CLI, enter `INS
 >
 ```
 
-A point with the measurement name of `cpu` and tags `host` has now been written to the database, with the measured value of `0.64`.
+A point with the measurement name of `cpu` and tag `host` has now been written to the database, with the measured value of `0.64`.
 
 Now we will query for the data we just wrote.
 
