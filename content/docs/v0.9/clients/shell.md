@@ -118,7 +118,7 @@ Format          csv
 
 ### Issuing Queries
 
-For a complete reference to the query language, please read the [online documentation](http://influxdb.com/docs).
+For a complete reference to the query language, please read the [online documentation](/docs/v0.9/query_language/querying_data.html).
 
 #### show databases
 
