@@ -17,6 +17,8 @@ curl -i -XPOST 'http://localhost:8086/write?db=mydb&rp=mypolicy' -d 'cpu_load_sh
 
 In the example above the destination database is `mydb`, and the data will be stored in the retention policy named `mypolicy`, which are assumed to exist. The actual data represents the short-term CPU-load on a server server01 in region _us-west_. `database` must be specified in the request body and must already exist. `rp` is optional, but if specified the retention policy must already exist. If `rp` is not specified the default retention policy for the given database is used. Strictly speaking `tags` are optional but most series include tags to differentiate data sources. The `timestamp` is also optional. If you do not specify a timestamp the server's local timestamp will be used.
 
+To learn more about retention policy management, see the section on [database administration](/docs/v0.9/query_language/database_administration.html).
+
 ### Schemaless Design
 InfluxDB is schemaless so the series and columns (fields and tags) get created on the fly. You can add columns to existing series without penalty. Tag keys, tag values, and field keys are always strings, but field values may be integers, floats, strings, booleans, or raw bytes. If you attempt to write data with a different type than previously used (for example writing a string to a tag that previously accepted integers), InfluxDB will reject the data.
 
