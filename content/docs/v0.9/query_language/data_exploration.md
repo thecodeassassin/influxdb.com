@@ -35,6 +35,8 @@ queries for data from the measurement `cpu_load` in the database `mydb`, that ha
 
 This feature is particularly useful if you wish to query data from different databases or retention periods, in one single query with multiple statements.
 
+For information on retention policy management see the section on [database administration](/docs/v0.9/administration/administration.html).
+
 ## Statements
 
 A query in InfluxDB can have multiple statements separated by semicolons. For example:
