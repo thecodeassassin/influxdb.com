@@ -11,6 +11,9 @@
 		<br />
 		{{ end }}
 		{{ .Content }}
+		{{ if in .RelPermalink "v0.9" }}
+			{{ partial "docs/contribute.html" . }}
+		{{ end }}
 	</article>
 	{{ partial "docs/sidebar.html" . }}
 </div>
