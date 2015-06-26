@@ -224,7 +224,7 @@ retention_policy_replication = "REPLICATION" int_lit
 
 ```sql
 -- Set default retention policy for mydb to 1h.cpu.
-ALTER RETENTION POLICY "1h.cpu" ON mydb DEFAULT;
+ALTER RETENTION POLICY "1h.cpu" ON mydb DEFAULT
 
 -- Change duration and replication factor.
 ALTER RETENTION POLICY policy1 ON somedb DURATION 1h REPLICATION 4
@@ -250,7 +250,7 @@ BEGIN
   INTO "6_months".events
   FROM events
   GROUP BY time(10m)
-END;
+END
 
 -- this selects from the output of one continuous query in one retention policy and outputs to another series in another retention policy
 CREATE CONTINUOUS QUERY "1h_event_count"
@@ -260,7 +260,7 @@ BEGIN
   INTO "2_years".events
   FROM "6_months".events
   GROUP BY time(1h)
-END;
+END
 ```
 
 ### CREATE DATABASE
@@ -288,10 +288,10 @@ create_retention_policy_stmt = "CREATE RETENTION POLICY" policy_name "ON"
 
 ```sql
 -- Create a retention policy.
-CREATE RETENTION POLICY "10m.events" ON somedb DURATION 10m REPLICATION 2;
+CREATE RETENTION POLICY "10m.events" ON somedb DURATION 10m REPLICATION 2
 
 -- Create a retention policy and set it as the default.
-CREATE RETENTION POLICY "10m.events" ON somedb DURATION 10m REPLICATION 2 DEFAULT;
+CREATE RETENTION POLICY "10m.events" ON somedb DURATION 10m REPLICATION 2 DEFAULT
 ```
 
 ### CREATE USER
@@ -305,11 +305,11 @@ create_user_stmt = "CREATE USER" user_name "WITH PASSWORD" password
 
 ```sql
 -- Create a normal database user.
-CREATE USER jdoe WITH PASSWORD '1337password';
+CREATE USER jdoe WITH PASSWORD '1337password'
 
 -- Create a cluster admin.
 -- Note: Unlike the GRANT statement, the "PRIVILEGES" keyword is required here.
-CREATE USER jdoe WITH PASSWORD '1337password' WITH ALL PRIVILEGES;
+CREATE USER jdoe WITH PASSWORD '1337password' WITH ALL PRIVILEGES
 ```
 
 ### DELETE
@@ -323,19 +323,19 @@ delete_stmt  = "DELETE" from_clause where_clause .
 ```sql
 -- delete data points from the cpu measurement where the region tag
 -- equals 'uswest'
-DELETE FROM cpu WHERE region = 'uswest';
+DELETE FROM cpu WHERE region = 'uswest'
 ```
 
 ### DROP CONTINUOUS QUERY
 
 ```
-drop_continuous_query_stmt = "DROP CONTINUOUS QUERY" query_name .
+drop_continuous_query_stmt = "DROP CONTINUOUS QUERY" query_name "ON" db_name.
 ```
 
 #### Example:
 
 ```sql
-DROP CONTINUOUS QUERY myquery;
+DROP CONTINUOUS QUERY myquery ON mydb
 ```
 
 ### DROP DATABASE
@@ -347,7 +347,7 @@ drop_database_stmt = "DROP DATABASE" db_name .
 #### Example:
 
 ```sql
-DROP DATABASE mydb;
+DROP DATABASE mydb
 ```
 
 ### DROP MEASUREMENT
@@ -360,7 +360,7 @@ drop_measurement_stmt = "DROP MEASUREMENT" measurement .
 
 ```sql
 -- drop the cpu measurement
-DROP MEASUREMENT cpu;
+DROP MEASUREMENT cpu
 ```
 
 ### DROP RETENTION POLICY
@@ -373,7 +373,7 @@ drop_retention_policy_stmt = "DROP RETENTION POLICY" policy_name "ON" db_name .
 
 ```sql
 -- drop the retention policy named 1h.cpu from mydb
-DROP RETENTION POLICY "1h.cpu" ON mydb;
+DROP RETENTION POLICY "1h.cpu" ON mydb
 ```
 
 ### DROP SERIES
@@ -385,7 +385,7 @@ drop_series_stmt = "DROP SERIES" [ from_clause ] [ where_clause ]
 #### Example:
 
 ```sql
-
+DROP SERIES FROM cpu WHERE host='server01'
 ```
 
 ### DROP USER
@@ -397,8 +397,7 @@ drop_user_stmt = "DROP USER" user_name .
 #### Example:
 
 ```sql
-DROP USER jdoe;
-
+DROP USER jdoe
 ```
 
 ### GRANT
@@ -413,10 +412,10 @@ grant_stmt = "GRANT" privilege [ on_clause ] to_clause
 
 ```sql
 -- grant cluster admin privileges
-GRANT ALL TO jdoe;
+GRANT ALL TO jdoe
 
 -- grant read access to a database
-GRANT READ ON mydb TO jdoe;
+GRANT READ ON mydb TO jdoe
 ```
 
 ### SHOW CONTINUOUS QUERIES
@@ -429,7 +428,7 @@ show_continuous_queries_stmt = "SHOW CONTINUOUS QUERIES"
 
 ```sql
 -- show all continuous queries
-SHOW CONTINUOUS QUERIES;
+SHOW CONTINUOUS QUERIES
 ```
 
 ### SHOW DATABASES
@@ -442,7 +441,7 @@ show_databases_stmt = "SHOW DATABASES" .
 
 ```sql
 -- show all databases
-SHOW DATABASES;
+SHOW DATABASES
 ```
 
 ### SHOW FIELD
@@ -455,25 +454,25 @@ show_field_keys_stmt = "SHOW FIELD KEYS" [ from_clause ] .
 
 ```sql
 -- show field keys from all measurements
-SHOW FIELD KEYS;
+SHOW FIELD KEYS
 
 -- show field keys from specified measurement
-SHOW FIELD KEYS FROM cpu;
+SHOW FIELD KEYS FROM cpu
 ```
 
 ### SHOW MEASUREMENTS
 
 ```
-show_measurements_stmt = [ where_clause ] [ group_by_clause ] [ limit_clause ]
+show_measurements_stmt = "SHOW MEASUREMENTS" [ where_clause ] [ group_by_clause ] [ limit_clause ]
                          [ offset_clause ] .
 ```
 
 ```sql
 -- show all measurements
-SHOW MEASUREMENTS;
+SHOW MEASUREMENTS
 
 -- show measurements where region tag = 'uswest' AND host tag = 'serverA'
-SHOW MEASUREMENTS WHERE region = 'uswest' AND host = 'serverA';
+SHOW MEASUREMENTS WHERE region = 'uswest' AND host = 'serverA'
 ```
 
 ### SHOW RETENTION POLICIES
@@ -486,26 +485,30 @@ show_retention_policies = "SHOW RETENTION POLICIES" db_name .
 
 ```sql
 -- show all retention policies on a database
-SHOW RETENTION POLICIES mydb;
+SHOW RETENTION POLICIES mydb
 ```
 
 ### SHOW SERIES
 
 ```
-show_series_stmt = [ from_clause ] [ where_clause ] [ group_by_clause ]
+show_series_stmt = "SHOW SERIES" [ from_clause ] [ where_clause ] [ group_by_clause ]
                    [ limit_clause ] [ offset_clause ] .
 ```
 
 #### Example:
 
 ```sql
+-- show all series on a database
+SHOW SERIES
 
+-- show series from cpu_user where cpu = 'cpu5'
+SHOW SERIES FROM cpu_user WHERE cpu='cpu6'
 ```
 
 ### SHOW TAG KEYS
 
 ```
-show_tag_keys_stmt = [ from_clause ] [ where_clause ] [ group_by_clause ]
+show_tag_keys_stmt = "SHOW TAG KEYS" [ from_clause ] [ where_clause ] [ group_by_clause ]
                      [ limit_clause ] [ offset_clause ] .
 ```
 
@@ -513,22 +516,22 @@ show_tag_keys_stmt = [ from_clause ] [ where_clause ] [ group_by_clause ]
 
 ```sql
 -- show all tag keys
-SHOW TAG KEYS;
+SHOW TAG KEYS
 
 -- show all tag keys from the cpu measurement
-SHOW TAG KEYS FROM cpu;
+SHOW TAG KEYS FROM cpu
 
 -- show all tag keys from the cpu measurement where the region key = 'uswest'
-SHOW TAG KEYS FROM cpu WHERE region = 'uswest';
+SHOW TAG KEYS FROM cpu WHERE region = 'uswest'
 
 -- show all tag keys where the host key = 'serverA'
-SHOW TAG KEYS WHERE host = 'serverA';
+SHOW TAG KEYS WHERE host = 'serverA'
 ```
 
 ### SHOW TAG VALUES
 
 ```
-show_tag_values_stmt = [ from_clause ] with_tag_clause [ where_clause ]
+show_tag_values_stmt = "SHOW TAG VALUES" [ from_clause ] with_tag_clause [ where_clause ]
                        [ group_by_clause ] [ limit_clause ] [ offset_clause ] .
 ```
 
@@ -536,13 +539,13 @@ show_tag_values_stmt = [ from_clause ] with_tag_clause [ where_clause ]
 
 ```sql
 -- show all tag values across all measurements for the region tag
-SHOW TAG VALUES WITH TAG = 'region';
+SHOW TAG VALUES WITH KEY = 'region'
 
 -- show tag values from the cpu measurement for the region tag
-SHOW TAG VALUES FROM cpu WITH TAG = 'region';
+SHOW TAG VALUES FROM cpu WITH KEY = 'region'
 
 -- show tag values from the cpu measurement for region & host tag keys where service = 'redis'
-SHOW TAG VALUES FROM cpu WITH TAG IN (region, host) WHERE service = 'redis';
+SHOW TAG VALUES FROM cpu WITH KEY IN (region, host) WHERE service = 'redis'
 ```
 
 ### SHOW USERS
@@ -555,7 +558,7 @@ show_users_stmt = "SHOW USERS" .
 
 ```sql
 -- show all users
-SHOW USERS;
+SHOW USERS
 ```
 
 ### REVOKE
@@ -568,10 +571,10 @@ revoke_stmt = privilege [ "ON" db_name ] "FROM" user_name
 
 ```sql
 -- revoke cluster admin from jdoe
-REVOKE ALL PRIVILEGES FROM jdoe;
+REVOKE ALL PRIVILEGES FROM jdoe
 
 -- revoke read privileges from jdoe on mydb
-REVOKE READ ON mydb FROM jdoe;
+REVOKE READ ON mydb FROM jdoe
 ```
 
 ### SELECT
@@ -586,7 +589,7 @@ select_stmt = fields from_clause [ into_clause ] [ where_clause ]
 
 ```sql
 -- select mean value from the cpu measurement where region = 'uswest' grouped by 10 minute intervals
-SELECT mean(value) FROM cpu WHERE region = 'uswest' GROUP BY time(10m) fill(0);
+SELECT mean(value) FROM cpu WHERE region = 'uswest' GROUP BY time(10m) fill(0)
 ```
 
 ## Clauses
