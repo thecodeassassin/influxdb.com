@@ -12,6 +12,10 @@ The syntax for the line protocol is
 
 `measurement[,tag_key1=tag_value1...] field_key=field_value[,field_key2=field_value2] [timestamp]`
 
+#### Case-sensitivity
+
+All values in InfluxDB are case-sensitive. 
+
 #### Whitespace
 
 A space must exist between the measurement and the field(s), or between the tag(s) and the field(s) if tags are 
@@ -30,7 +34,7 @@ Tag keys and values, and field keys and values must be separated by the equals s
 #### Escaping Characters
 
 If a measurement, tag key, tag value, or field key contains a space ` ` or a comma `,` it must be escaped using the
-backslash character `\`. Measurements currently cannot contain commas at all ([issue 3183](https://github.com/influxdb/influxdb/issues/3183)).
+backslash character `\`.
 
 #### Data Types
 
@@ -42,11 +46,13 @@ require escaping. Backslash characters do not require escaping, but may not be u
 Field values may be stored as `float64`, `int64`, `boolean`, or `string`. All subsequent field values must match 
 the type of the first point written to given measurement. 
 
-`float64` values must contain a decimal. `int64` values may not contain a decimal. `1` is an integer. `1.0` is a float. 
+`float64` values must contain a decimal. `1.0` is a float, `1` is an integer.
+
+`int64` values may not contain a decimal. `1` is an integer, `1.0` is a float. 
 
 `boolean` values are `t`, `T`, `true`, `True`, or `TRUE` for TRUE, and  `f`, `F`, `false`, `False`, or `FALSE` for FALSE
 
-`string` values for field values must be double-quoted. Double-quotes in the string must be escaped. All other characters are supported without escaping.
+`string` values for field values must be double-quoted. Double-quotes contained within the string must be escaped. All other characters are supported without escaping.
 
 #### Examples
 
@@ -94,9 +100,11 @@ If you write points in a batch all points without explicit timestamps will recei
 Measurements, tag keys, tag values, and field keys are never quoted. Spaces and commas must be escaped. Field keys 
 that are stored as strings must always be double-quoted. Only double-quotes should be escaped.
 
-Measurement names currently cannot include commas.
+Measurement names currently cannot include commas. ([issue 3183](https://github.com/influxdb/influxdb/issues/3183))
 
-Querying measurements or tags that contain double-quotes `"` can be difficult, since double-quotes are also the syntax for an identifier. It's possible to work around the limitations with regular expressions.
+Querying measurements or tags that contain double-quotes `"` can be difficult, since double-quotes are also the syntax for an identifier. It's possible to work around the limitations with regular expressions but it's not easy.
+
+Avoid using Keywords as identifiers (database names, retention policy names, measurement names, tag keys, or field keys) whenever possible. Keywords in InfluxDB are referenced on the [InfluxQL Syntax](../query_language/spec.md) page. There is no need to quote or escape keywords in the write syntax. 
 
 ### CLI
 
@@ -159,19 +167,80 @@ All timestamps are assumed to be Unix nanoseconds unless otherwise specified. If
 
 # Query Syntax
 
-## Quoting measurements, tags, and fields
+## Quoting Requirements
 
-All measurement names, tag keys, and field keys must be double-quoted if they contain a character other than [A-Z,a-z,0-9,_] or if they begin with a digit
-Any measurement name, tag key, or field key that matches a query language identifier (e.g. SELECT, INSERT, FROM, time, etc.) must be double-quoted whenever used in a query.
-All tag values must be single-quoted
-Field values must be single-quoted if they are strings
+### Double-quote Identifiers
+
+All identifiers must be double-quoted if they contain a character other than `A-Z`, `a-z`, `0-9`, or `_`, or if they begin with a digit. Any identifier that matches a Keyword must always be double-quoted whenever used in a query. Keywords in InfluxDB are referenced on the [InfluxQL Syntax](../query_language/spec.md) page.
+
+Identifiers refer to an object in the system rather than a stored string value. The following are all Identifiers
+ - cluster and database users
+ - database name
+ - retention policy name
+ - measurement name
+ - tag keys
+ - field keys
+
+###### Double-quote Identifier With Spaces, Leading Digit, Periods, Hyphens, Unicode, etc.
+
+`SELECT * FROM first_database`  
+`SELECT * FROM "first database"`  
+`SELECT * FROM "1st_database"`  
+`SELECT * FROM "first.database"`  
+`SELECT * FROM "first-database"`  
+`SELECT * FROM "α-database"`
+
+### Single-quote Strings
+
+All string values must always be single-quoted. All tag values are strings, and any field values that are not integers, floats, or booleans are also strings.
+
+###### Single-quote String Values
+
+`SELECT * FROM mydb WHERE tag_key='some string'`
+`SELECT * FROM mydb WHERE field_key='another string'`
+
+### Whitespace requirements
+
+When using time ranges, you must put a space between any arithmetic operators and the time range parameters. You must not include any whitespace between the time range parameter and the unit supplied.
+
+`SELECT * FROM mydb WHERE time > now() - 1d`  
+`SELECT * FROM mydb WHERE time> now() - 1d`  
+`SELECT * FROM mydb WHERE time >now() - 1d`  
+`SELECT * FROM mydb WHERE time > now()- 1d` are all valid, but  
+`SELECT * FROM mydb WHERE time > now() -1d` and  
+`SELECT * FROM mydb WHERE time > now() - 1 d` are not.
 
 ## CLI
 
-## Query String
+Querying with the CLI requires nothing other than selecting a database and then typing in the direct query.
+
+###### Select Target Database
+
+You should first set a target database for all queries. This will be passed along with each subsequent query until a new selection is made. The CLI command is `USE` and the syntax is `USE <database>`.
+
+```
+> use mydb
+Using database mydb
+```
+
+All subsequent queries will run against the `mydb` database.
+
+You do not need to select a target database. You may choose to explicitly name the database in each query:
+
+`> select * from mydb.myrp.mymeasurement`
+
+### Output Formats
+
+The CLI can return the results in three formats, column, JSON, and CSV. The default is column. You can change the output settings with `format`. Run `help` from within the CLI for more information.
+
+### Non-interactive Mode
+
+The CLI can run queries in non-interactive mode and the output can be redirected as desired. Run `influx -help` from the command line for more information.
+
+## HTTP
 
 ### Database
 
 ### Retention Policy
 
-### Returned Values
+### Authentication
