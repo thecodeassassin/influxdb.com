@@ -223,6 +223,7 @@ A **node** is a logical concept in the clustering setup. **Nodes** belong to **s
 ## Server
 A **server** is a machine, virtual or physical, running InfluxDB. There should only be one InfluxDB process per **server**.
 
+<!--
 ## Column
 
 ## Identifier
@@ -232,4 +233,4 @@ A **server** is a machine, virtual or physical, running InfluxDB. There should o
 ## Shard
 
 ## Shard File
-
+-->
