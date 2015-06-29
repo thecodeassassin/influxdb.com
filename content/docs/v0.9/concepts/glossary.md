@@ -2,9 +2,6 @@
 title: Glossary of Terms
 ---
 
-For example, `cpu_load` is a **Measurement**, `hostname=server002` is a **Tag** in the **Measurement**, `value=0.64` is a **field** in the **measurement**.
-
-
 ## Series
 A **series** is a collection of data points along a timeline that share a common key, expressed as a **measurement** and **tag set** pairing, grouped under a **retention policy**.
 
