@@ -57,7 +57,7 @@ curl -i -XPOST 'http://localhost:8086/write?db=mydb&precision=s' -d 'cpu_load_sh
 `n`, `u`, `ms`, `s`, `m`, and `h` are all supported and represent nanoseconds, microseconds, milliseconds, seconds, minutes, and hours, respectively.
 
 ### Response
-Once a configurable number of servers have acknowledged the write, the node that initially received the write responds with `HTTP 200 OK`.
+Once a configurable number of servers have acknowledged the write, the node that initially received the write responds with `HTTP 204 NO CONTENT`.
 
 #### Errors
 If an error was encountered while processing the data, InfluxDB will respond with either a `HTTP 400 Bad Request` or, in certain cases, with `HTTP 200 OK`. The former is returned if the request could not be understood. In the latter, InfluxDB could understand the request, but processing cannot be completed. In this case a JSON response is included in the body of the response with additional error information.
