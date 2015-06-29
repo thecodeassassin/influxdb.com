@@ -113,7 +113,7 @@ The CLI will return nothing on success and should give an informative parser err
 
 To write points using `curl`, call the `/write` endpoint at port `8086`. You must specify the target database in the query string using `db=<target_database>`. Use the `--data-binary` encoding method for all writes in the line protocol format. Other encoding methods will strip newlines or introduce URL encoding.  
 
-You may optionally provide a target retention policy and any required authentication in the query string.
+You may optionally provide a target retention policy, specify the precision of any supplied timestamps, and pass any required authentication in the query string. 
 
 ###### Write a Point with `curl`
 
@@ -139,28 +139,23 @@ Use the `u=<user>` and `p=<password>` to pass the authentication details, if req
 
 `curl -X POST 'http://localhost:8086/write' --data-urlencode 'db=mydb' --data-urlencode 'u=root&p=correct horse battery staple' --data-binary 'disk_free,hostname=server01 value=442221834240 1435362189575692182'`
 
-
 ###### Write a Batch of Points with `curl`
 
-You can also pass a file containing a batch of writes.
+You can also pass a file using the `@` flag. The file can contain a batch of points, one per line. Points must be separated by newline characters `\n`. Batches should be 5000 points or fewer for best performance.
 
-`curl -X POST 'http://localhost:8086/write?db=mydb' --data-binary 'disk_free,hostname=server01 value=442221834240 1435362189575692182'`
+`curl -X POST 'http://localhost:8086/write?db=mydb' --data-binary @<filename>`
 
-never quote measurement names (they are always strings)
-always escape commas and whitespace in measurement names
-never quote tag keys or values (they are always strings)
-always escape commas and whitespace in tag keys and values
-never quote field keys (they are always strings)
-always escape commas and whitespace in field keys
-if your field value is a(n):
-integer - don't use a decimal point (1, not 1.0)
-float - you must use a decimal point (1.0, not 1)
-string - always double-quote ("")
-boolean - use any of the following, unquoted: [t, T, true, True, TRUE; f, F, false, False, FALSE]
-if you provide timestamps in any unit other than nanoseconds, you must supply the appropriate precision in the URL query string. E.g. for milliseconds:
-curl ... localhost:8086/write?precision=ms ...
+`curl -X POST 'http://localhost:8086/write' --data-urlencode 'db=mydb&rp=myrp&u=root&p=root' --data-binary @points.txt`
 
-use [n, u, ms, s, m, h] for nanoseconds, microseconds, milliseconds, seconds, minutes, and hours, respectively. If no `precision` is supplied, nanoseconds is assumed.
+###### Specify Non-nanosecond Timestamps
+
+Use the `precision=[n,u,ms,s,m,h]` query string parameter to supply a precision for the timestamps.
+
+All timestamps are assumed to be Unix nanoseconds unless otherwise specified. If you provide timestamps in any unit other than nanoseconds, you must supply the appropriate precision in the URL query string. Use `n`, `u`, `ms`, `s`, `m`, and `h` for nanoseconds, microseconds, milliseconds, seconds, minutes, and hours, respectively. 
+
+`curl -X POST 'http://localhost:8086/write?db=mydb&precision=ms' --data-binary 'disk_free value=442221834240 1435362189575'`
+
+`curl -X POST 'http://localhost:8086/write' --data-urlencode 'db=mydb&precision=s' --data-binary @points.txt`
 
 # Query Syntax
 
