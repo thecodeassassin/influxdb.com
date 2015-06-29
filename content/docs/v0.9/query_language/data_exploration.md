@@ -233,36 +233,36 @@ If you have a `GROUP BY time` clause you should **always** have a `WHERE` clause
 By default, `GROUP BY` intervals that have no data will use `null` as the value, by default, though any numerical value, including negative values, are valid values for `fill`. For example, each of the following queries is valid:
 
 ```sql
-SELECT COUNT(type) FROM events
-GROUP BY time(1h) fill(0) WHERE time > now() - 3h
+SELECT COUNT(type) FROM events WHERE time > now() - 3h
+GROUP BY time(1h) fill(0)
 ```
 ```sql
-SELECT COUNT(type) FROM events
-GROUP BY time(1h) fill(-1) WHERE time > now() - 3h
+SELECT COUNT(type) FROM events WHERE time > now() - 3h
+GROUP BY time(1h) fill(-1)
 ```
 
 There are also special options for `fill`. Those values are `null`, `previous`, and `none`. `null` means null is used as the value for intervals without data. `previous` means the values of the previous window is used, and `none` means that all null values are removed. Examples of each are shown below.
 
 ```sql
-SELECT COUNT(type) FROM events
-GROUP BY time(1h) fill(null) WHERE time > now() - 3h
+SELECT COUNT(type) FROM events WHERE time > now() - 3h
+GROUP BY time(1h) fill(null)
 ```
 
 ```sql
-SELECT COUNT(type) FROM events
-GROUP BY time(1h) fill(previous) WHERE time > now() - 3h
+SELECT COUNT(type) FROM events WHERE time > now() - 3h
+GROUP BY time(1h) fill(previous)
 ```
 
 ```sql
-SELECT COUNT(type) FROM events
-GROUP BY time(1h) fill(none) WHERE time > now() - 3h
+SELECT COUNT(type) FROM events WHERE time > now() - 3h
+GROUP BY time(1h) fill(none)
 ```
 
 Note that `fill` must go at the end of the group by clause if there are other arguments:
 
 ```sql
-select count(type) from events
-group by time(1h), type fill(0) where time > now() - 3h
+SELECT count(type) FROM events WHERE time > now() - 3h
+GROUP BY time(1h), type fill(0)
 ```
 
 ## Merging Series
