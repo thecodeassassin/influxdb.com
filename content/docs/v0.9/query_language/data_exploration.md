@@ -136,6 +136,25 @@ Return the last point from every time series in the database.
 SELECT * FROM "otherDB"../disk.*/ LIMIT 1
 ```
 
+Return the last 5 points from every time series in the database.
+
+```sql
+SELECT * FROM "otherDB"../disk.*/ LIMIT 5
+```
+Return all points of 1 series
+
+```sql
+SELECT * FROM "otherDB"../disk.*/ SLIMIT 1
+```
+
+Return all points of a 5 series
+
+```sql
+SELECT * FROM "otherDB"../disk.*/ SLIMIT 5
+```
+
+*Note*. `SLIMIT N` returns all of the points for `N` different series, where as `LIMIT N` returns `N` points from all matching series. 
+
 Return the last point from otherDB's default retention policy where the measurement name begins with lowercase disk.
 
 ```sql
