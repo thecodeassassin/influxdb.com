@@ -275,6 +275,8 @@ GROUP BY time(1m)
 
 All the series under `cpu` that have the tag `region = 'uswest'` will be merged together before computing the mean.
 
+Note there is no `JOIN` function in InfluxDB 0.9. Measurements cannot be merged. 
+
 ## Getting series with special characters
 
 InfluxDB allows you to use any characters in your time series names. However, parsing queries for those series can be tricky. So it's best to wrap your queries for any series that has characters other than letters in double quotes like this:
