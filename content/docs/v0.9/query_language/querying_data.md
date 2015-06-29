@@ -263,7 +263,8 @@ group by time(1h), type fill(0) where time > now() - 3h
 
 ## Merging Series
 
-Queries merge series automatically for you on the fly. Remember that a series is a measurement plus its tag set. This means if you do a query like this:
+Queries merge series automatically for you on the fly. All series under a given measurement are implicitly merged together when querying that measurement. You can use tags in the WHERE clause to return results from a subset of 
+series within the measurement. This means if you do a query like this:
 
 ```
 SELECT mean(value)
@@ -274,6 +275,8 @@ GROUP BY time(1m)
 ```
 
 All the series under `cpu` that have the tag `region = 'uswest'` will be merged together before computing the mean.
+
+Note there is no `JOIN` function in InfluxDB 0.9. Multiple measurements cannot be merged. 
 
 ## Getting series with special characters
 
