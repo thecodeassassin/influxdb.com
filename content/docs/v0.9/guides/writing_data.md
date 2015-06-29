@@ -14,7 +14,7 @@ The HTTP API is the primary means of putting data into InfluxDB. To write data s
 curl -G http://localhost:8086/query --data-urlencode "q=CREATE DATABASE mydb"
 
 # Write a point to your new database.
-curl -i -XPOST 'http://localhost:8086/write?db=mydb' -d 'cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000'
+curl -i -XPOST 'http://localhost:8086/write?db=mydb' --data-binary 'cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000'
 ```
 
 The actual point represents a combination of elements which follow the line protocol format, which has the following structure.
@@ -34,7 +34,7 @@ InfluxDB is schemaless so the series and columns (fields and tags) get created o
 As you can see in the example below, you can post multiple points to multiple series at the same time by separating each point with a new line. Batching points in this manner will result in much higher performance.
 
 ```
-curl -i -XPOST 'http://localhost:8086/write?db=mydb' -d '
+curl -i -XPOST 'http://localhost:8086/write?db=mydb' --data-binary '
 cpu_load_short,host=server01,region=us-west value=0.64
 cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
 cpu_load_short,direction=in,host=server01,region=us-west value=23422.0 1422568543702900257'
@@ -51,7 +51,7 @@ _Epoch and Precision_
 Timestamps can be supplied as an integer value at the end of the line. The precision is configurable per-request by including a `precision` url parameter. If no precision is specified, the line protocol will default to nanosecond precision. For example to set the time in seconds, use the following request.
 
 ```
-curl -i -XPOST 'http://localhost:8086/write?db=mydb&precision=s' -d 'cpu_load_short,host=server01,region=us-west value=0.64 1434059627'
+curl -i -XPOST 'http://localhost:8086/write?db=mydb&precision=s' --data-binary 'cpu_load_short,host=server01,region=us-west value=0.64 1434059627'
 ```
 
 `n`, `u`, `ms`, `s`, `m`, and `h` are all supported and represent nanoseconds, microseconds, milliseconds, seconds, minutes, and hours, respectively.
