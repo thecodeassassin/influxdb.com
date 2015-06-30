@@ -245,7 +245,7 @@ The time function takes the time interval which can be in microseconds, seconds,
 
 If you issue a query that has an aggregate function like `count` but don't specify a `GROUP BY time` You will only get a single data point back with the number of count from time zero (00:00:00 UTC, Thursday, 1 January 1970).
 
-If you have a `GROUP BY time` clause you should **always** have a `WHERE` clause that limits the scope of time you are looking at.
+If you have a `GROUP BY time` clause you should **always** have a `WHERE` clause that limits the scope of time you are looking at. Unless otherwise specified, `GROUP BY` will use `epoch 0` as the lower bound for the time range which is almost never what is desired.
 
 ### Filling intervals with no data
 
