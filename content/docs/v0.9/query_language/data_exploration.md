@@ -42,7 +42,7 @@ For information on retention policy management see the section on [database admi
 A query in InfluxDB can have multiple statements separated by semicolons. For example:
 
 ```sql
-SELECT mean(value) from cpu
+SELECT mean(value) FROM cpu
 WHERE time > now() - 1d
 GROUP BY time(10m);
 SELECT mean from "hour_summaries".cpu
@@ -84,7 +84,8 @@ You can use `now()` to calculate a timestamp relative to the server's
 current timestamp. For example:
 
 ```sql
-SELECT value FROM response_times WHERE time > now() - 1h limit 1000;
+SELECT value FROM response_times
+WHERE time > now() - 1h limit 1000;
 ```
 
 will return up to the first 1000 points starting an hour ago until now.
@@ -96,7 +97,8 @@ Other options for how to specify time durations are `u` for microseconds, `s` fo
 Specify timestamp in epoch time, which is defined as the number of microseconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970. Use the same suffixes from the previous section to specify timestamps in other units. For example:
 
 ```sql
-SELECT value FROM response_times WHERE time > 1388534400s
+SELECT value FROM response_times
+WHERE time > 1388534400s
 ```
 
 will return all points that were writtern after `2014-01-01 00:00:00`
@@ -121,7 +123,8 @@ SELECT * FROM events, errors;
 Get the last hour of data from the two series events, and errors. Here's a regex example:
 
 ```sql
-SELECT * FROM /^stats\./i WHERE time > now() - 1h;
+SELECT * FROM /^stats\./i
+WHERE time > now() - 1h;
 ```
 
 Get the last hour of data from every time series that starts with stats. (case insensitive). Another example:
@@ -277,20 +280,30 @@ SHOW TAG VALUES FROM cpu WITH KEY = host
 We've already seen the `WHERE` clause for selecting time ranges and a specific point. You can also use it to filter based on given field values, tags, or regexes. Here are some examples of different ways to use `WHERE`.
 
 ```sql
-SELECT * FROM events WHERE state = 'NY';
+SELECT * FROM events
+WHERE state = 'NY'
 
-SELECT * FROM log_lines WHERE line =~ /error/i;
-
-SELECT * FROM events WHERE customer_id = 23 AND type = 'click';
-
-SELECT * FROM response_times WHERE value > 500 AND region='us-west'
-
-SELECT * FROM events WHERE email !~ /.*gmail.*/;
-
-SELECT * FROM events WHERE signed_in = false;
+SELECT * FROM log_lines
+WHERE line =~ /error/i
 
 SELECT * FROM events
-WHERE (email =~ /.*gmail.*/ or email =~ /.*yahoo.*/) AND state = 'ny';
+WHERE customer_id = 23
+  AND type = 'click'
+
+SELECT * FROM response_times
+WHERE value > 500
+  AND region='us-west'
+
+SELECT * FROM events
+WHERE email !~ /.*gmail.*/
+
+SELECT * FROM events
+WHERE signed_in = false
+
+SELECT * FROM events
+WHERE (email =~ /.*gmail.*/
+  OR email =~ /.*yahoo.*/)
+  AND state = 'ny'
 ```
 
 The WHERE clause supports comparisons against regexes, strings, booleans, floats, integers, and the times listed before. Comparators include `=` equal to, `>` greater than, `<` less than, `<>` not equal to, `=~` matches against, `!~` doesn't match against. You can chain logic together using `AND` and `OR` and you can separate using `(` and `)`
@@ -299,24 +312,44 @@ The WHERE clause supports comparisons against regexes, strings, booleans, floats
 
 The `GROUP BY` clause in InfluxDB is used not only for grouping by given values, but also for grouping by given time buckets. You'll always be pairing this up with [a function](aggregate_functions.html) in the `SELECT` clause and possibly a specific time range in the `WHERE` clause. Here are a few examples to illustrate how `GROUP BY` works.
 
+Count of events in the last hour in 10 minute intervals:
+
 ```sql
--- count of events in the last hour in 10 minute intervals
-SELECT count(type) FROM events WHERE time > now() - 1h GROUP BY time(10m)
+SELECT count(type) FROM events
+WHERE time > now() - 1h
+GROUP BY time(10m)
+```
 
--- count of each unique type of event in the last hour in 10 minute intervals
-SELECT count(type) FROM events WHERE time > now() - 1h GROUP BY time(10m), type
+Count of each unique type of event in the last hour in 10 minute intervals:
 
--- count of each unique type of event in the last day grouped by host tag
-SELECT count(type) FROM events WHERE time > now() - 1d GROUP BY host
+```sql
+SELECT count(type) FROM events
+WHERE time > now() - 1h
+GROUP BY time(10m), type
+```
 
--- 95th percentile of response times in the last day in 30 second intervals
-SELECT percentile(value, 95) FROM response_times WHERE time > now() - 1d GROUP BY time(30s)
+Count of each unique type of event in the last day grouped by host tag:
+
+```sql
+SELECT count(type) FROM events
+WHERE time > now() - 1d
+GROUP BY host
+```
+
+Show 95th percentile of response times in the last day in 30 second intervals:
+
+```sql
+SELECT percentile(value, 95) FROM response_times
+WHERE time > now() - 1d
+GROUP BY time(30s)
 ```
 
 By default functions will output a column that has the same name as the function, e.g. `count` will output a column with the name `count`. In order to change the name of the column an `AS` clause is required. Here is an example to illustrate how aliasing works:
 
 ```sql
-SELECT count(type) AS number_of_types WHERE time > now() - 1d GROUP BY time(10m);
+SELECT count(type) AS number_of_types
+WHERE time > now() - 1d
+GROUP BY time(10m);
 ```
 
 The time function takes the time interval which can be in microseconds, seconds, minutes, hours, days or weeks. To specify the units you can use the respective suffix `u`, `s`, `m`, `h`, `d` and `w`.
@@ -330,35 +363,41 @@ If you have a `GROUP BY time` clause you should **always** have a `WHERE` clause
 By default, `GROUP BY` intervals that have no data will use `null` as the value, by default, though any numerical value, including negative values, are valid values for `fill`. For example, each of the following queries is valid:
 
 ```sql
-SELECT COUNT(type) FROM events WHERE time > now() - 3h
+SELECT COUNT(type) FROM events
+WHERE time > now() - 3h
 GROUP BY time(1h) fill(0)
 ```
 ```sql
-SELECT COUNT(type) FROM events WHERE time > now() - 3h
+SELECT COUNT(type) FROM events
+WHERE time > now() - 3h
 GROUP BY time(1h) fill(-1)
 ```
 
 There are also special options for `fill`. Those values are `null`, `previous`, and `none`. `null` means null is used as the value for intervals without data. `previous` means the values of the previous window is used, and `none` means that all null values are removed. Examples of each are shown below.
 
 ```sql
-SELECT COUNT(type) FROM events WHERE time > now() - 3h
+SELECT COUNT(type) FROM events
+WHERE time > now() - 3h
 GROUP BY time(1h) fill(null)
 ```
 
 ```sql
-SELECT COUNT(type) FROM events WHERE time > now() - 3h
+SELECT COUNT(type) FROM events
+WHERE time > now() - 3h
 GROUP BY time(1h) fill(previous)
 ```
 
 ```sql
-SELECT COUNT(type) FROM events WHERE time > now() - 3h
+SELECT COUNT(type) FROM events
+WHERE time > now() - 3h
 GROUP BY time(1h) fill(none)
 ```
 
 Note that `fill` must go at the end of the group by clause if there are other arguments:
 
 ```sql
-SELECT count(type) FROM events WHERE time > now() - 3h
+SELECT count(type) FROM events
+WHERE time > now() - 3h
 GROUP BY time(1h), type fill(0)
 ```
 
@@ -367,8 +406,7 @@ GROUP BY time(1h), type fill(0)
 Queries merge series automatically for you on the fly. Remember that a series is a measurement plus its tag set. This means if you do a query like this:
 
 ```
-SELECT mean(value)
-FROM cpu
+SELECT mean(value) FROM cpu
 WHERE time > now() - 1h
   AND region = 'uswest'
 GROUP BY time(1m)
@@ -395,7 +433,7 @@ Get the second 10 series from the region:
 SELECT mean(value) FROM cpu
 WHERE app =~ '.*someapp.*'
   AND time > now() - 4h
-GROUP BY time(5m), *
+GROUP BY time(4m), *
 LIMIT 10
 OFFSET 10
 ```
