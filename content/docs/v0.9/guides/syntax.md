@@ -12,10 +12,6 @@ The syntax for the line protocol is
 
 `measurement[,tag_key1=tag_value1...] field_key=field_value[,field_key2=field_value2] [timestamp]`
 
-#### Case-sensitivity
-
-All values in InfluxDB are case-sensitive. 
-
 #### Whitespace
 
 A space must exist between the measurement and the field(s), or between the tag(s) and the field(s) if tags are 
@@ -100,11 +96,11 @@ If you write points in a batch all points without explicit timestamps will recei
 Measurements, tag keys, tag values, and field keys are never quoted. Spaces and commas must be escaped. Field keys 
 that are stored as strings must always be double-quoted. Only double-quotes should be escaped.
 
-Measurement names currently cannot include commas. ([issue 3183](https://github.com/influxdb/influxdb/issues/3183))
-
 Querying measurements or tags that contain double-quotes `"` can be difficult, since double-quotes are also the syntax for an identifier. It's possible to work around the limitations with regular expressions but it's not easy.
 
 Avoid using Keywords as identifiers (database names, retention policy names, measurement names, tag keys, or field keys) whenever possible. Keywords in InfluxDB are referenced on the [InfluxQL Syntax](../query_language/spec.md) page. There is no need to quote or escape keywords in the write syntax. 
+
+All values in InfluxDB are case-sensitive: `MyDB` != `mydb` != `MYDB`. The exception is Keywords, which are case-insensitive.
 
 ### CLI
 
@@ -119,9 +115,11 @@ The CLI will return nothing on success and should give an informative parser err
 
 ### HTTP
 
-To write points using `curl`, call the `/write` endpoint at port `8086`. You must specify the target database in the query string using `db=<target_database>`. Use the `--data-binary` encoding method for all writes in the line protocol format. Other encoding methods will strip newlines or introduce URL encoding.  
+To write points using HTTP, POST to the `/write` endpoint at port `8086`. You must specify the target database in the query string using `db=<target_database>`. 
 
 You may optionally provide a target retention policy, specify the precision of any supplied timestamps, and pass any required authentication in the query string. 
+
+Successful writes will return a `204` HTTP Status Code. Writes will return a `400` for invalid syntax.
 
 ###### Write a Point with `curl`
 
@@ -133,7 +131,7 @@ You can also supply the query string parameters elsewhere in the command. They m
 
 ###### Write a Point to a non-default Retention Policy
 
-Use the `rp=<retention_policy` query string parameter to supply a target retention policy. If not specified, the default retention policy will be used.
+Use the `rp=<retention_policy` query string parameter to supply a target retention policy. If not specified, the default retention policy for the target database will be used.
 
 `curl -X POST 'http://localhost:8086/write?db=mydb&rp=six_month_rollup' --data-binary 'disk_free,hostname=server01 value=442221834240 1435362189575692182'`
 
@@ -165,6 +163,10 @@ All timestamps are assumed to be Unix nanoseconds unless otherwise specified. If
 
 `curl -X POST 'http://localhost:8086/write' --data-urlencode 'db=mydb&precision=s' --data-binary @points.txt`
 
+### Caveats
+
+Use `curl`'s `--data-binary` encoding method for all writes in the line protocol format. Using any encoding method other than `--data-binary` is likely to lead to issues with writing points. `-d`, `--data-urlencode`, and `--data-ascii` may all strip out newlines or introduce new unintended formatting.
+
 # Query Syntax
 
 ## Quoting Requirements
@@ -183,12 +185,14 @@ Identifiers refer to an object in the system rather than a stored string value. 
 
 ###### Double-quote Identifier With Spaces, Leading Digit, Periods, Hyphens, Unicode, etc.
 
-`SELECT * FROM first_database`  
-`SELECT * FROM "first database"`  
-`SELECT * FROM "1st_database"`  
-`SELECT * FROM "first.database"`  
-`SELECT * FROM "first-database"`  
-`SELECT * FROM "α-database"`
+```
+SELECT * FROM first_database  
+SELECT * FROM "first database"  
+SELECT * FROM "1st_database" 
+SELECT * FROM "first.database"  
+SELECT * FROM "first-database"  
+SELECT * FROM "α-database"
+```
 
 ### Single-quote Strings
 
@@ -196,19 +200,42 @@ All string values must always be single-quoted. All tag values are strings, and 
 
 ###### Single-quote String Values
 
-`SELECT * FROM mydb WHERE tag_key='some string'`
-`SELECT * FROM mydb WHERE field_key='another string'`
+```
+SELECT * FROM mydb WHERE tag_key='some string'
+SELECT * FROM mydb WHERE field_key='another string'
+```
 
-### Whitespace requirements
+## Time Ranges
+
+When querying you often want to limit the set of returned points to a particular time range. This is done with the `now()` function in conjunction with the set of possible time range descriptors.
+
+### `now()` is Local 
+
+`now()` is the Unix time of the server at the time the query is executed on that server. In a cluster, `now()` will come from the node that receives and processes the query, regardless of where the queried data resides. 
+
+### Implicit Time Range Boundaries
+
+If you do not supply a lower bound for the time range, InfluxDB will use epoch `0`, "1970-01-01T00:00:00Z", as the lower bound.
+
+If you do not supply an upper bound for the time range, InfluxDB will use `now()` as the upper bound.
+
+## Whitespace requirements
 
 When using time ranges, you must put a space between any arithmetic operators and the time range parameters. You must not include any whitespace between the time range parameter and the unit supplied.
 
-`SELECT * FROM mydb WHERE time > now() - 1d`  
-`SELECT * FROM mydb WHERE time> now() - 1d`  
-`SELECT * FROM mydb WHERE time >now() - 1d`  
-`SELECT * FROM mydb WHERE time > now()- 1d` are all valid, but  
-`SELECT * FROM mydb WHERE time > now() -1d` and  
-`SELECT * FROM mydb WHERE time > now() - 1 d` are not.
+```
+SELECT * FROM mydb WHERE time > now() - 1d
+SELECT * FROM mydb WHERE time> now() - 1d
+SELECT * FROM mydb WHERE time >now() - 1d
+SELECT * FROM mydb WHERE time > now()- 1d
+``` 
+are all valid, but  
+
+```
+SELECT * FROM mydb WHERE time > now() -1d
+SELECT * FROM mydb WHERE time > now() - 1 d
+``` 
+are not.
 
 ## CLI
 
@@ -239,8 +266,56 @@ The CLI can run queries in non-interactive mode and the output can be redirected
 
 ## HTTP
 
+To query the database using HTTP, submit a GET request to the `/query` endpoint at port `8086`. Specify the desired query to run using the query string parameter `q=<query>`.
+
+Successful queries will return a `204` HTTP Status Code. Queries will return a `400` for invalid syntax.
+
 ### Database
+
+If required, specify the desired target database in the query string using `db=<target_database>`. 
 
 ### Retention Policy
 
+Use the `rp=<retention_policy` query string parameter to supply a target retention policy for the query. If not specified, the default retention policy for the target database will be used.
+
 ### Authentication
+
+Use the `u=<user>` and `p=<password>` to pass the authentication details, if required. 
+
+###### Query to Show All Databases
+
+`curl -G 'http://localhost:8086/query' --data-urlencode 'q=SHOW DATABASES'`
+
+###### Query to Show All Measurements
+
+This query is against a particular database, so we must supply the `db=` parameter in the query string.
+
+`curl -G 'http://localhost:8086/query?db=mydb' --data-urlencode 'q=SHOW MEASUREMENTS'`
+
+`curl -G 'http://localhost:8086/query' --data-urlencode 'db=mydb&q=SHOW MEASUREMENTS'`
+
+###### Query Against Non-defaults with Authentication 
+
+`curl -G 'http://localhost:8086/query' --data-urlencode 'db=mydb&rp=six_months' --data-urlencode 'u=root&p=123456' --data-urlencode 'q=select * from disk_free where time > now() - 2w group by time(2h)'`
+
+###### Declare Database and Retention Policy in InfluxQL
+
+Rather than using the GET query string parameters you can specify the target database and/or retention policy directly in the InfluxQL query.
+
+`curl -G 'http://localhost:8086/query' --data-urlencode 'q=select * from mydb.myrp.disk_free'`
+
+If you want to specify the database but are using the default retention policy for that database, you can leave the retention policy undeclared:
+
+`curl -G 'http://localhost:8086/query' --data-urlencode 'q=select * from mydb..disk_free'`
+
+### Caveats
+
+Use `--data-urlencode` for all parameters passed to `curl` when hitting the `/query` endpoint.
+
+Some queries require a target database. You may specify that in the URL query string or directly in the InfluxQL query, or both. The InfluxQL query takes precedence over the GET query string parameter. 
+
+Querying measurements or tags that contain double-quotes `"` can be difficult, since double-quotes are also the syntax for an identifier. It's possible to work around the limitations with regular expressions but it's not easy.
+
+Avoid using Keywords as identifiers (database names, retention policy names, measurement names, tag keys, or field keys) whenever possible. Keywords in InfluxDB are referenced on the [InfluxQL Syntax](../query_language/spec.md) page. There is no need to quote or escape keywords in the write syntax. 
+
+All values in InfluxDB are case-sensitive: `MyDB` != `mydb` != `MYDB`. The exception is Keywords, which are case-insensitive.
