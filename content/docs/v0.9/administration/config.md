@@ -2,6 +2,14 @@
 title: Database Configuration
 ---
 
+## Generating a Configuration file
+
+To generate an InfluxDB configuration file run the command
+
+```
+influxd config  > influx.conf
+```
+
 ## Authentication
 
 To add authentication to InfluxDB set `auth-enabled = true` in the `[http]` section of your config file.
