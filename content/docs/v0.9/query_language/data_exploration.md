@@ -168,7 +168,7 @@ In the previous examples last does not mean *latest*, but instead the point fart
 
 *NOTE*: Regular expressions cannot be used to specify multiple databases or retention policies. Only measurements.
 
-## Dropping measurements and series
+## Dropping measurements, series, and databases
 
 You can drop individual series within a measurement that match given tags, or you can drop entire measurements. Some examples:
 
@@ -195,6 +195,81 @@ Dropping all series from a measurement that match a given tag:
 DROP SERIES
 FROM cpu
 WHERE region = 'uswest'
+```
+
+Dropping a database:
+
+```sql
+DROP DATABASE mydb
+```
+
+## The SHOW Command
+
+Show all databases in the server:
+
+```sql
+SHOW DATABASES
+```
+
+Show all measurements in the passed in database:
+
+```sql
+SHOW MEASUREMENTS
+```
+
+Find out what measurements we're taking for redis:
+
+```sql
+SHOW MEASUREMENTS WHERE service = 'redis'
+```
+
+Show measurements against a regex:
+
+```sql
+SHOW MEASUREMENTS where app =~ '.*paulapp.*'
+```
+
+Show series (unique tag sets) on the cpu measurement:
+
+```sql
+SHOW SERIES FROM cpu
+```
+
+Show series from cpu for a given host:
+
+```sql
+SHOW SERIES FROM cpu WHERE host = 'serverA'
+SHOW SERIES FROM cpu WHERE host = 'serverA' OR host = 'serverB'
+```
+
+Show all measurements and their series for a given host:
+
+```sql
+SHOW SERIES WHERE host = 'serverA'
+```
+
+Show what tag keys we have:
+
+```sql
+SHOW TAG KEYS
+```
+
+Show what tag keys we have for a given measurement:
+
+```sql
+SHOW TAG KEYS FROM cpu
+```
+
+Show the tag values for a given key across all measurements: 
+
+```sql
+SHOW TAG VALUES WITH KEY = host
+```
+
+Show the tag values for a given measurement and tag key:
+
+```sql
+SHOW TAG VALUES FROM cpu WITH KEY = host
 ```
 
 ## The WHERE Clause
@@ -301,6 +376,30 @@ GROUP BY time(1m)
 
 All the series under `cpu` that have the tag `region = 'uswest'` will be merged together before computing the mean.
 
+## Querying with an OFFSET
+
+Get the second 10 series from the region:
+
+```sql
+SELECT mean(value) FROM cpu
+WHERE region = 'uswest'
+  AND time > now() - 4h
+GROUP BY time(5m), *
+LIMIT 10
+OFFSET 10
+```
+
+Get the second 10 series from the region:
+
+```sql
+SELECT mean(value) FROM cpu
+WHERE app =~ '.*someapp.*'
+  AND time > now() - 4h
+GROUP BY time(5m), *
+LIMIT 10
+OFFSET 10
+```
+
 ## Getting series with special characters
 
 InfluxDB allows you to use any characters in your time series names. However, parsing queries for those series can be tricky. So it's best to wrap your queries for any series that has characters other than letters in double quotes like this:
@@ -310,4 +409,3 @@ SELECT * FROM "series with special characters!"
 
 SELECT * FROM "series with \"double quotes\""
 ```
-
