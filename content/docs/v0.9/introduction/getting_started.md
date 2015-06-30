@@ -132,3 +132,44 @@ InfluxDB supports a sophisticated query language, allowing many different types 
 ```
 
 This is all you need to know to write data into InfluxDB and query it back. Of course, to write significant amounts of data you will want to access the HTTP API directly, or use one of the many client libraries.
+
+**Note:** All identifiers are case-sensitive
+```
+> show databases
+name: databases
+---------------
+name
+mydb
+MyDb
+MYDB
+```
+
+```
+> show series
+name: CaseSensitive
+-------------------
+_key            TAG1  Tag1  tag1
+CaseSensitive             
+CaseSensitive,Tag1=key          key 
+CaseSensitive,tag1=key            key
+CaseSensitive,TAG1=key        key   
+CaseSensitive,TAG1=key,tag1=key,Tag1=key  key key key
+
+
+name: casesensitive
+-------------------
+_key            TAG1  Tag1  tag1
+casesensitive             
+casesensitive,Tag1=key          key 
+casesensitive,TAG1=key,tag1=key,Tag1=key  key key key
+```
+
+```
+> select * from casesensitive
+name: casesensitive
+tags: TAG1=, Tag1=, tag1=
+time        VALUE Value value
+----        ----- ----- -----
+2015-06-12T23:08:54.80898266Z     1
+2015-06-12T23:10:28.604159664Z  3 2 1
+```
