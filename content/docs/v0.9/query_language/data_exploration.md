@@ -163,6 +163,9 @@ SELECT * FROM "1h"./disk.*/ LIMIT 1
 
 Return the last point from the 1h retention policy where the measurement name begins with lowercase disk.
 
+#### Note about the word `last`
+In the previous examples last does not mean *latest*, but instead the point farthest back in time.
+
 *NOTE*: Regular expressions cannot be used to specify multiple databases or retention policies. Only measurements.
 
 ## Dropping measurements and series
