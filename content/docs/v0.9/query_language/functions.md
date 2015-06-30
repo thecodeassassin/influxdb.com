@@ -4,7 +4,7 @@ aliases:
   - /docs/v0.9/query_language/aggregate_functions.html
 ---
 
-InfluxDB contains a number of functions that you can use for computing aggregates, rollups, or doing downsampling on the fly. These are usually used in conjunction with a `GROUP BY time(...)` clause. Note that the use of a `GROUP BY` clause necessitates a `WHERE time` clause. 
+InfluxDB contains a number of functions that you can use for computing aggregates, rollups, or doing downsampling on the fly. These are usually used in conjunction with a `GROUP BY time(...)` clause. Note that the use of a `GROUP BY` clause necessitates a `WHERE time` clause with an explicit lower bound for the time range. 
 
 When performing an aggregation without a `GROUP BY` clause, the timestamp returned with the aggregated value(s) will be epoch 0 (1970-01-01T00:00:00Z).
 
