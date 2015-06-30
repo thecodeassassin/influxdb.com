@@ -4,26 +4,34 @@ aliases:
   - /docs/v0.9/query_language/database_administration.html
 ---
 
-Full configuration and management of an InfluxDB cluster is provided through the query language. This section describes how to manage databases, retention policies, users, and user privileges using the query language.
+Full suite of administration commands are available through the query language. The administrative commands allow common database management operations such as
 
-_Note: Only cluster administrators can create and drop databases, and manage users. See the documentation on [Authorization](../authentication_and_authorization.html#cluster-administration-privileges) for more information._
+- Create and delete users, including admin users
+- Set user passwords
+- Create and delete databases
+- Grant, alter, and revoke database access privileges
+- Create and delete retention policies
+- Delete measurements and series
+- Create and delete continuous queries
 
-The primary mechanism for issuing any of the commands listed below is through the HTTP API or `influx` command line interface. For example, the command `CREATE DATABASE mydb` can be executed using `curl` as follows:
+_Note: When authentication is enabled, only admin users can execute the commands listed on this page. See the documentation on [authentication](authentication.html) and [authorization](authorization.html) for more information._
+
+The commands listed below can be executed by sending the command to the HTTP API `/query` endpoint as the URL parameter `q`. For example, using `curl`,
 
 ```
 curl -G 'http://localhost:8086/query' --data-urlencode "q=CREATE DATABASE mydb"
 ```
 
-and via the `influx` command line interface
+or using the `influx` command line interface,
 
 ```
 influx -username test -password test
 > CREATE DATABASE mydb
 ```
 
-### Identifiers
+## Identifiers
 
-An identifier is any user defined name or key, e.g. `mydb`.  In the query language, identifiers are used to reference databases, retention policies, measurements, and users, as well as tag keys and field keys.
+An identifier is any user defined name or key, e.g. `mydb`.  Identifiers are used to reference databases, retention policies, measurements, and users, as well as tag keys and field keys.
 
 Identifiers may be quoted or unquoted and must follow these rules:
 
@@ -34,10 +42,10 @@ Identifiers may be quoted or unquoted and must follow these rules:
 
 Throughout this page, identifiers are denoted by a word enclosed in `<>` characters, e.g. `<database>`.  
 
-## Database Management
+# Database Management
 Databases can be created, dropped, and listed. User privileges are also set on a per-database basis.
 
-### Creating a database
+## Creating a database
 ```sql
 CREATE DATABASE <database>
 ```
