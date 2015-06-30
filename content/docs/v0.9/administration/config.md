@@ -33,3 +33,7 @@ Configuring a cluster with host machines A, B, and C:
 5. On all three machines add `peers = ["A_IP:A_bindaddress", "B_IP:B_bindaddress", "C_IP:C_bindaddress"]` to the `[meta]` section of the config file.
 6. On all three machines, add `replication = 3` in the `[retention]` section of the config file.
 7. Launch `influxd` on hosts A, B, and C in and order.
+
+## A Note about `dir` in `[meta]` and `[data]`
+
+In both the `[meta]` and `[data]` the `dir` configuration setting must be on the same filesystem.
