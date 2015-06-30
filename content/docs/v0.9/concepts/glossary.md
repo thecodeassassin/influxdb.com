@@ -20,8 +20,6 @@ All **series** under a given **measurement** have the same **field keys** and di
 
 The **measurement** is what appears in the SELECT clause of query statements, and is thus similar to a table name in traditional SQL databases.
 
-If a **measurement** contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted. **Measurements** are unique per **retention policy**.
-
 #### Example:
 
 The metrics `cpu_load`, `peak_generation`, and `bikes_present` would be reasonable **measurements** for a server, a photovoltaic array, and a bike-sharing station, respectively.
@@ -46,14 +44,10 @@ The following are all valid **tags**: `hostname=server01`, `station_id=84`, and 
 ## Tag Key
 The **tag key** is the key part of the key-value pair that makes up a **tag** and is always stored as a string.
 
-If a **tag key** contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted.
-
 **Tag keys** are unique per **measurement**.
 
 ## Tag Value
 A **tag value** is the value part of the key-value pair that makes up a **tag** and is always stored as a string.
-
-If a **tag value** contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted. 
 
 **Tag values** must be unique per **tag key**.
 
@@ -90,16 +84,12 @@ The pairs `load=0.64`, `event=”panels cleaned”`, and `bikes_present=15` are 
 ## Field Key
 The **field key** is the key part of the key-value pair that makes up a **field** and is always stored as a string.
 
-If a **field key** contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted.
-
 **Field keys** are unique per **point**.
 
 ## Field Value
 A **field value** is the value part of the key-value pair that makes up a **field**.
 
 **Field value** data may be stored as a string, boolean, int64, or float64.
-
-If a **field value** contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit but is not a number it must be double-quoted.
 
 If the **field value** is number it may contain one decimal point.
 
@@ -115,8 +105,6 @@ The **field set** is the combination of all **fields** on the **point**, includi
 ## Database
 A **database** is a logical container for **users**, **retention policies**, and **continuous queries** which must be unique per **database**.
 
-If a **database** name contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted.
-
 **Databases** are unique per **cluster**.
 
 Typical use cases for multiple **databases** are to separate development and production metrics or for multi-tenant systems where distinct authentication to the **database** is desirable.
@@ -125,8 +113,6 @@ Typical use cases for multiple **databases** are to separate development and pro
 A **retention policy** is a collection of **measurements**, which must be unique within the **retention policy**.
 
 **Retention policies** are unique per **database**.
-
-If a **retention policy** contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted.
 
 **Retention policies** are frequently abbreviated as **RPs**.
 
@@ -164,8 +150,6 @@ A **continuous query** is a special type of query that is run internally by the 
 **Continuous queries** automatically aggregate or downsample data from one **series** into another **series**.
 
 **Continuous queries** are unique per **database**.
-
-If a **continuous query** name contains any character other than [A-Z,a-z,0-9,_] or if it starts with a digit it must be double-quoted.
 
 **Continuous queries** are frequently abbreviated as **CQs**.
 
