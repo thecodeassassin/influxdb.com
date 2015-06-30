@@ -67,7 +67,3 @@ _Cardinality_ means the number of unique values a certain object has. For exampl
 Within InfluxDB, a series is defined as a combination of a _Measurement_ and all the tag key-value pairs associated with that Measurement. This means that if your tags have a high cardinality, there will be a large number of series in your system. In the extreme case, if a tag has a different value for every data point -- if the tag was a monotonically increasing integer, for example -- this would result in a large number of series being generated. This would significantly degrade both ingest and query performance of your system.
 
 As a rule of thumb, keep tag cardinality below 100,000. The limit will vary depending on the resources available to InfluxDB, but it is best to keep tag cardinality as low as possible. If you have a value in your data with high cardinality, it should probably be a _field_, not a tag.
-
-## Measurement names
-Avoid using '.' in measurement names if possible, as names containing '.' must be quoted when queried.
-
