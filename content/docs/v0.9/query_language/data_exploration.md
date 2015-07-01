@@ -18,6 +18,25 @@ Double quoted identifiers may contain any unicode character except a new line ch
 
 Unquoted identifiers must start with an upper or lowercase ASCII letter and can only contain ASCII letters, decimal digits, and the "_" or "." characters.
 
+For Example:
+
+To select from a measurement `(client)`:
+```sql
+SELECT * FROM "(client)"
+```
+
+To select for a `cpu` measurement with a tag key of `cpu_1` and tag value of `1`:
+```sql
+SELECT * FROM cpu
+WHERE cpu_1 = '1'
+```
+
+To select for a `cpu` measurement with a tag key of `cpu-1` and tag value of `1`:
+```sql
+SELECT * FROM cpu
+WHERE "cpu-1" = '1'
+```
+
 ## Selecting the Database and Retention Period
 When selecting data using the query language, the target database and retention period can optionally be specified. Doing so is known as "fully qualifying" your measurement. A fully-qualified measurement is in the following form:
 
