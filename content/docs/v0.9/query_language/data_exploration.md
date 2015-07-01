@@ -113,6 +113,18 @@ Regular expressions are surrounded by `/` characters and use Golang's regular ex
 
 *NOTE*: Use of regular expressions is explained in the following sections.
 
+## Arithmetic in expressions
+
+Basic arithmetic operations can be performed when querying fields that store floats.
+
+```sql
+SELECT value / 2 from cpu_user
+
+SELECT (value * 2) + 4 from cpu_user
+
+SELECT (value + 6) / 10 from cpu_user
+```
+
 ## Selecting Multiple Series
 
 Select from multiple series by name or by specifying a regex to match against. Here are a few examples.
