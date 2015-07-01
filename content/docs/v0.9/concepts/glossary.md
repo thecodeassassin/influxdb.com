@@ -79,7 +79,7 @@ Every point must have at least one **Field** or it will be rejected as invalid.
 
 #### Example
 
-The pairs `load=0.64`, `event=”panels cleaned”`, and `bikes_present=15` are valid all **Fields**.
+The pairs `load=0.64`, `event=”panels cleaned”`, and `bikes_present=15` are all valid **Fields**.
 
 ## Field Key
 The **field key** is the key part of the key-value pair that makes up a **field** and is always stored as a string.
@@ -140,7 +140,7 @@ Data availability is maintained when the number of unavailable **data nodes** in
 
 Once the number of unavailable **data nodes** equals or exceeds the **replication factor** some data may be unavailable for queries.
 
-Replication is used to ensure data availability in the event a **data node** or Nodes are unavailable. There are no query performance benefits from replication.
+Replication is used to ensure data availability in the event a **data node** or nodes are unavailable. There are no query performance benefits from replication.
 
 The **replication factor** should be less than or equal to the number of **data nodes** in the **cluster**.
 
