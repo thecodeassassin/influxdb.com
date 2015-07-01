@@ -4,10 +4,10 @@ title: Getting Started with InfluxDB
 
 With [InfluxDB installed](installation.html), you're ready to start doing awesome things. In this section we'll use the `influx` command line interface (CLI). The CLI is included in all InfluxDB packages and is a lightweight and simple way to interact with the database. The CLI communicates with InfluxDB by making requests to the InfluxDB API. 
 
-_Note: The database can also be used by making direct requests to the API. See [Reading and Writing Data](../concepts/reading_and_writing_data.html) for examples._
+_Note: The database can also be used by making direct HTTP requests to the API. See [Reading and Writing Data](../concepts/reading_and_writing_data.html) for examples._
 
 ## Logging in and creating your first database
-If you've installed InfluxDB locally, the `influx` command should be available via the command line. Executing `influx` will start the CLI and automatically connect to the local InfluxDB instance. The out put should look like this:
+If you've installed InfluxDB locally, the `influx` command should be available via the command line. Executing `influx` will start the CLI and automatically connect to the local InfluxDB instance. The output should look like this:
 
 ```
 $ influx
@@ -22,7 +22,7 @@ The command line is now ready to take input in the form of Influx Query Language
 
 A fresh install of InfluxDB has no databases so creating one is our first task. Create a database with the `CREATE DATABASE <db-name>` InfluxQL statement, where `<db-name>` is the name of the database you wish to create. Names of databases can contain any unicode character as long as the string is double-quoted. Names can be left unquoted if they contain only ASCII letters, digits, or underscores and do not begin with a digit.
 
-Throughout this guide, we'll use the database `mydb`.
+Throughout this guide, we'll use the database name `mydb`.
 
 ```sql
 > CREATE DATABASE mydb
