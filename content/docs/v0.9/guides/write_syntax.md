@@ -151,7 +151,7 @@ The following query string parameters can be passed as part of the GET string wh
  - `one` - the data must be written to disk by at least 1 valid node
  - `quorum` - the data must be written to disk by (N/2 + 1) valid nodes (N is the replication factor for the target retention policy)
  - `all` - the data must be written to disk by all valid nodes
- - `any` - a write is confirmed if hinted-handoff is successful
+ - `any` - a write is confirmed if hinted-handoff is successful  
 In this context, "valid node" means a node that hosts a copy of the shard containing the series being written to. In a clustered system, the replication factor should equal the number of valid nodes. 
 
 ###### Write a Point with `curl`
