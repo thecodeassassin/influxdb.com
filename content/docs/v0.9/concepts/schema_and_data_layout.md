@@ -2,7 +2,7 @@
 title: Schema Design
 ---
 
-In the 0.9.x version of InfluxDB, it is recommended that you encode most metadata into the series `Tags`. Tags are indexed within the InfluxDB system allowing fast querying by 1 or more tag values. Note that tag values are always interpreted as strings. And the optimal way to structure things is to have many series and a single column named "value" (or some other key of your choice) used consistently across all series.
+In the 0.9.x version of InfluxDB, it is recommended that you encode most metadata into the series `Tags`. Tags are indexed within the InfluxDB system allowing fast querying by 1 or more tag values. Note that tag values are always interpreted as strings. And the optimal way to structure things is to have many series and a single field named "value" (or some other key of your choice) used consistently across all series.
 
 It’s also a good idea to start the tag names and measurement names with a character in [a-z] or [A-Z], but not a requirement. It will just make writing queries easier later since you won’t have to wrap the names in double quotes.
 
@@ -66,4 +66,4 @@ _Cardinality_ means the number of unique values a certain object has. For exampl
 
 Within InfluxDB, a series is defined as a combination of a _Measurement_ and all the tag key-value pairs associated with that Measurement. This means that if your tags have a high cardinality, there will be a large number of series in your system. In the extreme case, if a tag has a different value for every data point -- if the tag was a monotonically increasing integer, for example -- this would result in a large number of series being generated. This would significantly degrade both ingest and query performance of your system.
 
-As a rule of thumb, keep tag cardinality below 100,000. The limit will vary depending on the resources available to InfluxDB, but it is best to keep tag cardinality as low as possible. If you have a value in your data with high cardinality, it should probably be a _field_, not a tag.
+As a rule of thumb, keep tag cardinality below 100,000. The limit will vary depending on the resources available to InfluxDB, but it is best to keep tag cardinality as low as possible. If you have a value in your data with high cardinality, it should probably be a _field_, not a _tag_.
