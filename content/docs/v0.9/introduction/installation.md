@@ -5,7 +5,7 @@ title: Installation
 This page provides directions on downloading and starting InfluxDB Version 0.9.0.
 
 ## Requirements
-Installation of InfluxDB requires root privileges on the host machine.
+Installation of the pre-built InfluxDB package requires root privileges on the host machine.
 
 ### Networking
 By default InfluxDB will use TCP ports `8083` and `8086` so these ports should be available on your system. Once installation is complete you can change those ports and other options in the configuration file, which is located by default in `/etc/opt/influxdb`.
