@@ -6,7 +6,7 @@ title: Query Syntax
 
 ## Double-quote Identifiers
 
-All identifiers must be double-quoted if they contain a character other than `A-Z`, `a-z`, `0-9`, or `_`, or if they begin with a digit. Any identifier that matches a Keyword must always be double-quoted whenever used in a query. Keywords in InfluxDB are referenced on the [InfluxQL Syntax](../query_language/spec.md) page.
+All identifiers must be double-quoted if they contain a character other than `A-Z`, `a-z`, `0-9`, or `_`, or if they begin with a digit. Any identifier that matches a Keyword must always be double-quoted whenever used in a query. Keywords in InfluxDB are referenced on the [InfluxQL Syntax](../query_language/spec.html) page.
 
 Identifiers refer to an object in the system rather than a stored string value. The following are all Identifiers
 - cluster and database users
