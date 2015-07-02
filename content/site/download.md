@@ -62,7 +62,7 @@ Deprecated versions are no longer actively developed.
 - Via [Homebrew](http://brew.sh/)
 
 		brew update
-		brew install telegra
+		brew install telegraf
 
 #### Ubuntu & Debian
 
