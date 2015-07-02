@@ -32,6 +32,8 @@ Find us on freenode in #influxdb.
 
 <icon class="fa fa-exclamation-circle fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
 
+Ask us questions at [support@influxdb.com](mailto:support@influxdb.com)</p>
+
 Log issues on [GitHub](https://github.com/influxdb/influxdb/issues).
 
 <icon class="fa fa-github fa-border fa-2x fa-lg pull-right fa-align-center"></icon>
