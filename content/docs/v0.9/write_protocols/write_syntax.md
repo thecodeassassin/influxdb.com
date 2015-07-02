@@ -34,7 +34,7 @@ backslash character `\`.
 
 Measurements, tag keys, tag values, and field keys are always stored as strings in the database. 
 
-`string` values have a length limit of 64 KB. ALl Unicode characters should be valid, although commas and spaces 
+`string` values have a length limit of 64 KB. All Unicode characters should be valid, although commas and spaces 
 require escaping. Backslash characters do not require escaping, but may not be used directly preceeding a comma or space. (Note that `string` field values have different quoting and escaping rules than the measurement, tag, and field name `string` syntax.)
 
 Field values may be stored as `float64`, `int64`, `boolean`, or `string`. All subsequent field values must match 
