@@ -32,6 +32,12 @@ always stored in nanos, return silently drops trailing zeros
 
 ## Syntax Pitfalls
 
+### When to Single-Quote
+
+### When to Double-Quote
+
+### Reserved Words in InfluxQL
+
 ### Characters That Must Be Quoted
 
 ### Characters That Must Be Escaped
