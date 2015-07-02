@@ -117,7 +117,7 @@ If required, specify the desired target database in the query string using `db=<
 
 ## Retention Policy
 
-Use the `rp=<retention_policy` query string parameter to supply a target retention policy for the query. If not specified, the default retention policy for the target database will be used.
+Use the `rp=<retention_policy>` query string parameter to supply a target retention policy for the query. If not specified, the default retention policy for the target database will be used.
 
 ## Authentication
 
