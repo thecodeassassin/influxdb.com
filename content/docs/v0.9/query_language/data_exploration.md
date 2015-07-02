@@ -62,7 +62,7 @@ A query in InfluxDB can have multiple statements separated by semicolons. For ex
 
 ```sql
 SELECT mean(value) FROM cpu
-WHERE time > now() - 1d
+WHERE time > 12345678s
 GROUP BY time(10m);
 SELECT mean from "hour_summaries".cpu
 WHERE time > now() - 7d
@@ -400,7 +400,7 @@ GROUP BY time(1h) fill(0)
 ```
 ```sql
 SELECT COUNT(type) FROM events
-WHERE time > now() - 3h
+WHERE time > 12345678s
 GROUP BY time(1h) fill(-1)
 ```
 
@@ -428,7 +428,7 @@ Note that `fill` must go at the end of the group by clause if there are other ar
 
 ```sql
 SELECT count(type) FROM events
-WHERE time > now() - 3h
+WHERE time > 12345678s
 GROUP BY time(1h), type fill(0)
 ```
 
@@ -452,7 +452,7 @@ Get the second 10 series from the region:
 ```sql
 SELECT mean(value) FROM cpu
 WHERE region = 'uswest'
-  AND time > now() - 4h
+  AND time > 12345678s
 GROUP BY time(5m), *
 LIMIT 10
 OFFSET 10
