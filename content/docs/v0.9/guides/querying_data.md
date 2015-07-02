@@ -57,7 +57,30 @@ There are two top-level keys. `results` is an array of objects, one for each que
 The second top-level key is also named `error`, and is set if the API call failed before InfluxDB could perform any *query* operations. A example of this kind of failure would be invalid authentication credentials.
 
 ### Timestamp Format
+
 The format of the returned timestamps complies with RFC3339, and has nanosecond precision.
+
+#### Timestamps can be returned in various different formats
+
+Default UTC:
+```
+curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencode "q=SELECT value FROM cpu_load_short WHERE region='us-west'"
+```
+
+Epoch in Seconds:
+```
+curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencode "epoch=s" --data-urlencode "q=SELECT value FROM cpu_load_short WHERE region='us-west'"
+```
+
+Epoch in Milliseconds:
+```
+curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencode "epoch=ms" --data-urlencode "q=SELECT value FROM cpu_load_short WHERE region='us-west'"
+```
+
+Epoch in Nanoseconds:
+```
+curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencode "epoch=ms" --data-urlencode "q=SELECT value FROM cpu_load_short WHERE region='us-west'"
+```
 
 ### Multiple queries
 
