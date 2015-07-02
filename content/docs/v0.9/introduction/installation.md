@@ -2,7 +2,7 @@
 title: Installation
 ---
 
-This page provides directions on downloading and starting InfluxDB Version 0.9.0.
+This page provides directions on downloading and starting InfluxDB Version 0.9.1.
 
 ## Requirements
 Installation of the pre-built InfluxDB package requires root privileges on the host machine.
@@ -15,8 +15,8 @@ Debian users can install 0.9.0 by downloading the package and installing it like
 
 ```bash
 # 64-bit system install instructions
-wget http://influxdb.s3.amazonaws.com/influxdb_0.9.0_amd64.deb
-sudo dpkg -i influxdb_0.9.0_amd64.deb
+wget http://influxdb.s3.amazonaws.com/influxdb_0.9.1_amd64.deb
+sudo dpkg -i influxdb_0.9.1_amd64.deb
 ```
 
 Then start the daemon by running:
@@ -30,8 +30,8 @@ RedHat and CentOS users can install by downloading and installing the rpm like t
 
 ```bash
 # 64-bit system install instructions
-wget http://influxdb.s3.amazonaws.com/influxdb-0.9.0-1.x86_64.rpm
-sudo rpm -ivh influxdb-0.9.0-1.x86_64.rpm
+wget http://influxdb.s3.amazonaws.com/influxdb-0.9.1-1.x86_64.rpm
+sudo rpm -ivh influxdb-0.9.1-1.x86_64.rpm
 ```
 
 Then start the daemon by running:
