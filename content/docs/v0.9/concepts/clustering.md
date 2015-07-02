@@ -1,5 +1,7 @@
 ---
 title: Clustering
+aliases:
+  - /docs/v0.9/advanced_topics/clustering.html
 ---
 
 InfluxDB is designed to scale horizontally. This means that you can easily add more machines to your cluster. This will increase data ingestion performance and reduce query response time.

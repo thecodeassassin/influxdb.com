@@ -1,62 +1,81 @@
 <h2>InfluxDB Docs v0.9</h2>
 
-<h3>Introduction</h3>
+<h3><a href="/docs/v0.9/introduction/">Introduction</a></h3>
 <ul>
 	<li><a href="/docs/v0.9/introduction/overview.html">Overview</a></li>
 	<li><a href="/docs/v0.9/introduction/installation.html">Installation</a></li>
 	<li><a href="/docs/v0.9/introduction/getting_started.html">Getting Started</a></li>
 </ul>
 
-<h3>Fundamentals</h3>
+<h3><a href="/docs/v0.9/guides/">Guides</a></h3>
+<ul>
+	<li><a href="/docs/v0.9/guides/writing_data.html">Writing Data</a></li>
+	<li><a href="/docs/v0.9/guides/querying_data.html">Querying Data</a></li>
+	<!-- <li><a href="/docs/v0.9/guides/troubleshooting.html">Querying Data</a></li> -->
+	<!-- <li><a href="/docs/v0.9/guides/shell.html">Using the CLI (InfluxDB shell)</a></li> -->
+	<!-- <li><a href="/docs/v0.9/guides/curl.html">Using curl</a></li> -->
+	<!-- <li><a href="/docs/v0.9/guides/web_admin.html">Using the Web Admin</a></li> -->
+</ul>
+
+<h3><a href="/docs/v0.9/concepts/">Concepts</a></h3>
 <ul>
 	<li><a href="/docs/v0.9/concepts/key_concepts.html">Key Concepts</a></li>
-	<li><a href="/docs/v0.9/concepts/reading_and_writing_data.html">Reading and Writing Data</a></li>
+	<li><a href="/docs/v0.9/concepts/glossary.html">Glossary of Terms</a></li>
 	<li><a href="/docs/v0.9/concepts/schema_and_data_layout.html">Schema and Data Layout</a></li>
-	<li><a href="/docs/v0.9/concepts/continuous_queries.html">Continuous Queries</a></li>
-	<li><a href="/docs/v0.9/concepts/authentication_and_authorization.html">Authentication and Authorization</a></li>
-	<li><a href="/docs/v0.9/concepts/logs.html">Logs</a></li>
-	<li><a href="/docs/v0.9/concepts/backup_and_restore.html">Backup and Restore</a></li>
+	<li><a href="/docs/v0.9/concepts/api.html">HTTP API Endpoints</a></li>
+	<li><a href="/docs/v0.9/concepts/clustering.html">Clustering</a></li>
+	<li><a href="/docs/v0.9/concepts/storage_engine.html">Storage Engine</a></li>
 </ul>
 
-<h3>Query Language</h3>
+<h3><a href="/docs/v0.9/write_protocols/">Write Protocols and Plugins</a></h3>
+<ul>
+	<li><a href="/docs/v0.9/write_protocols/line.html">Line Protocol</a></li>
+	<li><a href="/docs/v0.9/write_protocols/write_syntax.html">Line Protocol Syntax Reference</a></li>
+	<li><a href="/docs/v0.9/write_protocols/json.html">JSON Protocol (deprecated)</a></li>
+	<li><a href="/docs/v0.9/write_protocols/graphite.html">Graphite Plugin</a></li>
+	<li><a href="/docs/v0.9/write_protocols/collectd.html">Collectd Plugin</a></li>
+	<li><a href="/docs/v0.9/write_protocols/opentsdb.html">OpenTSDB Plugin</a></li>
+</ul>
+
+<h3><a href="/docs/v0.9/query_language/">Query Language</a></h3>
 <ul>
 	<li><a href="/docs/v0.9/query_language/data_exploration.html">Data Exploration</a></li>
-	<li><a href="/docs/v0.9/query_language/querying_data.html">Querying Data</a></li>
-	<li><a href="/docs/v0.9/query_language/aggregate_functions.html">Aggregate Functions</a></li>
-	<li><a href="/docs/v0.9/query_language/database_administration.html">Cluster Administration</a></li>
-	<li><a href="/docs/v0.9/query_language/stats_diags.html">Statistics and Diagnostics</a></li>
+	<li><a href="/docs/v0.9/query_language/schema_exploration.html">Schema Exploration</a></li>
+	<li><a href="/docs/v0.9/query_language/functions.html">Functions</a></li>
+	<li><a href="/docs/v0.9/query_language/continuous_queries.html">Continuous Queries</a></li>
+	<li><a href="/docs/v0.9/query_language/spec.html">Specification</a></li>
+	<li><a href="/docs/v0.9/query_language/query_syntax.html">Query Syntax Reference</a></li>
 </ul>
 
-<h3>UI</h3>
+<h3><a href="/docs/v0.9/clients/api.html">Client Libraries</a></h3>
+
+<h3><a href="/docs/v0.9/administration/">Administration</a></h3>
 <ul>
-	<li><a href="http://docs.grafana.org/datasources/influxdb/">Grafana Dashboards</a></li>
+	<li><a href="/docs/v0.9/administration/administration.html">Administration</a></li>
+	<li><a href="/docs/v0.9/administration/authentication.html">Authentication</a></li>
+	<li><a href="/docs/v0.9/administration/authorization.html">Authorization</a></li>
+  <!-- <li><a href="/docs/v0.9/administration/statistics.html">Statistics</a></li> -->
+  <!-- <li><a href="/docs/v0.9/administration/diagnostics.html">Diagnostics</a></li> -->
+	<li><a href="/docs/v0.9/administration/logs.html">Logs</a></li>
+	<li><a href="/docs/v0.9/administration/backup_and_restore.html">Backup and Restore</a></li>
+	<li><a href="/docs/v0.9/administration/upgrading.html">Upgrading</a></li>
+	<li><a href="/docs/v0.9/administration/config.html">Configuration</a></li>
 </ul>
 
-<h3>Advanced Topics</h3>
+<h3><a href="/docs/v0.9/tools/">Tools</a></h3>
 <ul>
-	<li><a href="/docs/v0.9/advanced_topics/storage_engine.html">Storage Engine</a></li>
-	<li><a href="/docs/v0.9/advanced_topics/clustering.html">Clustering</a></li>
-	<li><a href="/docs/v0.9/advanced_topics/upgrading.html">Upgrading to 0.9</a></li>
+	<li><a href="/docs/v0.9/tools/shell.html">InfluxDB Shell (CLI)</a></li>
+	<li><a href="/docs/v0.9/tools/web_admin.html">InfluxDB Web Admin</a></li>
+	<li><a href="/docs/v0.9/tools/grafana.html">Grafana Graphs and Dashboards</a></li>
+	<li><a href="https://github.com/influxdb/telegraf">Telegraf Metrics Collection</a></li>
 </ul>
 
-<!-- <h3>Data Sources</h3>
+<h3><a href="/docs/v0.9/about/">About the Project</a></h3>
 <ul>
-	<li><a href="/docs/v0.9/clustering/carbon.html">Carbon</a></li>
-	<li><a href="/docs/v0.9/clustering/collectd.html">Collectd</a></li>
-	<li><a href="/docs/v0.9/clustering/opentsdb.html">OpenTSDB</a></li>
-	<li><a href="/docs/v0.9/clustering/diamond.html">Diamond</a></li>
-</ul> -->
-
-<h3>Client Libraries and Tools</h3>
-<ul>
-	<li><a href="/docs/v0.9/clients/shell.html">InfluxDB Shell (CLI)</a></li>
-</ul>
-
-<h3>Contributing</h3>
-<ul>
-	<li><a href="https://github.com/influxdb/influxdb/blob/master/CONTRIBUTING.md">Building and Contributing</a></li>
+	<!-- <li><a href="/docs/v0.9/about/roadmap.html">Roadmap</a></li> -->
+	<li><a href="/docs/v0.9/about/release_notes.html">Release Notes</a></li>
+	<li><a href="https://github.com/influxdb/influxdb/blob/master/CONTRIBUTING.md">Contributing</a></li>
 	<li><a href="/community/cla.html">CLA</a></li>
-	<li><a href="https://github.com/influxdb/influxdb.com">To this Documentation</a></li>
 	<li><a href="https://github.com/influxdb/influxdb/blob/master/LICENSE">License (MIT)</a></li>
 </ul>
 

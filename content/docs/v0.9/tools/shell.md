@@ -1,5 +1,7 @@
 ---
 title: Using the Influx Shell
+aliases:
+  - /docs/v0.9/clients/shell.html
 ---
 
 The Influx shell is an interactive shell for InfluxDB, and is part of all InfluxDB distributions. If you install InfluxDB via a package manager, the shell is installed at `/opt/influxdb/influx`.
@@ -11,14 +13,16 @@ There are several arguments you can pass into the shell when starting.  You can 
 ```sh
 $ influx --help
 Usage of influx:
+  -version
+       Display the version and exit.
   -host 'host name'
        Host to connect to.
-  -port
+  -port 'port #'
        Port to connect to.
   -database 'database name'
        Database to connect to the server.
   -password 'password'
-             Password to connect to the server.  Leaving blank will prompt for password (--password '')
+      Password to connect to the server.  Leaving blank will prompt for password (--password '')
   -username 'username'
        Username to connect to the server.
   -dump
@@ -32,14 +36,14 @@ Usage of influx:
 
 Examples:
 
-        # Use influx in a non-interactive mode to query the database "metrics" and pretty print json
-        $ influx -database 'metrics' -execute 'select * from cpu' -format 'json' -pretty
+    # Use influx in a non-interactive mode to query the database "metrics" and pretty print json
+    $ influx -database 'metrics' -execute 'select * from cpu' -format 'json' -pretty
 
-        # Dumping out your data
-        $ influx  -database 'metrics' -dump
+    # Dumping out your data
+    $ influx  -database 'metrics' -dump
 
-        # Connect to a specific database on startup and set database context
-        $ influx -database 'metrics' -host 'localhost' -port '8086'
+    # Connect to a specific database on startup and set database context
+    $ influx -database 'metrics' -host 'localhost' -port '8086'
 ```
 
 ## Shell Commands
@@ -268,7 +272,7 @@ $ influx -execute="select * from cpu" -database=foo -format=json -pretty=true
 }
 ```
 
-### Dumping the database
+### Dumping the database (Currently not functional)
 
 The CLI allows you to dump your existing database to a JSON file that is valid for writing into InfluxDB via the [HTTP API endpoint](http://influxdb.com/docs/v0.9/concepts/reading_and_writing_data.html).
 
