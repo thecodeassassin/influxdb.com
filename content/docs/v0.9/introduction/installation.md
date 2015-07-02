@@ -49,6 +49,9 @@ brew update
 brew install influxdb
 ```
 
+<a href="getting_started.html"><font size="6"><b>⇒ Now get started!</b></font></a>
+
+
 ## Hosted
 
 For users who don't want to install any software and are ready to use InfluxDB, you may want to check out our [managed hosted InfluxDB offering](http://customers.influxdb.com). __However, our hosted service is currently only running InfluxDB v0.8.8. Hosted 0.9.0 instances will be available soon.__
@@ -61,4 +64,6 @@ All InfluxDB packages ship with an example configuration file. In addition, a va
 /opt/influxdb/influxd config
 ```
 
-<a href="getting_started.html"><font size="6"><b>⇒ Now get started!</b></font></a>
+## Development Versions
+
+Nightly packages are available and can be found on the [downloads page](/download/index.html)

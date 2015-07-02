@@ -1,5 +1,7 @@
 ---
 title: Administration
+aliases:
+  - /docs/v0.9/query_language/database_administration.html
 ---
 
 Full configuration and management of an InfluxDB cluster is provided through the query language. This section describes how to manage databases, retention policies, users, and user privileges using the query language.
