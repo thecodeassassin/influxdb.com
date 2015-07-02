@@ -4,7 +4,7 @@ title: Introduction
 
 The introductory documentation includes all the information needed to get up and running with InfluxDB.
 
-## [Introduction](introduction.html)
+## [Overview](overview.html)
 
 Gives an introduction to the capabilities of InfluxDB.
 
