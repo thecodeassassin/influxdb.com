@@ -16,3 +16,9 @@ A minimal configuration for a highly-available cluster requires three servers, e
 In a larger setup you’d have 3-7 dedicated brokers and have the remainder act as data nodes. The number of brokers you have is influenced by the number of failures you want to be able to sustain among the brokers. In a setup with 3, you can have 1 broker failure and your cluster will still be available for writes. With 5 brokers you can have 2 broker failures and with 7 you can have 3 failures.
 
 It is important to note that while it doesn't affect performance, an odd number of brokers is best practice in cluster design.  This is due to how a leader is elected and always requires a quorum with the Raft consensus protocol.
+
+## Cluster Configuration
+
+See the [Configuration](/docs/v0.9/administration/config.html) section for more information on cluster configuration.
+
+**Note:** Clustering is still very much in alpha stage.
