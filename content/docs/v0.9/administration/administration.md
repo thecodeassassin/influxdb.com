@@ -224,7 +224,7 @@ Note that it is required that _password_ be quoted.
 _Example_
 
 ```sql
-CREATE USER jdoe WITH PASSWORD 'mypassword'
+CREATE USER todd WITH PASSWORD 'mypassword'
 ```
 
 ### Changing a user's password
@@ -236,7 +236,7 @@ Note that it is required that _password_ be quoted.
 _Example_
 
 ```sql
-SET PASSWORD FOR jdoe = 'mynewpassword'
+SET PASSWORD FOR todd = 'mynewpassword'
 ```
 
 ### Showing existing users
@@ -247,7 +247,7 @@ SHOW USERS
 _Example_
 
 ```sql
-CREATE USER jdoe WITH PASSWORD 'mypassword'
+CREATE USER todd WITH PASSWORD 'mypassword'
 SHOW USERS
 ```
 
@@ -265,7 +265,7 @@ The response returned is:
                     ],
                     "values": [
                         [
-                            "myuser",
+                            "todd",
                             true
                         ]
                     ]
@@ -285,7 +285,7 @@ DROP USER <username>
 _Example_
 
 ```sql
-DROP USER jdoe
+DROP USER todd
 ```
 
 The response returned is:
@@ -312,7 +312,7 @@ _Example_
 ```sql
 GRANT READ
     ON mydb
-    TO jdoe
+    TO todd
 ```
 
 The response returned is:
@@ -334,7 +334,7 @@ _Example_
 ```sql
 REVOKE ALL
     ON mydb
-    TO jdoe
+    TO todd
 ```
 
 The response returned is:
@@ -353,7 +353,7 @@ CREATE USER <user>
 _Example_
 
 ```sql
-CREATE USER someuser
+CREATE USER paul
     WITH PASSWORD 'somepassword'
     WITH ALL PRIVILEGES
 ```
@@ -363,7 +363,7 @@ The response returned is:
 ```json
 {"results":[{}]}
 ```
-
+<!-- ISSUE: https://github.com/influxdb/influxdb/issues/2872
 ### Granting cluster administration privileges to existing users
 ```sql
 GRANT ALL PRIVILEGES TO <user>
@@ -372,7 +372,7 @@ GRANT ALL PRIVILEGES TO <user>
 _Example_
 
 ```sql
-GRANT ALL PRIVILEGES TO jdoe
+GRANT ALL PRIVILEGES TO todd
 ```
 
 The response returned is:
@@ -380,7 +380,7 @@ The response returned is:
 ```json
 {"results":[{}]}
 ```
-
+ -->
 ### Showing cluster administrators
 ```sql
 SHOW USERS
@@ -406,11 +406,11 @@ The response returned is:
                     ],
                         "values": [
                         [
-                            "someuser",
+                            "paul",
                             true
                         ],
                         [
-                            "jdoe",
+                            "todd",
                             true
                         ]
                     ]
@@ -430,7 +430,7 @@ REVOKE ALL PRIVILEGES FROM <user>
 _Example_
 
 ```sql
-REVOKE ALL PRIVILEGES FROM jdoe
+REVOKE ALL PRIVILEGES FROM todd
 ```
 
 The response returned is:
