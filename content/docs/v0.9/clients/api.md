@@ -7,6 +7,10 @@ This is a list of the client libraries which currently support InfluxDB version 
 ## Go
 - [Influx Go](https://github.com/influxdb/influxdb/blob/master/client/README.md) by InfluxDB
 
+## Python
+
+- [influxdb-python](https://github.com/influxdb/influxdb-python)
+
 ## Javascript/Node
 - [Node Influx](https://github.com/node-influx/node-influx) by [nichdiekuh](https://github.com/nichdiekuh)
 
