@@ -1077,6 +1077,40 @@ aside {
 	background-color: #fa0;
 }
 
+.contact-form-centered h1 {
+    margin-bottom: 0.5em;
+}
+
+#mc_embed_signup {
+    margin-left: 35%;
+}
+
+#mc_embed_signup .contact-form label {
+    font-size: 1em;
+}
+
+#mc_embed_signup .button {
+    background-color: #008fb8 !important;
+}
+
+#mc_embed_signup div.response {
+    width: 100% !important;
+}
+
+div.page-content article.chronograf {
+    padding-top: 2em;
+}
+
+div.page-content article.chronograf h1 {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    font-weight: 700;
+}
+
+div.page-content article.chronograf h2 {
+    margin-top: 0.5em;
+}
+
 /* Print styles!
 -------------------------------------------------------------------------------*/
 @media print {
