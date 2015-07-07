@@ -1,4 +1,4 @@
 +++
-title = "support"
+title = "Support"
 layout = "support"
 +++
