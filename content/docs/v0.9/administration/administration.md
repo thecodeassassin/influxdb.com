@@ -326,7 +326,7 @@ The response returned is:
 ```sql
 REVOKE READ|WRITE|ALL
     ON <database>
-    TO <user>
+    FROM <user>
 ```
 
 _Example_
@@ -334,7 +334,7 @@ _Example_
 ```sql
 REVOKE ALL
     ON mydb
-    TO todd
+    FROM todd
 ```
 
 The response returned is:
