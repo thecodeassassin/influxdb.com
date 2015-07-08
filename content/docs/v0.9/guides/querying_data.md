@@ -79,7 +79,7 @@ curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencod
 
 Epoch in Nanoseconds:
 ```
-curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencode "epoch=ms" --data-urlencode "q=SELECT value FROM cpu_load_short WHERE region='us-west'"
+curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencode "epoch=ns" --data-urlencode "q=SELECT value FROM cpu_load_short WHERE region='us-west'"
 ```
 
 ### Multiple queries
