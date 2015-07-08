@@ -32,6 +32,8 @@ enabled = false
 
 ## Cluster
 
+_Note: Clustering is in alpha state right now and all clusters __must__ contain three and only three nodes._
+
 Configuring a cluster with host machines A, B, and C:
 
 1. Install InfluxDB on all three machines.

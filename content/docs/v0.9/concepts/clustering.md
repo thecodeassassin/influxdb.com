@@ -4,21 +4,32 @@ aliases:
   - /docs/v0.9/advanced_topics/clustering.html
 ---
 
-InfluxDB is designed to scale horizontally. This means that you can easily add more machines to your cluster. This will increase data ingestion performance and reduce query response time.
+_Note: Clustering is in alpha state right now and all clusters __must__ contain three and only three nodes._
 
-There are two ways you can scale your cluster.  Increasing hardware, such as memory and CPU (commonly referred to as scaling vertically), or by adding more machines or data centers (commonly referred to as scaling horizontally).  A benefit to scaling horizontally is that it adds additional replication.  Replicating your data provides high-availability, allowing your cluster to remain fully functional, even if some nodes fail.
+In 0.9.1 clusters must be fully replicated, meaning all data is copied to all nodes. Retention policies must have replication set to 3 for a three node cluster.
 
-## Brokers and Data Nodes
-The 0.9.0 release has a different clustering design than that used by earlier releases. At its core is a new Streaming Raft implementation optimized for our use case. In a cluster, each machine is either a _Broker_, a _Data Node_ or both. The Brokers represent a streaming Raft consensus group. The Data nodes host all the raw replicated data. Data nodes are the machines that answer queries. The function a particular machine is performing is known as its _role_.
+The full replication requirement should be lifted in 0.9.2 when distributed queries are wired up.
 
-A minimal configuration for a highly-available cluster requires three servers, each acting as both brokers and data nodes. In that setup if you had a replication factor of 3, you’d be able to sustain a single server failure and still have a cluster that could ingest data and respond to queries.
+<!--
+## Design
 
-In a larger setup you’d have 3-7 dedicated brokers and have the remainder act as data nodes. The number of brokers you have is influenced by the number of failures you want to be able to sustain among the brokers. In a setup with 3, you can have 1 broker failure and your cluster will still be available for writes. With 5 brokers you can have 2 broker failures and with 7 you can have 3 failures.
+InfluxDB is designed to scale horizontally. This means that more machines can easily added to a cluster. This will increase data ingestion performance and reduce query response time.
 
-It is important to note that while it doesn't affect performance, an odd number of brokers is best practice in cluster design.  This is due to how a leader is elected and always requires a quorum with the Raft consensus protocol.
+There are two ways you can scale a cluster. Increasing hardware, such as memory and CPU (commonly referred to as scaling vertically), or by adding more machines or data centers (commonly referred to as scaling horizontally). Scaling horizontally can also add additional replication. Data replication provides high-availability, allowing a cluster to remain fully functional even when some nodes fail.
 
-## Cluster Configuration
+Each running instance of InfluxDB in a cluster 
+-->
 
-See the [Configuration](/docs/v0.9/administration/config.html) section for more information on cluster configuration.
+## Configuration
+
+Configuring a cluster with three host machines A, B, and C:
+
+1. Install InfluxDB on all three machines.
+2. Generate a config file on each machine by running `influxd config > influxdb.conf`.
+3. Update the `[meta]` section of the configuration file on all three hosts, replacing `localhost` with the hosts actual network IP.
+4. Update the bind-address to another port if 8088 is not acceptable.
+5. On all three machines add `peers = ["A_IP:A_bindaddress", "B_IP:B_bindaddress", "C_IP:C_bindaddress"]` to the `[meta]` section of the config file.
+6. On all three machines, add `replication = 3` in the `[retention]` section of the config file.
+7. Launch `influxd` on hosts A, B, and C in and order.
 
 **Note:** Clustering is still very much in alpha stage.
