@@ -42,7 +42,7 @@ Configuring a cluster with host machines A, B, and C:
 4. Update the bind-address to another port if 8088 is not acceptable.
 5. On all three machines add `peers = ["A_IP:A_bindaddress", "B_IP:B_bindaddress", "C_IP:C_bindaddress"]` to the `[meta]` section of the config file.
 6. On all three machines, add `replication = 3` in the `[retention]` section of the config file.
-7. Launch `influxd` on hosts A, B, and C in and order.
+7. Launch `influxd` on hosts A, B, and C in order.
 
 ## A Note about `dir` in `[meta]` and `[data]`
 
