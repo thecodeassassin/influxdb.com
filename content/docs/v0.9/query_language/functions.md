@@ -115,7 +115,7 @@ This example with a `GROUP BY` statement outputs the rate of change per **minute
 Finally it is possible to take the `DERIVATIVE` of another aggregate function. For example:
 
 ```sql
-SELECT DERIVATIVE(mean(field_key), 1s) FROM measurement ...
+SELECT DERIVATIVE(MEAN(field_key), 1s) FROM measurement ...
 ```
 
 ## Sum
