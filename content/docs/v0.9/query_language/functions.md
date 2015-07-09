@@ -90,10 +90,32 @@ SELECT PERCENTILE(field_key, N) FROM measurement WHERE time > now() - 1d GROUP B
 
 This definition is a work in progress, suggestions welcome.
 
-DERIVATIVE() requires exactly one argument, which is a field name. The out is a field containing the value of `(v_last - v_first) / (t_last - t_first)` where `v_last` is the last value of the given field and `t_last` is the corresponding timestamp (and similarly for `v_first` and `t_first`). In other words, DERIVATIVE() calculates the **rate of change** of the given field.
+DERIVATIVE() can have two arguments. The first is required and is a field name. The second is optional and is a rate normalization parameter. The output is a field containing the value of `(v_last - v_first) / (t_last - t_first)` where `v_last` is the last value of the given field and `t_last` is the corresponding timestamp (and similarly for `v_first` and `t_first`). In other words, DERIVATIVE() calculates the **rate of change** of the given field.  The optional second argument determines the time `units` of the output. For example `DERIVATIVE(field_key, 1s)` returns a rate per second while `DERIVATIVE(field_key, 1h)` returns a rate per hour. The second argument can be any time duration and if it is not specified defaults to `1s` or the time duration of a `GROUP BY` statement.
+
 
 ```sql
 SELECT DERIVATIVE(field_key) FROM measurement ...
+```
+
+The above example outputs the rate of change per **second** of `field_key`.
+
+```sql
+SELECT DERIVATIVE(field_key, 1h) FROM measurement ...
+```
+
+This example outputs the rate of change per **hour** of `field_key`.
+
+```sql
+SELECT DERIVATIVE(field_key) FROM measurement ... GROUP BY time(1m)
+```
+
+This example with a `GROUP BY` statement outputs the rate of change per **minute** of `field_key`.
+
+
+Finally it is possible to take the `DERIVATIVE` of another aggregate function. For example:
+
+```sql
+SELECT DERIVATIVE(MEAN(field_key), 1s) FROM measurement ...
 ```
 
 ## Sum
