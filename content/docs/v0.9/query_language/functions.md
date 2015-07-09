@@ -112,7 +112,7 @@ SELECT DERIVATIVE(field_key) FROM measurement ... GROUP BY time(1m)
 This example with a `GROUP BY` statement outputs the rate of change per **minute** of `field_key`.
 
 
-Finally it is possible to take the `DERIVATIVE` of the result another aggregate function. For example:
+Finally it is possible to take the `DERIVATIVE` of another aggregate function. For example:
 
 ```sql
 SELECT DERIVATIVE(mean(field_key), 1s) FROM measurement ...
