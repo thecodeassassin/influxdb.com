@@ -55,7 +55,7 @@ Deprecated versions are no longer actively developed.
 
 # Telegraf Downloads
 
-## Version 0.1.2
+## Version 0.1.4
 
 #### OS X
 
@@ -68,13 +68,13 @@ Deprecated versions are no longer actively developed.
 
 - 64-bit system install instructions
 
-		wget http://get.influxdb.org/telegraf/telegraf_0.1.2_amd64.deb
-		sudo dpkg -i telegraf_0.1.2_amd64.deb
+		wget http://get.influxdb.org/telegraf/telegraf_0.1.4_amd64.deb
+		sudo dpkg -i telegraf_0.1.4_amd64.deb
 
 #### RedHat & CentOS
 
 - 64-bit system install instructions
 
-		wget http://get.influxdb.org/telegraf/telegraf-0.1.2-1.x86_64.rpm
-		sudo rpm -ivh telegraf-0.1.2-.x86_64.rpm
+		wget http://get.influxdb.org/telegraf/telegraf-0.1.4-1.x86_64.rpm
+		sudo rpm -ivh telegraf-0.1.4-.x86_64.rpm
 
