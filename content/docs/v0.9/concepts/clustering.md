@@ -28,8 +28,10 @@ Configuring a cluster with three host machines A, B, and C:
 2. Generate a config file on each machine by running `influxd config > influxdb.conf`.
 3. Update the `[meta]` section of the configuration file on all three hosts, replacing `localhost` with the hosts actual network IP.
 4. Update the bind-address to another port if 8088 is not acceptable.
-5. On all three machines add `peers = ["A_IP:A_bindaddress", "B_IP:B_bindaddress", "C_IP:C_bindaddress"]` to the `[meta]` section of the config file.
+5. On all three machines add `peers = ["IP_address_A:port_A", "IP_address_B:port_B", "IP_address_C:port_C"]` to the `[meta]` section of the config file. For example,
+    
+    ```
+    peers = ["10.202.47.11:8086", "10.202.47.12:8086", "10.202.47.13:8086”]
+    ```
 6. On all three machines, add `replication = 3` in the `[retention]` section of the config file.
 7. Launch `influxd` on hosts A, B, and C in and order.
-
-**Note:** Clustering is still very much in alpha stage.
