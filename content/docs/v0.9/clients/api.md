@@ -12,9 +12,11 @@ This is a list of the client libraries which currently support InfluxDB version 
 - [influxdb-python](https://github.com/influxdb/influxdb-python)
 
 ## Javascript/Node
+
 - [Node Influx](https://github.com/node-influx/node-influx) by [nichdiekuh](https://github.com/nichdiekuh)
 
 ## Java
+
 - [Influxdb Java](https://github.com/influxdb/influxdb-java) by [majst01](https://github.com/majst01)
 
 ## PHP
@@ -27,3 +29,7 @@ This is a list of the client libraries which currently support InfluxDB version 
 
 ## Erlang UDP
 - [Influx UDP](https://github.com/palkan/influx_udp) by [palkan](https://github.com/palkan)
+
+## R
+
+- [influxdbr](https://github.com/dleutnant/influxdbr) by [dleutnant](https://github.com/dleutnant)
