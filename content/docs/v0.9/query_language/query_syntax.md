@@ -19,12 +19,12 @@ Identifiers refer to an object in the system rather than a stored string value. 
 ###### Double-quote Identifier With Spaces, Leading Digit, Periods, Hyphens, Unicode, etc.
 
 ```
-SELECT * FROM first_database  
-SELECT * FROM "first database"  
-SELECT * FROM "1st_database" 
-SELECT * FROM "first.database"  
-SELECT * FROM "first-database"  
-SELECT * FROM "α-database"
+SELECT * FROM first_measurement  
+SELECT * FROM "first measurement"  
+SELECT * FROM "1st_measurement" 
+SELECT * FROM "first.measurement"  
+SELECT * FROM "first-measurement"  
+SELECT * FROM "α-measurement"
 ```
 
 ## Single-quote Strings
