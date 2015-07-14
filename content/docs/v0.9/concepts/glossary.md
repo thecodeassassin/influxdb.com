@@ -53,7 +53,7 @@ A **tag value** is the value part of the key-value pair that makes up a **tag** 
 
 InfluxDB will not allow assignment of `weather='partly sunny'` and `weather='partly cloudy'` to the same **point**.
 
-If you write multiple **tag values** for the same **tag key** on a given **point**. One of the **tag values** will be assigned to the **tag key** and all other **tag values** will be silently dropped.
+If you write multiple **tag values** for the same **tag key** on a given **point**, one of the **tag values** will be assigned to the **tag key** and all other **tag values** will be silently dropped.
 
 ## Tag Set
 The **tag set** is the combination of all **tags** on the **point**, including all **tag keys** and their corresponding **tag values**.
