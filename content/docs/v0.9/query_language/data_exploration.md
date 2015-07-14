@@ -181,21 +181,19 @@ Return all points of 1 series
 SELECT * FROM "otherDB"../disk.*/ SLIMIT 1
 ```
 
-Return all points of a 5 series
+Return all points of 5 series
 
 ```sql
 SELECT * FROM "otherDB"../disk.*/ SLIMIT 5
 ```
 
-*Note*. `SLIMIT N` returns all of the points for `N` different series, where as `LIMIT N` returns `N` points from all matching series. 
+*Note*. `SLIMIT N` returns all of the points for `N` different series, where as `LIMIT N` returns `N` points from all matching series. The series are ordered by their internal InfluxDB index. Therefore although the results of `SLIMIT` are not intuitive, they are deterministic.
 
-Return the oldest point from otherDB's default retention policy where the measurement name begins with lowercase disk.
+Return the oldest point from the 1h retention policy where the measurement name begins with lowercase disk.
 
 ```sql
 SELECT * FROM "1h"./disk.*/ LIMIT 1
 ```
-
-Returns the oldest point from the 1h retention policy where the measurement name begins with lowercase disk.
 
 *NOTE*: Regular expressions cannot be used to specify multiple databases or retention policies. Only measurements.
 
