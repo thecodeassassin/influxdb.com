@@ -41,7 +41,7 @@ A query in InfluxDB can have multiple statements separated by semicolons. For ex
 SELECT mean(value) from cpu
 WHERE time > now() - 1d
 GROUP BY time(10m);
-SELECT mean from "hour_summaries".cpu
+SELECT value from "hour_summaries".cpu
 WHERE time > now() - 7d
 ```
 
