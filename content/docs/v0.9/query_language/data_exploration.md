@@ -151,7 +151,7 @@ Select from multiple series by name or by specifying a regex to match against. H
 SELECT * FROM events, errors;
 ```
 
-Get the last hour of data from the two series events, and errors. Here's a regex example:
+Get the most recent hour of data from the two series, events and errors. Here's a regex example:
 
 ```sql
 SELECT * FROM /^stats\./i
@@ -164,13 +164,13 @@ Get the last hour of data from every time series that starts with stats. (case i
 SELECT * FROM /.*/ limit 1;
 ```
 
-Return the last point from every time series in the database.
+Return the oldest point from every time series in the database.
 
 ```sql
 SELECT * FROM "otherDB"../disk.*/ LIMIT 1
 ```
 
-Return the last 5 points from every time series in the database.
+Return the oldest 5 points from every time series in the database.
 
 ```sql
 SELECT * FROM "otherDB"../disk.*/ LIMIT 5
@@ -189,16 +189,13 @@ SELECT * FROM "otherDB"../disk.*/ SLIMIT 5
 
 *Note*. `SLIMIT N` returns all of the points for `N` different series, where as `LIMIT N` returns `N` points from all matching series. 
 
-Return the last point from otherDB's default retention policy where the measurement name begins with lowercase disk.
+Return the oldest point from otherDB's default retention policy where the measurement name begins with lowercase disk.
 
 ```sql
 SELECT * FROM "1h"./disk.*/ LIMIT 1
 ```
 
-Return the last point from the 1h retention policy where the measurement name begins with lowercase disk.
-
-#### Note about the word `last`
-In the previous examples last does not mean *latest*, but instead the point farthest back in time.
+Returns the oldest point from the 1h retention policy where the measurement name begins with lowercase disk.
 
 *NOTE*: Regular expressions cannot be used to specify multiple databases or retention policies. Only measurements.
 
