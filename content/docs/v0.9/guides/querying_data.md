@@ -1,5 +1,7 @@
 ---
 title: Querying Data
+alias:
+  -/docs/v0.9/query_language/querying_data.html
 ---
 
 The HTTP API is also the primary means for querying data contained within InfluxDB. To perform a query send a `GET` to the endpoint `/query`, set the URL parameter `db` as the target database, and set the URL parameter `q` as your query. An example query, sent to a locally-running InfluxDB server, is shown below.
