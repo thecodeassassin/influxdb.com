@@ -202,7 +202,7 @@ curl -X POST 'http://localhost:8086/write?db=mydb&precision=ms' --data-binary 'd
 
 ```
 curl -X POST 'http://localhost:8086/write' --data-urlencode 'db=mydb&precision=s' --data-binary @points.txt
-````
+```
 
 ###### Write a Batch of Points with `curl`
 
