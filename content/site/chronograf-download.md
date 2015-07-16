@@ -4,7 +4,7 @@ layout = "chronograf-download"
 +++
 #  Installing Chronograf
 
-Installing Chrongraf on either a Debian/Ubuntu or RedHat/CentOS distribution of Linux is easy. Just choose the correct package for your platform:
+Installing Chronograf on either a Debian/Ubuntu or RedHat/CentOS distribution of Linux is easy. Just choose the correct package for your platform:
 
 ## Ubuntu & Debian
 
@@ -22,7 +22,7 @@ Installing Chrongraf on either a Debian/Ubuntu or RedHat/CentOS distribution of 
 
 # Usage
 
-If you installed Chonograf via a .deb or .rpm package, you should be able to simply run `sudo service chronograf start`.
+If you installed Chronograf via a .deb or .rpm package, you should be able to simply run `sudo service chronograf start`.
 The Chronograf startup script needs root permission to ensure that it can write to /var/log, but the actual executable runs as a normal user.
 
 If you did not install Chronograf via a package, you can just directly run the executable, e.g. `/opt/chronograf/chronograf`.
