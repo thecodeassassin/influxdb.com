@@ -51,6 +51,8 @@ TODO (verify booleans write properly without quotes)
 
 ### Reserved Words in InfluxQL
 
+https://github.com/influxdb/influxdb/blob/master/influxql/INFLUXQL.md#identifiers
+
 
 ### Characters That Must Be Quoted
 
