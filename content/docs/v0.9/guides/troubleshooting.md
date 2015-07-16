@@ -48,6 +48,10 @@ always stored in nanos, return silently drops trailing zeros
 
 ### 100000 Buckets For GROUP BY
 
+### 10000 Point Batches 
+
+unless chunked response
+
 ### 64-bit Integers
 
 ### 64-bit Floats
