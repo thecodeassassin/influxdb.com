@@ -26,9 +26,10 @@ always stored in nanos, return silently drops trailing zeros
 ## Return Codes
 
 ### 2xx Means Understood
-A HTTP status code of 204 is returned if Influx could understand the request that has been sent. In the case that your request was understood, but could nnot be completed a 204 is still returned however, the body of the response will contain an error message specifying what went wrong.
+An HTTP status code of 204 is returned if Influx could understand the request that has been sent. In the case that your request was understood, but could nnot be completed a 204 is still returned however, the body of the response will contain an error message specifying what went wrong.
 
 ### 4xx Means Not Understood
+An HTTP status code of 4XX implies that the request that was sent in could not be understood and Influx does not know what was being asked of it.
 
 ### 5xx Means Cluster Not Healthy
 
