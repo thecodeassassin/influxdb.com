@@ -50,9 +50,7 @@ never double-quote keys (measurements, tags) in writes (line protocol)
 double-quote field values in line protocol to write digits or booleans as strings
 TODO (verify booleans write properly without quotes)
 
-### Reserved Words in InfluxQL
-
-https://github.com/influxdb/influxdb/blob/master/influxql/INFLUXQL.md#identifiers
+### [Reserved Words in InfluxQL](https://github.com/influxdb/influxdb/blob/master/influxql/INFLUXQL.md#identifiers)
 
 
 ### Characters That Must Be Quoted
