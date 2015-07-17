@@ -13,7 +13,7 @@ If you do not specify an explicit lower boundary for the time range of your quer
 
 ### Upper Bound
 
-If you do not specify an explicit upper boundary for the time range of your query InfluxDB will use `now()` as the implicit upper boundary. 
+If you do not specify an explicit upper boundary for the time range of your query InfluxDB will use `now()` as the implicit upper boundary. To query points in the future, you must explicitly set an upper boundary in the future. For example, `SELECT * FROM foo WHERE time < now() + 1000d`
 
 ### Special Times
 
@@ -35,6 +35,10 @@ Queries with a time range that exceeds the minimum or maximum timestamps valid f
 
 All timestamps are stored in the database as nanosecond values, regardless of the write precision supplied. When returning query results, trailing zeros are silently dropped from timestamps. See GitHub Issue [#2977](https://github.com/influxdb/influxdb/issues/2977) for more information.
 
+### Math on Timestamps
+
+It is not currently possible to execute mathematical operators or functions against timestamp values. All time calculations must be carried out by the client receiving the InfluxDB query results.
+
 ## Return Codes
 
 ### 2xx Means Understood
@@ -50,24 +54,35 @@ An HTTP status code of 5XX implies that the process is either down or significan
 
 ### When to Single-Quote
 
-single-quote strings in queries, never identifiers
+When querying, you must single-quote all string values. For example, `SELECT ... WHERE tag_key='tag_value'` Unquoted strings will be parsed as identifiers.
 
-never single quote in writes (line protocol)
+When querying, never single-quote identifiers. The will be parsed as strings, not identifiers. Double-quotes are used for identifiers.
 
-the CREATE USER with PASSWORD 'password' query always requires quoting the password string
+When writing via the line protocol, never use single-quotes. All special characters should be escaped, not quoted. See the [line protocol syntax](https://influxdb.com/docs/v0.9/write_protocols/write_syntax.html) page for more information.
+
+The `CREATE USER with PASSWORD 'password'` query always requires single-quoting the password string. There is a GitHub Issue [#123](https://github.com/influxdb/influxdb.com/issues/123) open against the documentation repo to determine and document proper escaping within the password string.
 
 ### When to Double-Quote
 
-double-quote identifiers in queries, never strings
+When querying, it is always safe to double-quote identifiers. Identifiers starting with a digit or containing characters other than `[A-z]`, `[0-9]`, or `_` must always be double-quoted. See the [query syntax](https://influxdb.com/docs/v0.9/query_language/query_syntax.html) page for more information.
 
 never double-quote keys (measurements, tags) in writes (line protocol)
 double-quote field values in line protocol to write digits or booleans as strings
+
+
 TODO (verify booleans write properly without quotes)
 
-### [Reserved Words in InfluxQL](https://github.com/influxdb/influxdb/blob/master/influxql/INFLUXQL.md#identifiers)
+### Reserved Words in InfluxQL
 
+Use of any of the [InfluxQL Reserved Words](https://github.com/influxdb/influxdb/blob/master/influxql/INFLUXQL.md#identifiers) as Identifiers or Strings will require quoting of the identifier or string in every use. It can lead to non-intuitive errors and is not recommended.
 
 ### Characters That Must Be Quoted
+
+### Querying Booleans
+
+Although the following are all valid syntax for writing boolean values: `t`, `T`, `true`, `True`, `TRUE`, `f`, `F`, `false`, `False`, and `FALSE`, only the full words are valid syntax when using booleans in the `WHERE` clause. When querying, you must use `true`, `True`, `TRUE`, `false`, `False`, or `FALSE`. 
+
+For example, `SELECT ... WHERE tag1=True` will return all points with `tag1` set to TRUE, but `SELECT ... WHERE tag1=T` will return an empty set of points and no error.
 
 #### Writing
 
