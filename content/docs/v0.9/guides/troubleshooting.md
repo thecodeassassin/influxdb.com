@@ -2,7 +2,6 @@
 title: Troubleshooting
 ---
 
-
 # Frequent Sources of Confusion
 
 ## Time Ranges
@@ -56,13 +55,13 @@ It is not currently possible to execute mathematical operators or functions agai
 ## Return Codes
 
 ### 2xx Means Understood
-An HTTP status code of 204 is returned if Influx could understand the request that has been sent. In the case that your request was understood but could not be completed, a 204 is still returned. However, the body of the response will contain an error message specifying what went wrong. A valid parseable query with no matching results will return a 204 with no error message.
+An HTTP status code of 204 is returned if InfluxDB could successfully parse the request that was sent. In the case that the request was understood but could not be completed, a 204 is still returned. However, the body of the response will contain an error message specifying what went wrong. A valid parseable query with no matching results will return a 204 with no error message.
 
 ### 4xx Means Not Understood
-An HTTP status code of 4XX implies that the request that was sent in could not be understood and Influx does not know what was being asked of it. These generally indicate a syntax error with the write or query request. 
+An HTTP status code of 4XX implies that the request that was sent in could not be understood and InfluxDB does not know what was being asked of it. These generally indicate a syntax error with the write or query request. 
 
 ### 5xx Means Cluster Not Healthy
-An HTTP status code of 5XX implies that the process is either down or significantly impaired. Further writes and reads are likely to fail permanently until the node or cluster is repaired.
+An HTTP status code of 5XX implies that the `influxd` process is either down or significantly impaired. Further writes and reads are likely to fail permanently until the node or cluster is returned to health.
 
 ## Syntax Pitfalls
 
@@ -143,3 +142,4 @@ InfluxDB stores all floating point values as signed `float64` data types. The la
 ### 64 KB Strings
 
 The maximum length for a string in InfluxDB is 64 KB (65,536 bytes). 
+
