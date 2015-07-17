@@ -1,5 +1,5 @@
 ---
-title: Data Exploration
+title: Schema Exploration
 ---
 
 There are various ways to learn about the data contained within an InfluxDB system.
