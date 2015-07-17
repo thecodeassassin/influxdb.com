@@ -88,7 +88,7 @@ If you want to use regex avoid using the following in identifiers and strtings, 
 
 ### 100000 Buckets For GROUP BY
 
-See https://github.com/influxdb/influxdb/issues/2702
+See [2702](https://github.com/influxdb/influxdb/issues/2702)
 
 ### 10000 Point Batches 
 
