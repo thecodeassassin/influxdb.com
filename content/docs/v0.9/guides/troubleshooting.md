@@ -95,7 +95,7 @@ See [2702](https://github.com/influxdb/influxdb/issues/2702)
 
 unless chunked response
 
-### 64-bit Integers
+### Signed 64-bit Integers
 
 ### 64-bit Floats
 
