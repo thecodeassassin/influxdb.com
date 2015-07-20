@@ -217,3 +217,5 @@ curl -X POST 'http://localhost:8086/write' --data-urlencode 'db=mydb&rp=myrp&u=r
 ## Caveats
 
 Use `curl`'s `--data-binary` encoding method for all writes in the line protocol format. Using any encoding method other than `--data-binary` is likely to lead to issues with writing points. `-d`, `--data-urlencode`, and `--data-ascii` may all strip out newlines or introduce new unintended formatting.
+
+When passing a file to `curl`, the points must be separated by newline characters only (`\n`). Files containing carriage returns will cause parser errors.
