@@ -90,8 +90,6 @@ SELECT PERCENTILE(field_key, N) FROM measurement WHERE time > now() - 1d GROUP B
 
 DERIVATIVE() computes the rate of change for a field value at each point in the series.
 
-This definition is a work in progress, suggestions welcome.
-
 DERIVATIVE() can have two arguments. The first is required and is a field name. The second is optional and is a rate normalization parameter. If the second parameter is not provided defaults to 1s
 
 The optional second argument determines the time `units` of the output. For example `DERIVATIVE(field_key, 1s)` returns a rate per second while `DERIVATIVE(field_key, 1h)` returns a rate per hour.
