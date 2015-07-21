@@ -88,10 +88,13 @@ SELECT PERCENTILE(field_key, N) FROM measurement WHERE time > now() - 1d GROUP B
 
 ## Derivative
 
+DERIVATIVE() computes the rate of change for a field value at each point in the series.
+
 This definition is a work in progress, suggestions welcome.
 
-DERIVATIVE() can have two arguments. The first is required and is a field name. The second is optional and is a rate normalization parameter. The output is a field containing the value of `(v_last - v_first) / (t_last - t_first)` where `v_last` is the last value of the given field and `t_last` is the corresponding timestamp (and similarly for `v_first` and `t_first`). In other words, DERIVATIVE() calculates the **rate of change** of the given field.  The optional second argument determines the time `units` of the output. For example `DERIVATIVE(field_key, 1s)` returns a rate per second while `DERIVATIVE(field_key, 1h)` returns a rate per hour. The second argument can be any time duration and if it is not specified defaults to `1s` or the time duration of a `GROUP BY` statement.
+DERIVATIVE() can have two arguments. The first is required and is a field name. The second is optional and is a rate normalization parameter and if not parameter is provided defaults to 1s.
 
+The optional second argument determines the time `units` of the output. For example `DERIVATIVE(field_key, 1s)` returns a rate per second while `DERIVATIVE(field_key, 1h)` returns a rate per hour.
 
 ```sql
 SELECT DERIVATIVE(field_key) FROM measurement ...
