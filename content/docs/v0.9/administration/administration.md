@@ -151,13 +151,13 @@ Durations such as `1h`, `90m`, `12h`, `7d`, and `4w`, are all supported and mean
 To delete a retention policy issue the following command:
 
 ```sql
-SHOW RETENTION POLICIES <database>
+SHOW RETENTION POLICIES ON <database>
 ```
 
 _Example_
 
 ```sql
-SHOW RETENTION POLICIES mydb
+SHOW RETENTION POLICIES ON mydb
 ```
 
 The response returned is:
