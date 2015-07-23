@@ -44,7 +44,7 @@ Points prior to epoch 0 (1970-01-01T00:00:00Z) are valid and should be written w
 
 Queries with a time range that exceeds the minimum or maximum timestamps valid for InfluxDB will currently return no results, rather than an error message. See GitHub Issue [#3369](https://github.com/influxdb/influxdb/issues/3369) for more information.
 
-### Time Precision
+### Time Precision and trailing zeros
 
 All timestamps are stored in the database as nanosecond values, regardless of the write precision supplied. When returning query results, trailing zeros are silently dropped from timestamps. See GitHub Issue [#2977](https://github.com/influxdb/influxdb/issues/2977) for more information.
 
