@@ -35,7 +35,7 @@ END
 
 ### Downsampling Continuous Queries
 
-This is expected to be the primary use case for continuous queries. When a continuous query is created from a select query that contains a `GROUP BY` time() clause, InfluxDB will write the aggregate into the target time series when each time interval elapses. On creation, the cluster will backfill old data asynchronously in the background.
+This is expected to be the primary use case for continuous queries. When a continuous query is created from a select query that contains a `GROUP BY` time() clause, InfluxDB will write the aggregate into the target time series when each time interval elapses. Continuous queries are not applied to historical data. See GitHub Issue [#211](https://github.com/influxdb/influxdb/issues/211) to follow development of the historical backfill feature for continuous queries.
 
 ```sql
 CREATE CONTINUOUS QUERY clicks_per_hour ON mydb BEGIN
