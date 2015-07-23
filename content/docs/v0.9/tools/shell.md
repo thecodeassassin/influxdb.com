@@ -25,8 +25,6 @@ Usage of influx:
       Password to connect to the server.  Leaving blank will prompt for password (--password '')
   -username 'username'
        Username to connect to the server.
-  -dump
-       Dump the contents of the given database to stdout.
   -execute 'command'
        Execute command and quit.
   -format 'json|csv|column'
