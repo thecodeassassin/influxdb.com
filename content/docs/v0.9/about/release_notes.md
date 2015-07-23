@@ -2,6 +2,14 @@
 title: Release Notes
 ---
 
+## v0.9.2
+
+### Update notes
+
+- [BREAKING CHANGE] `SHOW RETENTION POLICIES mydb` is  now `SHOW RETENTION POLICIES ON mydb`. [3345](https://github.com/influxdb/influxdb/pull/3345)
+
+### Features
+
 ## v0.9.1
 
 ### Upgrade notes
