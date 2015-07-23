@@ -32,7 +32,7 @@ A configuration section has been added for the snapshot handler with the followi
 
 ```
 [snapshot]
-enabled = true # Enabled by default if not set.
+enabled = true # Disabled by default if not set.
 ```
 
 If set to false InfluxDB will not allow snapshots. Any attempt will return a 404 error. The process must be restarted for configuration changes to take effect.
