@@ -5,7 +5,7 @@ date: 2015-07-23
 publishdate: 2015-07-23
 ---
 
-Today we're releasing InfluxDB 0.9.2, exactly 3 weeks after 0.9.1, which is what we were aiming for. Other than the addition of support for SSL, this release was focused on bug fixes and laying the groudwork for lifting the limitations on clustering. See the <a href="https://github.com/influxdb/influxdb/blob/master/CHANGELOG.md" target="_">CHANGELOG</a> for full details on what went into this 0.9.2.
+Today we're releasing InfluxDB 0.9.2, exactly 3 weeks after 0.9.1, which is what we were aiming for. Other than the addition of support for SSL, this release was focused on bug fixes and laying the groundwork for lifting the limitations on clustering. See the <a href="https://github.com/influxdb/influxdb/blob/master/CHANGELOG.md" target="_">CHANGELOG</a> for full details on what went into this 0.9.2.
 
 ### Clustering, performance and the next release
 
