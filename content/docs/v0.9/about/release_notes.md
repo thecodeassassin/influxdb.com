@@ -10,6 +10,10 @@ title: Release Notes
 
 ### Features
 
+### Bugfixes
+
+- Restarting process irrevocably BREAKS measurements with spaces [3319](https://github.com/influxdb/influxdb/issues/3319)
+
 ## v0.9.1
 
 ### Upgrade notes
