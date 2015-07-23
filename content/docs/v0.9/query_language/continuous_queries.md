@@ -13,12 +13,23 @@ Continuous queries are created on a database. Instead of returning the results i
 Here are a few examples:
 
 ```sql
+# Create a CQ to sample the 95% value from 5 minute buckets of the response_times measurement
 CREATE CONTINUOUS QUERY response_times_percentile ON mydb BEGIN
   SELECT percentile(value, 95) INTO "response_times.percentiles.5m.95" FROM response_times GROUP BY time(5m)
 END
 
+# Create a CQ to count the number of points with non-null "type" value per 10 minute bucket, grouping and tagging by "type"
 CREATE CONTINUOUS QUERY event_counts_per_10m_by_type ON mydb BEGIN
   SELECT COUNT(type) INTO typeCount_10m_byType FROM events GROUP BY time(10m), type
+END
+```
+
+To preserve all tags in your downsampled data, add a `, *` clause to the `GROUP BY` clause of the continuous query. For example:
+
+```sql
+# Create a CQ to count the number of points with non-null "type" value per 10 minute bucket, grouping by all tags
+CREATE CONTINUOUS QUERY event_counts_per_10m_by_type ON mydb BEGIN
+  SELECT COUNT(type) INTO typeCount_10m_byType FROM events GROUP BY time(10m), *
 END
 ```
 
