@@ -14,7 +14,7 @@ You can also access remote InfluxDB instances from the same admin page, although
 
 ### HTTP vs HTTPS
 
-The Admin UI uses HTTP by default but can be configured to use HTTPS.
+The Admin UI uses HTTP by default but can be configured to use HTTPS. In the InfluxDB config file, find the `[admin]` section and set `https-enabled = true`. You must explicitly connect to the instance using `https://`, there is no redirect from `http` to `https`.
 
 
 ### Selecting the Database
