@@ -11,6 +11,15 @@ The primary mechanism for issuing any of the queries listed below is through the
 ```
 curl -G 'http://localhost:8086/query' --data-urlencode 'db=mydb' --data-urlencode 'q=SELECT * FROM cpu'
 ```
+
+**NOTE:** When querying large amounts of data, a `chunk_size` query parameter should be passed along with the request. By default the chunk size is 10,000.
+
+```
+curl -G 'http://localhost:8086/query' --data-urlencode 'db=mydb' --date-urlencode 'chunk_size=20000' --data-urlencode 'q=SELECT * FROM cpu'
+```
+
+For more information see [3242](https://github.com/influxdb/influxdb/issues/3242).
+
 ## Quote Usage
 *Identifiers* are either unquoted or double quoted. Identifiers are database names, retention policies, measurements, or tag keys. String literals are always single quoted however.
 
