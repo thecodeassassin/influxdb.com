@@ -2,6 +2,25 @@
 title: Release Notes
 ---
 
+## v0.9.2
+
+### Upgrade notes
+
+### Features
+
+- Client supports making HTTPS requests. Thanks [@jipperinbham](https://github.com/jipperinbham).
+- Refactor query engine for distributed query support.
+- Clean shutdown of influxd. Thanks [@mcastilho](https://github.com/mcastilho).
+
+### Bugfixes
+
+- Restarting process irrevocably BREAKS measurements with spaces [3319](https://github.com/influxdb/influxdb/issues/3319)
+- [Breaking Change] `SHOW RETENTION POLICIES mydb` is  now `SHOW RETENTION POLICIES ON mydb`. [3345](https://github.com/influxdb/influxdb/pull/3345)
+
+
+See the [changelog](https://github.com/influxdb/influxdb/blob/0.9.2/CHANGELOG.md#bugfixes)
+
+
 ## v0.9.1
 
 ### Upgrade notes
