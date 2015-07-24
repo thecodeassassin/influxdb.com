@@ -14,7 +14,7 @@ Full suite of administration commands are available through the query language. 
 - Delete measurements and series
 - Create and delete continuous queries
 
-_Note: When authentication is enabled, only admin users can execute the commands listed on this page. See the documentation on [authentication](authentication.html) and [authorization](authorization.html) for more information._
+_Note: When authentication is enabled, only admin users can execute most of the commands listed on this page. See the documentation on [authentication](authentication.html) and [authorization](authorization.html) for more information._
 
 The commands listed below can be executed by sending the command to the HTTP API `/query` endpoint as the URL parameter `q`. For example, using `curl`,
 
@@ -329,6 +329,8 @@ REVOKE READ|WRITE|ALL
     FROM <user>
 ```
 
+__Note: If a user with ALL privileges has WRITE privileges revoked, they will be left with READ privileges and vice versa.__
+
 _Example_
 
 ```sql
@@ -363,7 +365,7 @@ The response returned is:
 ```json
 {"results":[{}]}
 ```
-<!-- ISSUE: https://github.com/influxdb/influxdb/issues/2872
+
 ### Granting cluster administration privileges to existing users
 ```sql
 GRANT ALL PRIVILEGES TO <user>
@@ -380,7 +382,7 @@ The response returned is:
 ```json
 {"results":[{}]}
 ```
- -->
+
 ### Showing cluster administrators
 ```sql
 SHOW USERS
