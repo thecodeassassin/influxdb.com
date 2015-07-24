@@ -2,7 +2,7 @@
 title: Installation
 ---
 
-This page provides directions on downloading and starting InfluxDB Version 0.9.1.
+This page provides directions on downloading and starting InfluxDB Version 0.9.2.
 
 ## Requirements
 Installation of the pre-built InfluxDB package requires root privileges on the host machine.
@@ -11,12 +11,12 @@ Installation of the pre-built InfluxDB package requires root privileges on the h
 By default InfluxDB will use TCP ports `8083` and `8086` so these ports should be available on your system. Once installation is complete you can change those ports and other options in the configuration file, which is located by default in `/etc/opt/influxdb`.
 
 ## Ubuntu & Debian
-Debian users can install 0.9.0 by downloading the package and installing it like this:
+Debian users can install 0.9.2 by downloading the package and installing it like this:
 
 ```bash
 # 64-bit system install instructions
-wget http://influxdb.s3.amazonaws.com/influxdb_0.9.1_amd64.deb
-sudo dpkg -i influxdb_0.9.1_amd64.deb
+wget http://influxdb.s3.amazonaws.com/influxdb_0.9.2_amd64.deb
+sudo dpkg -i influxdb_0.9.2_amd64.deb
 ```
 
 Then start the daemon by running:
@@ -30,8 +30,8 @@ RedHat and CentOS users can install by downloading and installing the rpm like t
 
 ```bash
 # 64-bit system install instructions
-wget http://influxdb.s3.amazonaws.com/influxdb-0.9.1-1.x86_64.rpm
-sudo rpm -ivh influxdb-0.9.1-1.x86_64.rpm
+wget http://influxdb.s3.amazonaws.com/influxdb-0.9.2-1.x86_64.rpm
+sudo rpm -ivh influxdb-0.9.2-1.x86_64.rpm
 ```
 
 Then start the daemon by running:
@@ -54,7 +54,7 @@ brew install influxdb
 
 ## Hosted
 
-For users who don't want to install any software and are ready to use InfluxDB, you may want to check out our [managed hosted InfluxDB offering](http://customers.influxdb.com). __However, our hosted service is currently only running InfluxDB v0.8.8. Hosted 0.9.0 instances will be available soon.__
+For users who don't want to install any software and are ready to use InfluxDB, you may want to check out our [managed hosted InfluxDB offering](http://customers.influxdb.com). __However, our hosted service is currently only running InfluxDB v0.8.8. Hosted 0.9 instances will be available soon.__
 
 ## Generate a configuration file
 
