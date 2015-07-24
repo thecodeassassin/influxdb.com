@@ -6,9 +6,9 @@ aliases:
 
 _Note: Clustering is in alpha state right now and all clusters __must__ contain three and only three nodes._
 
-In 0.9.1 clusters must be fully replicated, meaning all data is copied to all nodes. Retention policies must have replication set to 3 for a three node cluster.
+In 0.9.1 and 0.9.2 clusters must be fully replicated, meaning all data is copied to all nodes. Retention policies must have replication set to 3 for a three node cluster.
 
-The full replication requirement should be lifted in 0.9.2 when distributed queries are wired up.
+The full replication requirement should be lifted in 0.9.3.
 
 <!--
 ## Design
