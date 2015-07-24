@@ -2,7 +2,7 @@
 title: Authorization
 ---
 
-Authorization is set by granting users database access or administration privileges.
+Authorization is set by granting users privileges to access a database or execute administration queries.
 
 Authorization is only enforced when [authentication](authentication.html) is enabled.  When authentication is disabled, all users have all privileges.
 
@@ -29,7 +29,7 @@ Admin users are authorized to execute all of the following administration querie
 
 The [administration page](administration.html) describes the full syntax of all administration queries.
 
-## Types of database access privileges
+## Database access privileges
 
 Users may be assigned one of the following three access privileges per database:
 
