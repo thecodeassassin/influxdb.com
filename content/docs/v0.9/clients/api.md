@@ -19,6 +19,10 @@ This is a list of the client libraries which currently support InfluxDB version 
 
 - [Influxdb Java](https://github.com/influxdb/influxdb-java) by [majst01](https://github.com/majst01)
 
+## Perl
+
+- [AnyEvent::InfluxDB](https://github.com/ajgb/anyevent-influxdb) by [ajgb](https://github.com/ajgb)
+
 ## PHP
 
 - [InfluxPHP Github](https://github.com/crodas/InfluxPHP) by [crodas](https://github.com/crodas)
