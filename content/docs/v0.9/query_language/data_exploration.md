@@ -163,7 +163,7 @@ SELECT * FROM events, errors;
 Get the most recent hour of data from the two series, events and errors. Here's a regex example:
 
 ```sql
-SELECT * FROM /^stats\./i
+SELECT * FROM /(?i)^stats\./
 WHERE time > now() - 1h;
 ```
 
@@ -319,7 +319,7 @@ SELECT * FROM events
 WHERE state = 'NY'
 
 SELECT * FROM log_lines
-WHERE line =~ /error/i
+WHERE line =~ /(?i)error/
 
 SELECT * FROM events
 WHERE customer_id = 23
