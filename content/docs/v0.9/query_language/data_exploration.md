@@ -28,13 +28,13 @@ SELECT * FROM "(client)" WHERE time > 1434059627s
 To select for a `cpu` measurement with a tag key of `cpu_1` and tag value of `1`:
 ```sql
 SELECT * FROM cpu
-WHERE cpu_1 = '1' AND time > 1434059627s
+WHERE cpu_1 = '1'
 ```
 
 To select for a `cpu` measurement with a tag key of `cpu-1` and tag value of `1`:
 ```sql
 SELECT * FROM cpu
-WHERE "cpu-1" = '1' AND time > 1434059627s
+WHERE "cpu-1" = '1'
 ```
 
 ## Selecting the Database and Retention Period
