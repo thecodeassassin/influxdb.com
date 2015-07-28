@@ -22,19 +22,19 @@ For Example:
 
 To select from a measurement `(client)`:
 ```sql
-SELECT * FROM "(client)"
+SELECT * FROM "(client)" WHERE time > 1434059627s
 ```
 
 To select for a `cpu` measurement with a tag key of `cpu_1` and tag value of `1`:
 ```sql
 SELECT * FROM cpu
-WHERE cpu_1 = '1'
+WHERE cpu_1 = '1' AND time > 1434059627s
 ```
 
 To select for a `cpu` measurement with a tag key of `cpu-1` and tag value of `1`:
 ```sql
 SELECT * FROM cpu
-WHERE "cpu-1" = '1'
+WHERE "cpu-1" = '1' AND time > 1434059627s
 ```
 
 ## Selecting the Database and Retention Period
@@ -73,7 +73,7 @@ WHERE time > now() - 7d
 By default, InfluxDB returns data in time-ascending order.
 
 ```sql
-SELECT value FROM response_times;
+SELECT value FROM response_times WHERE time > 1434059627s
 ```
 
 This simple query pulls the values for the `value` column from the `response_times` series.
@@ -92,7 +92,7 @@ Date time strings have the format `YYYY-MM-DD HH:MM:SS.mmm` where `mmm` are the 
 
 ```sql
 SELECT value FROM response_times
-WHERE time > '2013-08-12 23:32:01.232' and time < '2013-08-13';
+WHERE time > '2013-08-12 23:32:01.232' AND time < '2013-08-13';
 ```
 
 The time and date should be wrapped in single quotes. If you only specify the date, the time will be set to `00:00:00`. The `.232` after the hours, minutes, and seconds is optional and specifies the milliseconds.
