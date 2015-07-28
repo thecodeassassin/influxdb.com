@@ -77,7 +77,7 @@ SELECT DISTINCT(field_key) FROM measurement
 
 SELECT DISTINCT(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT DISTINCT(field_key) FROM measurement WHERE 1434059627s GROUP BY time(10m)
+SELECT DISTINCT(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
 ```
 
 You can nest distinct in count to get the counts of unique values over windows of time:
