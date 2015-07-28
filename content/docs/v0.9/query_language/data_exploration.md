@@ -22,7 +22,7 @@ For Example:
 
 To select from a measurement `(client)`:
 ```sql
-SELECT * FROM "(client)" WHERE time > 1434059627s
+SELECT * FROM "(client)"
 ```
 
 To select for a `cpu` measurement with a tag key of `cpu_1` and tag value of `1`:
