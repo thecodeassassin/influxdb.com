@@ -17,7 +17,7 @@ SELECT COUNT(field_key) FROM measurement
 
 SELECT COUNT(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT COUNT(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT COUNT(field_key) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Min
@@ -29,7 +29,7 @@ SELECT MIN(field_key) FROM measurement
 
 SELECT MIN(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT MIN(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT MIN(field_key) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Max
@@ -41,7 +41,7 @@ SELECT MAX(field_key) FROM measurement
 
 SELECT MAX(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT MAX(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT MAX(field_key) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Mean
@@ -53,7 +53,7 @@ SELECT MEAN(field_key) FROM measurement
 
 SELECT MEAN(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT MEAN(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT MEAN(field_key) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Median
@@ -65,7 +65,7 @@ SELECT MEDIAN(field_key) FROM measurement
 
 SELECT MEDIAN(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT MEDIAN(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT MEDIAN(field_key) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Distinct
@@ -77,7 +77,7 @@ SELECT DISTINCT(field_key) FROM measurement
 
 SELECT DISTINCT(field_key) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT DISTINCT(field_key) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT DISTINCT(field_key) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 You can nest distinct in count to get the counts of unique values over windows of time:
@@ -87,7 +87,7 @@ SELECT COUNT(DISTINCT(field_key)) from measurement
 
 SELECT COUNT(DISTINCT(field_key)) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT COUNT(DISTINCT(field_key)) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT COUNT(DISTINCT(field_key)) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Percentile
@@ -99,7 +99,7 @@ SELECT PERCENTILE(field_key, N) FROM measurement
 
 SELECT PERCENTILE(field_key, N) FROM measurement WHERE time > now() - 1d GROUP BY time(10m)
 
-SELECT PERCENTILE(field_key, N) FROM measurement WHERE time > 1434059627s GROUP BY time(10m)
+SELECT PERCENTILE(field_key, N) FROM measurement WHERE time > 1434059627s GROUP BY tag_key
 ```
 
 ## Derivative
