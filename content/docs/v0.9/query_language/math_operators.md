@@ -16,13 +16,13 @@ Mathematical operators follow the standard order of operations. That is, *parent
 
 You can add a constant.
 
-```
+```sql
 SELECT A + 5 FROM add
 ```
 
 You can add together other field keys.
 
-```
+```sql
 SELECT A + B FROM add
 ```
 
@@ -30,58 +30,61 @@ SELECT A + B FROM add
 
 You can subtract a constant.
 
-```
+```sql
 SELECT 1 - A FROM sub
 ```
 
 You can subtract one field key from another field key.
 
-```
-SELECT A + B FROM add
+```sql
+SELECT A - B FROM sub
 ```
 
 ### Multiplication
 
 You can multiply by a constant.
 
-```
+```sql
+SELECT A + B FROM add
 SELECT 10 * A FROM mult
 ```
 
 You can multiply by other field keys.
 
-```
+```sql
 SELECT A * B * C FROM mult
 ```
 
 Multiplication distributes across other operators
-```
+
+```sql
 SELECT 10 * (A + B + C) FROM mult
 ```
 
-```
+```sql
 SELECT 10 * (A - B - C) FROM mult
 ```
 
-```
+```sql
 SELECT 10 * (A + B - C) FROM mult
 ```
 
 ### Division
 You can divide by a constant.
 
-```
+```sql
 SELECT 10 / A FROM div
 ```
 
 You can divide by other field keys.
 
-```
+```sql
 SELECT A / B FROM div
 ```
 
 Division distributes across other operators
-```
+
+```sql
 SELECT 10 / (A + B + C) FROM mult
 ```
 
