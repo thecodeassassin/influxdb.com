@@ -22,6 +22,7 @@ This is a list of the client libraries which currently support InfluxDB version 
 ## Perl
 
 - [AnyEvent::InfluxDB](https://github.com/ajgb/anyevent-influxdb) by [ajgb](https://github.com/ajgb)
+- [InfluxDB::LineProtocol](http://search.cpan.org/~domm/InfluxDB-LineProtocol-1.001/) by [domm](http://search.cpan.org/~domm/)
 
 ## PHP
 
