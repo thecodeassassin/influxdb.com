@@ -6,7 +6,7 @@ aliases:
 
 **Note:** Currently all mathematical operators work soley on `floats`. Any operation performed on an `int` will return a `null` value.
 
-Mathematical operators follow the standard order of operations. That is, *parentheses* take precedence to *division* and *multiplication*, which takes precedence to *addition* and *substraction*.
+Mathematical operators follow the standard order of operations. That is, *parentheses* take precedence to *division* and *multiplication*, which takes precedence to *addition* and *substraction*. For example `5 / 2 + 3 * 2 =  (5 / 2) + (3 * 2)` and `5 + 2 * 3 - 2 = 5 + (2 * 3) - 2`.
 
 ## Supported Operators
 
