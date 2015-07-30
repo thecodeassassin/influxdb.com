@@ -27,6 +27,7 @@ This is a list of the client libraries which currently support InfluxDB version 
 
 ## PHP
 
+- **Official** [InfluxDB-PHP Github](https://github.com/influxdb/influxdb-php) by [InfluxDB](https://github.com/influxdb)
 - [InfluxPHP Github](https://github.com/crodas/InfluxPHP) by [crodas](https://github.com/crodas)
 - [InfluxDB PHP SDK Github](https://github.com/corley/influxdb-php-sdk) by [corley](https://github.com/corley)
 
